@@ -1,4 +1,4 @@
-1.__getattr__()
+1.__getattr__(self, item)
 Python还有另一个机制，那就是写一个__getattr__()方法，动态返回一个属性。
 class Student(object):
 
@@ -12,14 +12,10 @@ class Student(object):
 
 
 
-
-
 2.with...as...
 为了保证文件打开后都能关闭，使用with语句自动调用close()函数
 with open('learn.txt', 'r') as f 等同于
 f = open('learn.txt', 'r')
-
-
 
 
 
@@ -28,3 +24,27 @@ f = open('learn.txt', 'r')
 由except函数捕捉错误
 执行完except函数后，执行finally后代码
 （无论出现何种错误，均执行finally后的代码）
+
+
+
+4.__setattr__(self, key, value)
+定义了设置属性时的行为，包括在 __init__ 初始化函数中的设置行为
+
+
+
+5.logging.info()
+import logging
+logging.debug('debug message')
+logging.info('info message')
+logging.warning('warning message')
+logging.error('error message')
+logging.critical('critical message')
+
+输出：
+
+WARNING:root:warning message
+ERROR:root:error message
+CRITICAL:root:critical message
+
+可见，默认情况下Python的logging模块将日志打印到了标准输出中，且只显示了大于等于WARNING级别的日志，这说明默认的日志级别设置为WARNING（日志级别等级
+CRITICAL > ERROR > WARNING > INFO > DEBUG > NOTSET）
