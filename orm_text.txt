@@ -1,0 +1,30 @@
+1.__getattr__()
+Python还有另一个机制，那就是写一个__getattr__()方法，动态返回一个属性。
+class Student(object):
+
+    def __init__(self):
+        self.name = 'Michael'
+
+    def __getattr__(self, attr):
+        if attr=='score':
+            return 99
+当调用不存在的属性时，比如score，Python解释器会试图调用__getattr__(self, 'score')来尝试获得属性，这样，我们就有机会返回score的值。
+
+
+
+
+
+2.with...as...
+为了保证文件打开后都能关闭，使用with语句自动调用close()函数
+with open('learn.txt', 'r') as f 等同于
+f = open('learn.txt', 'r')
+
+
+
+
+
+3.try...except...finally...
+当我们认为某些代码可能会出错时，就可以用try来运行这段代码，如果执行出错，则后续代码不会继续执行
+由except函数捕捉错误
+执行完except函数后，执行finally后代码
+（无论出现何种错误，均执行finally后的代码）
