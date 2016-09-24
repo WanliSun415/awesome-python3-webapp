@@ -78,9 +78,9 @@ class RequestHandler(object):
             return dict(error=e.error, data=e.data, message=e.message)
 
 # 添加一个模块的所有路由
-def add_routes(app, moudle_name):
+def add_routes(app, module_name):
     try:
-        mod = __import__(moudle_name, fromlist=['get_submodule'])
+        mod = __import__(module_name, fromlist=['get_submodule'])
     except ImportError as e:
         raise e
     # 遍历所有处理方法，由于被@get或@post修饰过，所以方法里会有'__method__'和'__route__'属性
