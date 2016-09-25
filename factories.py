@@ -3,8 +3,6 @@ import json
 from aiohttp import web
 from urllib import parse
 
-from app
-
 # 在每个响应之前打印日志
 async def logger_factory(app, handler):
     async def logger(request):

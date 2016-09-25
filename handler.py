@@ -5,8 +5,6 @@ import os
 import asyncio
 from aiohttp import web
 
-from .errors import APIError
-
 # *********RequestHandler模块的主要任务为在View（网页）向Controller（路由）之间建立桥梁，与response_factory之间相对应。web框架把Controller的指令构造成一个request发送给View，然后动态生成前段页面；用户在前段页面的某些操作，然后通过request传回到后端，在传回到后端之前先将request进行解析，转变成后端可以处理的事务。RequestHandler负责对这些request进行标准化处理。**************
 
 def get(path):
