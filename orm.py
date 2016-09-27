@@ -80,7 +80,7 @@ class ModelMetaclass(type):
         if name == 'Model':
             return type.__new__(cls, name, bases, attrs)
         # 找到表名，若没有定义__table__属性,将类名作为表名
-        tablename = attrs.get('__table__', None) or name
+        tablename = attrs.get('__table__', name)
         logging.info('found model: %s (table: %s)' % (name, tablename))
         # 建立映射关系表和找到主键
         mappings = {}   # 保存映射关系
@@ -100,8 +100,8 @@ class ModelMetaclass(type):
                     if primary_key:
                         raise KeyError('Duplicate primary key for field: %s')
                     primary_key = key
-            else:
-                escaped_fields.append(key)  # 将非主键的属性名都保存到escaped_fields
+                else:
+                    escaped_fields.append(key)  # 将非主键的属性名都保存到escaped_fields
         if not primary_key:  # 没有主键也将报错
             raise KeyError('Primary key not found. ')
 
@@ -193,13 +193,12 @@ class Model(dict, metaclass=ModelMetaclass):
         resultset = await select(' '.join(sql), args, 1)   # size = 1
         if not resultset:
             return 0
-        return resultset[0]['_num_', 0]
+        return resultset[0].get('_num_', 0)
     # 根据主键查找一个实例的信息
     @classmethod
     async def find(cls, pk):
         ' find object by primary key. '
-        resultset = await select('%s where `%s`= ?' % (cls.__select__,
-                                               cls.__primary_key__), [pk], 1)
+        resultset = await select('%s where `%s`= ?' % (cls.__select__, cls.__primary_key__), [pk], 1)
         return cls(**resultset[0]) if resultset else None
 
 
