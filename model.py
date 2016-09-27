@@ -16,9 +16,9 @@ class User(Model):
     passwd = StringField(ddl='varchar(50)')
     admin = BooleanField()
     name = StringField(ddl='varchar(50)')
-    image = StringField(ddl='varchar(50)')
+    image = StringField(ddl='varchar(500)')
     # 时间和日期用float类型存储在数据库中，不用datetime类型的好处在于不必关心数据库的时区和时区转换，显示时只需要做一个float到str的转换
-    create_at = FloatField(default=time.time)
+    created_at = FloatField(default=time.time)
 
 
 class Blog(Model):
@@ -27,11 +27,11 @@ class Blog(Model):
     id = StringField(primary_key=True, default=next_id, ddl='varchar(50)')
     user_id = StringField(ddl='varchar(50)')
     user_name = StringField(ddl='varchar(50)')
-    user_image = StringField(ddl='varchar(50)')
+    user_image = StringField(ddl='varchar(500)')
     name = StringField(ddl='varchar(50)')
-    summary = StringField(ddl='varchar(50)')
+    summary = StringField(ddl='varchar(200)')
     content = TextField()
-    create_at = FloatField(defaulr=time.time)
+    created_at = FloatField(default=time.time)
 
 
 class Comment(Model):
@@ -41,7 +41,7 @@ class Comment(Model):
     blog_id = StringField(ddl='varchar(50)')
     user_id = StringField(ddl='varchar(50)')
     user_name = StringField(ddl='varchar(50)')
-    user_image = StringField(ddl='varchar(50)')
+    user_image = StringField(ddl='varchar(500)')
     content = TextField
-    create_at = FloatField(defaulr=time.time)
+    created_at = FloatField(default=time.time)
 

@@ -1,9 +1,10 @@
 from jinja2 import Environment, FileSystemLoader
-import orm
+from orm import create_pool, destroy_pool
 import factories
 from filters import datetime_filter
-from handler import add_routes, add_static
+from handlers import add_routes, add_static
 import os
+from model import User
 
 import asyncio
 from aiohttp import web
@@ -14,12 +15,12 @@ logging.basicConfig(level=logging.INFO)
 def init_jinja2(app, **kw):
     logging.info('init jinja2...')
     options = dict(
-        autoescape = kw.get('autoescape', True),
-        block_start_string = kw.get('block_start_string', '{%'),
-        block_end_start = kw.get('block_end_start', '}%'),
-        variable_strart_string = kw.get('variable_start_string', '{{'),
-        variable_end_string = kw.get('variable_end_string', '}}'),
-        auto_reload =kw.get('auto_reload', True)
+        autoescape=kw.get('autoescape', True),
+        block_start_string=kw.get('block_start_string', '{%'),
+        block_end_start=kw.get('block_end_start', '}%'),
+        variable_strart_string=kw.get('variable_start_string', '{{'),
+        variable_end_string=kw.get('variable_end_string', '}}'),
+        auto_reload=kw.get('auto_reload', True)
     )
     path = kw.get('path', None)
     if path is None:
@@ -45,6 +46,19 @@ async def init(loop):
     return srv
 
 
+def index(request):
+    return web.Response(body=b'<h1>Awesome</h1>')
+
 loop = asyncio.get_event_loop()
-loop.run_until_complete(init(loop))
-loop.run_forever()
+async def test1(loop):
+    await create_pool(loop=loop, host='localhost', port=3306,
+                          user='www-data', password='www-data', db='awesome')
+    u = User(name='Test4', email='test4@1example.com', passwd='123456',
+             image='about:blank')
+    await u.save()
+    await destroy_pool()  # 这里先销毁连接池
+    print('test ok')
+
+
+loop.run_until_complete(test1(loop))
+loop.close()
