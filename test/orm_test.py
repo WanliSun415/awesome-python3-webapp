@@ -13,6 +13,21 @@ async def test1(loop):
     rows = await User.countRows()
     logging.info('rows is %s' % rows)
 
+    # 测试insert into语句
+    if rows < 3:
+        for idx in range(5):
+            u = User(
+                name='test%s' % idx,
+                email='test%s@org.com' % idx,
+                passwd='orm123%s' % idx,
+                image='about:blank'
+            )
+            row = await User.countRows(where='email = ?', args=[u.email])
+            if row == 0:
+                await u.save()
+            else:
+                print('the email is already registered...')
+
     # 测试select语句
     users = await User.findAll(orderBy='created_at')
     for user in users:
@@ -29,7 +44,7 @@ async def test1(loop):
     logging.info('name: %s, email: %s' % (test_user.name, test_user.email))
 
     # 测试delete语句
-    users = await User.findAll(orderBy='created_at', limit=(2, 3))
+    users = await User.findAll(orderBy='created_at', limit=(0, 3))
     for user in users:
         logging.info('delete user: %s' % user.name)
         await user.remove()
