@@ -1,5 +1,0 @@
-config = {
-    'db': {
-        'host': 'localhost'
-    }
-}
