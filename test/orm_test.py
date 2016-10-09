@@ -18,7 +18,7 @@ async def test1(loop):
         for idx in range(5):
             u = User(
                 name='test%s' % idx,
-                email='test%s@org.com' % idx,
+                email='mytest%s@org.com' % idx,
                 passwd='orm123%s' % idx,
                 image='about:blank'
             )
@@ -43,11 +43,11 @@ async def test1(loop):
     test_user = await User.find(user.id)
     logging.info('name: %s, email: %s' % (test_user.name, test_user.email))
 
-    # 测试delete语句
-    users = await User.findAll(orderBy='created_at', limit=(0, 3))
-    for user in users:
-        logging.info('delete user: %s' % user.name)
-        await user.remove()
+    # # 测试delete语句
+    # users = await User.findAll(orderBy='created_at', limit=(0, 3))
+    # for user in users:
+    #     logging.info('delete user: %s' % user.name)
+    #     await user.remove()
 
     await destroy_pool()  # 这里先销毁连接池
     print('test ok')
