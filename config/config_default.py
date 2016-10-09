@@ -1,4 +1,5 @@
-config = {
+configs = {
+    'debug': True,
     'db': {
         'host': 'localhost',
         'port': 3306,
@@ -7,6 +8,6 @@ config = {
         'db': 'awesome'
     },
     'session': {
-        'secret': 'AwEs0mE'
+        'secret': 'Awesome'
     }
 }

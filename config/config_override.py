@@ -1,4 +1,4 @@
-config = {
+configs = {
     'db': {
         'host': 'localhost'
     }
