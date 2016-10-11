@@ -105,12 +105,12 @@ def register():
 @post('/api/authenticate')
 async def authenticate(*, email, passwd):
     if not email:
-        raise APIValueError('email', 'Invalid email.')
+        raise APIValueError('email', '请填写邮箱地址')
     if not passwd:
-        raise APIValueError('passwd', 'Invalid password.')
+        raise APIValueError('passwd', '请填写密码')
     users = await User.findAll('email=?', [email])
     if len(users) == 0:
-        raise APIValueError('email', 'Email not exist.')
+        raise APIValueError('email', '邮箱不存在')
     user = users[0]
     # check passwd:
     sha1 = hashlib.sha1()
@@ -118,7 +118,7 @@ async def authenticate(*, email, passwd):
     sha1.update(b':')
     sha1.update(passwd.encode('utf-8'))
     if user.passwd != sha1.hexdigest():
-        raise APIValueError('passwd', 'Invalid password.')
+        raise APIValueError('passwd', '密码错误')
     # authenticate ok, set cookie:
     r = web.Response()
     r.set_cookie(COOKIE_NAME, user2cookie(user, 86400), max_age=86400, httponly=True)
