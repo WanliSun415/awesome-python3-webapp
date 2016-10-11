@@ -78,14 +78,15 @@ async def getblog(id, request):
         blog = await Blog.find(id)
         comments = await Comment.findAll('blogid=?', [id], orderBy='created_at desc')
         for c in comments:
-                c.htmlcontent = text2html(c.content)
+                c.html_content = text2html(c.content)
         print('handlers.py line 82 %s' % request.user)
-        blog.htmlcontent=markdown2.markdown(blog.content)
+        blog.html_content = markdown2.markdown(blog.content)
         return {
             '__template__': 'blogs.html',
             'blogs': blog,
             '__user__': request.__user__,
-            'comments': comments}
+            'comments': comments
+        }
 
 @get('/signin')
 def signin():
