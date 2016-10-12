@@ -245,6 +245,7 @@ class Field(object):
     def __str__(self):
         return '<%s, %s:%s>' % (self.__class__.__name__, self.column_type, self.name)
 
+
 # 以下几个类作用是为User,Blog,Comment中的字段提供初始化
 class StringField(Field):
 

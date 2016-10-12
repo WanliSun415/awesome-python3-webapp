@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from coroweb import get, post
 from model import User, Comment, Blog, next_id
 import re, time, json, logging, hashlib, base64
-from errors import APIValueError, APIResourceNotFoundError, APIPermissionError
+from errors import APIValueError,Page, APIPermissionError
 from aiohttp import web
 from config.config import configs
 import markdown2
@@ -14,6 +17,17 @@ _COOKIE_KEY = configs.session.secret
 def check_admin(request):
     if request.__user__ is None or not request.__user__.admin:
         raise APIPermissionError()
+
+
+def get_page_index(page_str):
+    p = 1
+    try:
+        p = int(page_str)
+    except ValueError as e:
+        pass
+    if p < 1:
+        p = 1
+    return p
 
 
 def user2cookie(user, max_age):
@@ -74,7 +88,7 @@ async def index(request):
 
 
 @get('/blog/{id}')
-async def getblog(id, request):
+async def get_blog(id, request):
         blog = await Blog.find(id)
         comments = await Comment.findAll('blogid=?', [id], orderBy='created_at desc')
         for c in comments:
@@ -84,7 +98,6 @@ async def getblog(id, request):
         return {
             '__template__': 'blogs.html',
             'blogs': blog,
-            '__user__': request.__user__,
             'comments': comments
         }
 
@@ -127,6 +140,31 @@ async def authenticate(*, email, passwd):
     r.body = json.dumps(user, ensure_ascii=False).encode('utf-8')
     return r
 
+
+@get('/signout')
+def signout(request):
+    referer = request.headers.get('Referer')
+    r = web.HTTPFound(referer or '/')
+    r.set_cookie(COOKIE_NAME, '-deleted-', max_age=0, httponly=True)
+    logging.info('user signed out.')
+    return r
+
+
+@get('/manage/blogs/create')
+def manage_create_blog():
+    return{
+        '__template__': 'manage_blog_edit.html',
+        'id': '',
+        'action': '/api/blogs'
+    }
+
+
+@get('/manage/blogs')
+def manage_blogs(*, page='1'):
+    return{
+        '__template__': 'manage_blog_'
+    }
+
 _RE_EMAIL = re.compile(r'^[a-z0-9\.\-\_]+\@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+){1,4}$')
 _RE_SHA1 = re.compile(r'[0-9a-f]{40}$')
 
@@ -154,6 +192,17 @@ async def api_register_user(*, email, name, passwd):
     return r
 
 
+@get('/api/blogs')
+async def api_blogs(*, page='1'):
+    page_index = get_page_index(page)
+    num = await Blog.findNumber('count(id)')
+    p = Page(num, page_index)
+    if num == 0:
+        return dict(page=p, blogs=())
+    blogs = await Blog.findAll(orderBy='created_at_desc', limit=(p.offset, p.limit))
+    return dict(page=p, blogs=blogs)
+
+
 @get('/api/blogs/{id}')
 def api_get_blog(*, id):
     blog = yield from Blog.find(id)
@@ -172,3 +221,5 @@ async def api_create_blog(request, *, name, summary, content):
     blog = Blog(user_id=request.__user__.id, user_name=request.__user__.name, user_image=request.__user__.image, name=name.strip(), summary=summary.strip(), content=content.strip())
     await blog.save()
     return blog
+
+

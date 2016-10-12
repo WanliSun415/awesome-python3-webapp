@@ -3,6 +3,7 @@ import json
 from aiohttp import web
 from urllib import parse
 from handlers import cookie2user, COOKIE_NAME
+from model import User
 
 # 在每个响应之前打印日志
 async def logger_factory(app, handler):
@@ -12,32 +13,32 @@ async def logger_factory(app, handler):
     return logger
 
 
-# # 通过cookie找到当前用户信息，把用户绑定在request.__user__
-# async def auth_factory(app, handler):
-#     async def auth(request):
-#         logging.info('check user: %s %s' % (request.method, request.path))
-#         cookie = request.cookies.get(COOKIE_NAME)
-#         request.__user__ = await User.find_by_cookie(cookie)
-#         if request.__user__ is not None:
-#             logging.info('set current user: %s' % request.__user__.email)
-#         return await handler(request)
-#     return auth
-
-
+# 通过cookie找到当前用户信息，把用户绑定在request.__user__
 async def auth_factory(app, handler):
     async def auth(request):
         logging.info('check user: %s %s' % (request.method, request.path))
-        request.__user__ = None
-        cookie_str = request.cookies.get(COOKIE_NAME)
-        if cookie_str:
-            user = await cookie2user(cookie_str)
-            if user:
-                logging.info('set current user: %s' % user.email)
-                request.__user__ = user
-        if request.path.startswith('/manage/') and (request.__user__ is None or not request.__user__.admin):
-            return web.HTTPFound('/signin')
+        cookie = request.cookies.get(COOKIE_NAME)
+        request.__user__ = await cookie2user(cookie)
+        if request.__user__ is not None:
+            logging.info('set current user: %s' % request.__user__.email)
         return await handler(request)
     return auth
+
+
+# async def auth_factory(app, handler):
+#     async def auth(request):
+#         logging.info('check user: %s %s' % (request.method, request.path))
+#         request.__user__ = None
+#         cookie_str = request.cookies.get(COOKIE_NAME)
+#         if cookie_str:
+#             user = await cookie2user(cookie_str)
+#             if user:
+#                 logging.info('set current user: %s' % user.email)
+#                 request.__user__ = user
+#         if request.path.startswith('/manage/') and (request.__user__ is None or not request.__user__.admin):
+#             return web.HTTPFound('/signin')
+#         return await handler(request)
+#     return auth
 
 
 async def data_factory(app, handler):
