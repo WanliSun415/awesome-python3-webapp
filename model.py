@@ -8,6 +8,7 @@ def next_id():
     return '%015d%s000' % (int(time.time() * 1000), uuid.uuid4().hex)
 
 
+# User,Blog,Comment均继承自Model类，在父类Model中实现了查血相关的类方法，比如findAll,countRows,find,update,remove,save等方法
 class User(Model):
     __table__ = 'users'
 

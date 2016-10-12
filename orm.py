@@ -3,6 +3,7 @@ import aiomysql
 logging.basicConfig(level=logging.INFO)
 
 
+# 定义log函数用于提示log信息,第一部分为数据库中用到的log语句,第二部分为'?'对应的参数
 def log(sql, args=None):
     logging.info('SQl: [%s] args: %s' % (sql, args or []))
 
@@ -39,10 +40,10 @@ async def select(sql, args, size=None):
         async with conn.cursor(aiomysql.DictCursor) as cur:
             # 将sql中的'?'替换为'%s'，因为mysql语句中的占位符为%s
             await cur.execute(sql.replace('?', '%s'), args)
-            if size:   # 如果传入的为size
-                resultset = await cur.fetchmany(size)  # 从数据库中取出指定行数的数据
+            if size:   # 如果传入的为size,取出指定行数的结果
+                resultset = await cur.fetchmany(size)
             else:
-                resultset = await cur.fetchall()  # 否则取出所有结果集
+                resultset = await cur.fetchall()  # 否则取出所有结果
         logging.info('row returned: %s' % len(resultset))
         return resultset
 
@@ -107,15 +108,17 @@ class ModelMetaclass(type):
 
         attrs['__mappings__'] = mappings                        # 保存表名
         attrs['__table__'] = tablename                          # 映射关系表
-        attrs['__primary_key__'] = primary_key                  # 主键属性名
+        attrs['__primary_key__'] = primary_key                 # 主键属性名
         attrs['__fields__'] = escaped_fields + [primary_key]    # 将所有属性名都添加进__fields__属性中
 
         # --------------------默认SQL语句------------------------------------
         # 默认select选出主键
-        attrs['__select__'] = 'select * from `%s`' % (tablename)
-        attrs['__insert__'] = 'insert into `%s` (%s) values (%s)' % (tablename, ', '.join('`%s`' % f for f in mappings), ', '.join('?' * len(mappings)))
-        attrs['__update__'] = 'update `%s` set %s where `%s` = ?' % (tablename, ', '.join('`%s` = ?' % f for f in escaped_fields), primary_key)
-        attrs['__delete__'] = 'delete from `%s` where `%s`= ?' % (tablename, primary_key)
+        attrs['__select__'] = 'SELECT * FROM `%s`' % (tablename)
+        attrs['__insert__'] = 'INSERT INTO `%s` (%s) VALUES (%s)' % (tablename, ', '.join('`%s`' % f for f in mappings), ', '.join('?' * len(mappings)))
+        attrs['__update__'] = 'UPDATE `%s` SET %s WHERE `%s` = ?' % (tablename,
+                                                                 ', '.join('`%s` = ?' % f for f in escaped_fields), primary_key)
+        attrs['__delete__'] = 'DELETE FROM `%s` WHERE `%s`= ?' % (tablename,
+                                                              primary_key)
         return type.__new__(cls, name, bases, attrs)
 
 
@@ -164,19 +167,19 @@ class Model(dict, metaclass=ModelMetaclass):
             args = []
         # WHERE查找条件的关键字
         if where:
-            sql.append('where ')
+            sql.append('WHERE ')
             sql.append(where)
         # ORDER BY是排序的关键字
         if kw.get('orderBy') is not None:
-            sql.append('order by %s' % (kw['orderBy']))
+            sql.append('ORDER BY %s' % (kw['orderBy']))
         # LIMIT 是筛选结果集的关键字
         limit = kw.get('limit')
         if limit is not None:
             if isinstance(limit, int):
-                sql.append('limit ?')
+                sql.append('LIMIT ?')
                 args.append(limit)
             elif isinstance(limit, tuple) and len(limit) == 2:
-                sql.append('limit ?, ?')
+                sql.append('LIMIT ?, ?')
                 args.extend(limit)
             else:
                 raise ValueError('Invalid limit value: %s' % limit)
@@ -187,18 +190,21 @@ class Model(dict, metaclass=ModelMetaclass):
     @classmethod
     async def countRows(cls, selectField='*', where=None, args=None):
         ' find number by select and where. '
-        sql = ['select count(%s) _num_ from `%s`' % (selectField, cls.__table__)]
+        sql = ['SELECT COUNT(%s) _num_ FROM `%s`' % (selectField,
+                                                     cls.__table__)]
         if where:
             sql.append('where %s' % where)
         resultset = await select(' '.join(sql), args, 1)   # size = 1
         if not resultset:
             return 0
         return resultset[0].get('_num_', 0)
+
     # 根据主键查找一个实例的信息
     @classmethod
     async def find(cls, pk):
         ' find object by primary key. '
-        resultset = await select('%s where `%s`= ?' % (cls.__select__, cls.__primary_key__), [pk], 1)
+        resultset = await select('%s WHERE `%s`= ?' % (cls.__select__,
+                                                       cls.__primary_key__), [pk], 1)
         return cls(**resultset[0]) if resultset else None
 
 
@@ -239,11 +245,13 @@ class Field(object):
     def __str__(self):
         return '<%s, %s:%s>' % (self.__class__.__name__, self.column_type, self.name)
 
-
+# 以下几个类作用是为User,Blog,Comment中的字段提供初始化
 class StringField(Field):
 
     # String一般不作为主键，所以默认False, DDL是数据定义语言，为了配合mysql，所以默认设定为100的长度
     def __init__(self, name=None, primary_key=False, default=None, ddl='varchar(100)'):
+        # http://www.cnblogs.com/dkblog/archive/2011/02/24/1980654.html
+        # super用于子类调用父类的方法
         super().__init__(name, ddl, primary_key, default)
 
 
