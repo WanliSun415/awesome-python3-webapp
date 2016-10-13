@@ -17,28 +17,17 @@ async def logger_factory(app, handler):
 async def auth_factory(app, handler):
     async def auth(request):
         logging.info('check user: %s %s' % (request.method, request.path))
-        cookie = request.cookies.get(COOKIE_NAME)
-        request.__user__ = await cookie2user(cookie)
-        if request.__user__ is not None:
-            logging.info('set current user: %s' % request.__user__.email)
+        request.__user__ = None
+        cookie_str = request.cookies.get(COOKIE_NAME)
+        if cookie_str:
+            user = await cookie2user(cookie_str)
+            if user:
+                logging.info('set current user: %s' % user.email)
+                request.__user__ = user
+        if request.path.startswith('/manage/') and (request.__user__ is None or not request.__user__.admin):
+            return web.HTTPFound('/signin')
         return await handler(request)
     return auth
-
-
-# async def auth_factory(app, handler):
-#     async def auth(request):
-#         logging.info('check user: %s %s' % (request.method, request.path))
-#         request.__user__ = None
-#         cookie_str = request.cookies.get(COOKIE_NAME)
-#         if cookie_str:
-#             user = await cookie2user(cookie_str)
-#             if user:
-#                 logging.info('set current user: %s' % user.email)
-#                 request.__user__ = user
-#         if request.path.startswith('/manage/') and (request.__user__ is None or not request.__user__.admin):
-#             return web.HTTPFound('/signin')
-#         return await handler(request)
-#     return auth
 
 
 async def data_factory(app, handler):

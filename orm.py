@@ -187,17 +187,29 @@ class Model(dict, metaclass=ModelMetaclass):
         return [cls(**r) for r in resultset]            # 返回结果，结果是list对象，里面的元素是dict类型的
 
     # 根据列名和条件查看数据库有多少条信息
+    # @classmethod
+    # async def countRows(cls, selectField='*', where=None, args=None):
+    #     ' find number by select and where. '
+    #     sql = ['SELECT COUNT(%s) _num_ FROM `%s`' % (selectField,
+    #                                                  cls.__table__)]
+    #     if where:
+    #         sql.append('where %s' % where)
+    #     resultset = await select(' '.join(sql), args, 1)   # size = 1
+    #     if not resultset:
+    #         return 0
+    #     return resultset[0].get('_num_', 0)
+
     @classmethod
-    async def countRows(cls, selectField='*', where=None, args=None):
+    async def findNumber(cls, selectField, where=None, args=None):
         ' find number by select and where. '
-        sql = ['SELECT COUNT(%s) _num_ FROM `%s`' % (selectField,
-                                                     cls.__table__)]
+        sql = ['select %s _num_ from `%s`' % (selectField, cls.__table__)]
         if where:
-            sql.append('where %s' % where)
-        resultset = await select(' '.join(sql), args, 1)   # size = 1
-        if not resultset:
-            return 0
-        return resultset[0].get('_num_', 0)
+            sql.append('where')
+            sql.append(where)
+        rs = await select(' '.join(sql), args, 1)
+        if len(rs) == 0:
+            return None
+        return rs[0]['_num_']
 
     # 根据主键查找一个实例的信息
     @classmethod

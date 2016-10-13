@@ -5,52 +5,53 @@
 {% block beforehead %}
 
 <script>
-    function validateEmail(email) {
-        var re = /^[a-z0-9\.\-\_]+\@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+){1,4}$/;
-        return re.test(email.toLowerCase());
-    }
 
-    $(function () {
-        var vm = new Vue({
-            el: '#vm',
-            data: {
-                name: '',
-                email: '',
-                password1: '',
-                password2: ''
-            },
-            method: {
-                submit: function (event) {
-                    event.preventDefault();
-                    var $form = $('#vm');
-                    if(! this.name.trim()) {
-                        return $form.showFormError('请输入名字');
-                    }
-                    if(! validateEmail(this.email.trim().toLowerCase())) {
-                        return $form.showFormError('请输入正确的Email地址');
-                    }
-                    if(this.password1.length < 6) {
-                        return $form.showFormError('口令长度至少为6个字符');
-                    }
-                    if(this.password1 !== this.password2) {
-                        return $form.showFormError('两次输入的口令不一致');
-                    }
-                    var email = this.email.trim().toLowerCase();
-                    $form.postJSON('/api/users', {
-                        name: this.name.trim(),
-                        email: email,
-                        passwd: CryptoJS.SHA1(email + ':' + this.password1).toString()
-                    }, function (err, r) {
-                        if (err) {
-                            return $form.showFormError(err);
-                        }
-                        return location.assign('/');
-                    });
+function validateEmail(email) {
+    var re = /^[a-z0-9\.\-\_]+\@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+){1,4}$/;
+    return re.test(email.toLowerCase());
+}
+
+$(function () {
+    var vm = new Vue({
+        el: '#vm',
+        data: {
+            name: '',
+            email: '',
+            password1: '',
+            password2: ''
+        },
+        method: {
+            submit: function (event) {
+                event.preventDefault();
+                var $form = $('#vm');
+                if(! this.name.trim()) {
+                    return $form.showFormError('请输入名字');
                 }
+                if(! validateEmail(this.email.trim().toLowerCase())) {
+                    return $form.showFormError('请输入正确的Email地址');
+                }
+                if(this.password1.length < 6) {
+                    return $form.showFormError('口令长度至少为6个字符');
+                }
+                if(this.password1 !== this.password2) {
+                    return $form.showFormError('两次输入的口令不一致');
+                }
+                var email = this.email.trim().toLowerCase();
+                $form.postJSON('/api/users', {
+                    name: this.name.trim(),
+                    email: email,
+                    passwd: CryptoJS.SHA1(email + ':' + this.password1).toString()
+                }, function (err, r) {
+                    if (err) {
+                        return $form.showFormError(err);
+                    }
+                    return location.assign('/');
+                });
             }
-        });
-        $('#vm').show();
+        }
     });
+    $('#vm').show();
+});
 
 </script>
 

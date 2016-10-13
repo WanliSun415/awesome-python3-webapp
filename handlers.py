@@ -70,19 +70,17 @@ async def cookie2user(cookie_str):
 
 
 @get('/')
-async def index(request):
-    summary = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    blogs = [
-        Blog(id='1', name='Test Blog', summary=summary, created_at=time.time(
-
-        )-120),
-        Blog(id='2', name='Something New', summary=summary,
-             created_at=time.time() - 3600),
-        Blog(id='3', name='Learn Swift', summary=summary,
-             created_at=time.time() - 7200)
-    ]
+async def index(*, page='1'):
+    page_index = get_page_index(page)
+    num = await Blog.findNumber('count(id)')
+    page = Page(num, page_index)
+    if num == 0:
+        blogs = []
+    else:
+        blogs = await Blog.findAll(orderBy='created_at desc', limit=(page.offset, page.limit))
     return {
         '__template__': 'blogs.html',
+        'page': page,
         'blogs': blogs
     }
 
@@ -162,7 +160,8 @@ def manage_create_blog():
 @get('/manage/blogs')
 def manage_blogs(*, page='1'):
     return{
-        '__template__': 'manage_blog_'
+        '__template__': 'manage_blogs.html',
+        'page_index': get_page_index(page)
     }
 
 _RE_EMAIL = re.compile(r'^[a-z0-9\.\-\_]+\@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+){1,4}$')
