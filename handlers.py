@@ -69,6 +69,7 @@ async def cookie2user(cookie_str):
         return None
 
 
+# 首页
 @get('/')
 async def index(*, page='1'):
     page_index = get_page_index(page)
@@ -85,20 +86,7 @@ async def index(*, page='1'):
     }
 
 
-@get('/blog/{id}')
-async def get_blog(id, request):
-        blog = await Blog.find(id)
-        comments = await Comment.findAll('blogid=?', [id], orderBy='created_at desc')
-        for c in comments:
-                c.html_content = text2html(c.content)
-        print('handlers.py line 82 %s' % request.user)
-        blog.html_content = markdown2.markdown(blog.content)
-        return {
-            '__template__': 'blogs.html',
-            'blogs': blog,
-            'comments': comments
-        }
-
+# 登陆 __base__.html:button-登陆
 @get('/signin')
 def signin():
     return {
@@ -106,6 +94,7 @@ def signin():
     }
 
 
+# 注册 __base__.html:button-注册
 @get('/register')
 def register():
     return {
@@ -113,6 +102,55 @@ def register():
     }
 
 
+# 登出 __base__.html:button-登出
+@get('/signout')
+def signout(request):
+    referer = request.headers.get('Referer')
+    r = web.HTTPFound(referer or '/')
+    r.set_cookie(COOKIE_NAME, '-deleted-', max_age=0, httponly=True)
+    logging.info('user signed out.')
+    return r
+
+
+# 创建日志页
+@get('/manage/blogs/create')
+def manage_create_blog():
+    return{
+        '__template__': 'manage_blog_edit.html',
+        'id': '',
+        'action': '/api/blogs'
+    }
+
+
+# 日志列表页
+@get('/manage/blogs')
+def manage_blogs(*, page='1'):
+    return{
+        '__template__': 'manage_blogs.html',
+        'page_index': get_page_index(page)
+    }
+
+
+# 日志详情页 blogs.html日志列表页中的button-blog.name与button-继续阅读
+@get('/blog/{id}')
+async def get_blog(id):
+        blog = await Blog.find(id)
+        comments = await Comment.findAll('blog_id=?', [id],
+                                         orderBy='created_at')
+        for c in comments:
+                c.html_content = text2html(c.content)
+        blog.html_content = markdown2.markdown(blog.content)
+        return {
+            '__template__': 'blog.html',
+            'blog': blog,
+            'comments': comments
+        }
+
+_RE_EMAIL = re.compile(r'^[a-z0-9\.\-\_]+\@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+){1,4}$')
+_RE_SHA1 = re.compile(r'[0-9a-f]{40}$')
+
+
+# 后端API：验证用户 signin.html:button-登陆
 @post('/api/authenticate')
 async def authenticate(*, email, passwd):
     if not email:
@@ -139,35 +177,7 @@ async def authenticate(*, email, passwd):
     return r
 
 
-@get('/signout')
-def signout(request):
-    referer = request.headers.get('Referer')
-    r = web.HTTPFound(referer or '/')
-    r.set_cookie(COOKIE_NAME, '-deleted-', max_age=0, httponly=True)
-    logging.info('user signed out.')
-    return r
-
-
-@get('/manage/blogs/create')
-def manage_create_blog():
-    return{
-        '__template__': 'manage_blog_edit.html',
-        'id': '',
-        'action': '/api/blogs'
-    }
-
-
-@get('/manage/blogs')
-def manage_blogs(*, page='1'):
-    return{
-        '__template__': 'manage_blogs.html',
-        'page_index': get_page_index(page)
-    }
-
-_RE_EMAIL = re.compile(r'^[a-z0-9\.\-\_]+\@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+){1,4}$')
-_RE_SHA1 = re.compile(r'[0-9a-f]{40}$')
-
-
+# 后端API：创建新用户 register.html:button-注册
 @post('/api/users')
 async def api_register_user(*, email, name, passwd):
     if not name or not name.strip():
@@ -191,6 +201,7 @@ async def api_register_user(*, email, name, passwd):
     return r
 
 
+# 后端API：获取日志
 @get('/api/blogs')
 async def api_blogs(*, page='1'):
     page_index = get_page_index(page)
@@ -198,16 +209,11 @@ async def api_blogs(*, page='1'):
     p = Page(num, page_index)
     if num == 0:
         return dict(page=p, blogs=())
-    blogs = await Blog.findAll(orderBy='created_at_desc', limit=(p.offset, p.limit))
+    blogs = await Blog.findAll(orderBy='created_at', limit=(p.offset, p.limit))
     return dict(page=p, blogs=blogs)
 
 
-@get('/api/blogs/{id}')
-def api_get_blog(*, id):
-    blog = yield from Blog.find(id)
-    return blog
-
-
+# 后端API：创建日志
 @post('/api/blogs')
 async def api_create_blog(request, *, name, summary, content):
     check_admin(request)
@@ -222,3 +228,8 @@ async def api_create_blog(request, *, name, summary, content):
     return blog
 
 
+# 后端API：修改日志
+@get('/api/blogs/{id}')
+async def api_get_blog(*, id):
+    blog = await Blog.find(id)
+    return blog
