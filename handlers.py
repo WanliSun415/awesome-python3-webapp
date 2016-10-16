@@ -112,7 +112,7 @@ def signout(request):
     return r
 
 
-# 创建日志页
+# 创建日志页 manage_blogs.html:button-新日志
 @get('/manage/blogs/create')
 def manage_create_blog():
     return{
@@ -211,7 +211,7 @@ async def authenticate(*, email, passwd):
     return r
 
 
-# 后端API:获取用户 managr_blogs.html:link-用户
+# 后端API:获取用户 manage_users.html
 @get('/api/users')
 async def api_get_users(*, page='1'):
     page_index = get_page_index(page)
@@ -249,7 +249,7 @@ async def api_register_user(*, email, name, passwd):
     return r
 
 
-# 后端API：获取日志
+# 后端API：获取日志 manage_blogs.html
 @get('/api/blogs')
 async def api_blogs(*, page='1'):
     page_index = get_page_index(page)
@@ -276,7 +276,7 @@ async def api_create_blog(request, *, name, summary, content):
     return blog
 
 
-# 后端API：获取日志
+# 后端API：修改日志 manage_blogs.html:methods-edit_blog
 @get('/api/blogs/{id}')
 async def api_get_blog(*, id):
     blog = await Blog.find(id)
@@ -292,7 +292,7 @@ async def api_delete_blog(request, *, id):
     return dict(id=id)
 
 
-# 后端API:获取评论列表
+# 后端API:获取评论列表 manage_comments.html
 @get('/api/comments')
 async def api_comments(*, page='1'):
     page_index = get_page_index(page)

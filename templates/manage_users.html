@@ -30,6 +30,7 @@
     });
 
 </script>
+
 {% endblock %}
 
 {% block content %}
@@ -37,11 +38,14 @@
     <div class="uk-width-1-1 uk-margin-bottom">
         <div class="uk-panel uk-panel-box">
             <ul class="uk-breadcrumb">
-                <li><a href="/manage/api/comments">评论</a></li>
-                <li><a href="manage_blogs.html">日志</a></li>
+                <li><a href="/manage/comments">评论</a></li>
+                <li><a href="/manage/blogs">日志</a></li>
                 <li class="uk-active"><span>用户</span></li>
             </ul>
         </div>
+    </div>
+
+    <div id="error" class="uk-width-1-1">
     </div>
 
     <div id="loading" class="uk-width-1-1 uk-text-center">
@@ -49,7 +53,7 @@
     </div>
 
     <div id="vm" class="uk-width-1-1">
-        <table class="uk-table uk-table-bover">
+        <table class="uk-table uk-table-hover">
             <thead>
                 <tr>
                     <th class="uk-width-4-10">名字</th>
