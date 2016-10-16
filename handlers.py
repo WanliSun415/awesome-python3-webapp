@@ -211,7 +211,21 @@ async def authenticate(*, email, passwd):
     return r
 
 
-# 后端API：创建新用户 register.html:button-注册
+# 后端API:获取用户 managr_blogs.html:link-用户
+@get('/api/users')
+async def api_get_users(*, page='1'):
+    page_index = get_page_index(page)
+    num = await User.findNumber('count(id)')
+    p = Page(num, page_index)
+    if num == 0:
+        return dict(page=p, users=())
+    users = await User.findAll(orderBy='created_at', limit=(p.offset, p.limit))
+    for u in users:
+        u.passwd = '******'
+    return dict(page=p, users=users)
+
+
+# 后端API:创建新用户 register.html:button-注册
 @post('/api/users')
 async def api_register_user(*, email, name, passwd):
     if not name or not name.strip():
