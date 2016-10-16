@@ -122,7 +122,41 @@ def manage_create_blog():
     }
 
 
-# 日志列表页
+# 修改日志页 manage_blogs.html:methods-edit_blog
+@get('/manage/blogs/edit')
+def manage_edit_blog(*, id):
+    return{
+        '__template__': 'manage_blog_edit.html',
+        'id': id,
+        'action': 'api/blogs/%s' % id
+    }
+
+
+# 管理页 blogs.html:button-[Manage]
+@get('/manage/')
+def manage():
+    return 'redirect:/manage/comments'
+
+
+# 评论列表页 manage_blog_edit.html:button-评论
+@get('/manage/comments')
+def manage_comments(*, page='1'):
+    return {
+        '__template__': 'manage_comments.html',
+        'page_index': get_page_index(page)
+    }
+
+
+# 用户列表页 manage_blog_edit.html:button-用户
+@get('/manage/users')
+def manage_user(*, page='1'):
+    return {
+        '__template__': 'manage_users.html',
+        'page_index': get_page_index(page)
+    }
+
+
+# 日志列表页 manage_blog_edit.html:button-日志
 @get('/manage/blogs')
 def manage_blogs(*, page='1'):
     return{
@@ -213,7 +247,7 @@ async def api_blogs(*, page='1'):
     return dict(page=p, blogs=blogs)
 
 
-# 后端API：创建日志
+# 后端API：创建日志 manage_blog_edit.html:button-保存
 @post('/api/blogs')
 async def api_create_blog(request, *, name, summary, content):
     check_admin(request)
@@ -233,3 +267,12 @@ async def api_create_blog(request, *, name, summary, content):
 async def api_get_blog(*, id):
     blog = await Blog.find(id)
     return blog
+
+
+# 后端API：删除日志 manage_blogs.html:methods-delete_blog
+@post('/api/blogs/{id}/delete')
+async def api_delete_blog(request, *, id):
+    check_admin(request)
+    blog = await Blog.find(id)
+    await blog.remove()
+    return dict(id=id)

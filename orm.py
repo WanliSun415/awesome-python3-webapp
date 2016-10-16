@@ -219,7 +219,6 @@ class Model(dict, metaclass=ModelMetaclass):
                                                        cls.__primary_key__), [pk], 1)
         return cls(**resultset[0]) if resultset else None
 
-
     # 更改一个实例在数据库的信息
     async def update(self):
         args = list(map(self.get, self.__fields__))
