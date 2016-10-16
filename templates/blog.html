@@ -6,25 +6,26 @@
 
 <script>
 
-    var comment_url = '/api/blogs/{{ blog.id }}/comments'
+var comment_url = '/api/blogs/{{ blog.id }}/comments'
 
-    $(function () {
-        var $form = $('form-comment');
-        $form.submit(function (e) {
-            e.preventDefault();
-            $form.showFormError('');
-            var content = $form.find('textarea').val().trim();
-            if (conteng === '') {
-                return $form.showFormError('请输入评论内容！')；
+$(function () {
+    var $form = $('#form-comment');
+    $form.submit(function (e) {
+        e.preventDefault();
+        $form.showFormError('');
+        var content = $form.find('textarea').val().trim();
+        if (content==='') {
+            return $form.showFormError('请输入评论内容！');
+        }
+        $form.postJSON(comment_url, {content: content}, function (err, result) {
+            if (err) {
+                return $form.showFormError(err);
             }
-            $form.postJSON(comment_url, {content: content}, function (err, result) {
-                if (err) {
-                    return $form.showFormError(err);
-                }
-                refresh();
-            });
+            refresh();
         });
     });
+});
+
 </script>
 
 {% endblock %}
@@ -55,7 +56,7 @@
                         <textarea rows="6" placeholder="说点什么把" style="width:100%;resize: none;"></textarea>
                     </div>
                     <div class="uk-form-row">
-                        <button type="submit" class="uk-button uk-button-primary"><i class="uk-icon-comment"></i> 发表于</button>
+                        <button type="submit" class="uk-button uk-button-primary"><i class="uk-icon-comment"></i> 发表评论</button>
                     </div>
                 </form>
             </div>
@@ -73,7 +74,7 @@
                     <header class="uk-comment-header">
                         <img class="uk-comment-avatar uk-border-circle" width="50" height="50" src="{{ comment.user_image }}">
                         <h4 class="uk-commit-title">{{ comment.user_name }}
-                        {% if comment.user_id==blog.user_id %}{作者}{% endif
+                        {% if comment.user_id==blog.user_id %}(作者){% endif
                             %}</h4>
                         <p class="uk-comment-meta">{{ comment.created_at |
                             datetime }}</p>

@@ -4,7 +4,7 @@
 from coroweb import get, post
 from model import User, Comment, Blog, next_id
 import re, time, json, logging, hashlib, base64
-from errors import APIValueError,Page, APIPermissionError
+from errors import Page, APIValueError, APIPermissionError, APIResourceNotFoundError
 from aiohttp import web
 from config.config import configs
 import markdown2
@@ -262,17 +262,56 @@ async def api_create_blog(request, *, name, summary, content):
     return blog
 
 
-# 后端API：修改日志
+# 后端API：获取日志
 @get('/api/blogs/{id}')
 async def api_get_blog(*, id):
     blog = await Blog.find(id)
     return blog
 
 
-# 后端API：删除日志 manage_blogs.html:methods-delete_blog
+# 后端API:删除日志 manage_blogs.html:methods-delete_blog
 @post('/api/blogs/{id}/delete')
 async def api_delete_blog(request, *, id):
     check_admin(request)
     blog = await Blog.find(id)
     await blog.remove()
+    return dict(id=id)
+
+
+# 后端API:获取评论列表
+@get('/api/comments')
+async def api_comments(*, page='1'):
+    page_index = get_page_index(page)
+    num = await Comment.findNumber('count(id)')
+    p = Page(num, page_index)
+    if num == 0:
+        return dict(page=p, comments=())
+    comments = await Comment.findAll(orderBy='created_at', limit=(p.offset, p.limit))
+    return dict(page=p, comments=comments)
+
+
+# 后端API:创建评论 blog.html:comment_url
+@post('/api/blogs/{id}/comments')
+async def api_create_comment(id, request, *, content):
+    user = request.__user__
+    if user is None:
+        raise APIPermissionError('Please signin first.')
+    if not content or not content.strip():
+        raise APIValueError('content')
+    blog = await Blog.find(id)
+    if blog is None:
+        raise APIResourceNotFoundError('Blog')
+    comment = Comment(blog_id=blog.id, user_id=user.id, user_name=user.name, user_image=user.image, content=content.strip())
+    await comment.save()
+    return comment
+
+
+# 后端API:删除评论 manage_comments.html:methods-delete_comment
+@post('/api/comments/{id}/delete')
+async def api_delete_comments(id, request):
+    check_admin(request)
+    c = await Comment.find(id)
+    if c is None:
+        raise APIResourceNotFoundError('Comment')
+    await c.remove()
     return dict(id=id)
