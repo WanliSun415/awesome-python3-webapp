@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--
 {% macro pagination(url, page) %}
     <ul class="uk-pagination">
         {% if page.has_previous %}
@@ -7,7 +6,40 @@
         {% else %}
             <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
         {% endif %}
-            <li class="uk-active"><span>{{ page.page_index }}</span></li>
+
+        {% if page.page_index == 1 %}
+            <li class="uk-active"><span>1</span></li>
+        {% else %}
+            <li><a href="{{ url }}{{ 1 }}">1</a></li>
+        {% endif %}
+
+        {% if page.pagelist %}
+            {% if page.pagelist[0] > 2 %}
+                <li><span>...</span></li>
+            {% endif %}
+
+            {% for pl in page.pagelist %}
+                {% if pl == page.page_index %}
+                    <li class="uk-active"><span>{{ page.page_index }}</span></li>
+                {% else %}
+                    <li><a href="{{ url }}{{ pl }}">{{ pl }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if page.pagelist[-1] < (page.page_count-1) %}
+                <li><span>...</span></li>
+            {% endif %}
+        {% endif %}
+
+        {% if page.page_count > 1 %}
+            {% if page.page_index == page.page_count %}
+                <li class="uk-active"><span>{{ page.page_count }}</span></li>
+            {% else %}
+                <li><a href="{{ url }}{{ page.page_count }}">{{
+        page.page_count }}</a></li>
+            {% endif %}
+        {% endif %}
+
         {% if page.has_next %}
             <li><a href="{{ url }}{{ page.page_index + 1 }}"><i class="uk-icon-angle-double-right"></i></a></li>
         {% else %}
@@ -15,7 +47,7 @@
         {% endif %}
     </ul>
 {% endmacro %}
--->
+
 <html>
 <head>
     <meta charset="UTF-8" />
