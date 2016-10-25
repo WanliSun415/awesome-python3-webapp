@@ -54,8 +54,9 @@
     {% block meta %}<!-- block meta -->{% endblock %}
     <title>{% block title %} ? {% endblock %} - Awesome Python Webapp</title>
     <link rel="stylesheet" href="/static/css/uikit.min.css">
-    <link rel="stylesheet" href="/static/css/uikit.gradient.min.css">
+    <!--<link rel="stylesheet" href="/static/css/uikit.gradient.min.css">-->
     <link rel="stylesheet" href="/static/css/awesome.css" />
+    <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Raleway:100,500,600,800" rel="stylesheet">
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/sha1.min.js"></script>
     <script src="/static/js/uikit.min.js"></script>
@@ -67,12 +68,8 @@
 <body>
     <nav class="uk-navbar uk-navbar-attached uk-margin-bottom">
         <div class="uk-container uk-container-center">
-            <a href="/" class="uk-navbar-brand">Awesome</a>
-            <ul class="uk-navbar-nav">
-                <li data-url="blogs"><a href="/"><i class="uk-icon-home"></i>日志</a></li>
-                <li><a target="_blank" href="https://github.com/WalleSun415"><i class="uk-icon-code"></i>
-                    源码</a></li>
-            </ul>
+            <a href="/" class="uk-navbar-brand"
+               style="font-family: Raleway">WalleSun Blog</a>
             <div class="uk-navbar-flip">
                 <ul class="uk-navbar-nav">
                 {% if __user__ %}
@@ -94,6 +91,7 @@
         </div>
     </nav>
 
+
     <div class="uk-container uk-container-center">
         <div class="uk-grid">
             <!-- content -->
@@ -103,8 +101,9 @@
         </div>
     </div>
 
-    <div class="uk-margin-large-top" style="background-color: #eee; border-top:1px solid #ccc;">
-        <div class="uk-container uk-container-center uk-text-center">
+    <div class="uk-margin-large-top" style="background-color: #41292c;
+    border-top:1px solid #41292c;">
+        <div class="uk-container uk-container-center uk-text-center uk-contrast">
             <div class="uk-panel uk-margin-top uk-margin-bottom">
                 <p>
                     <a target="_blank" href="http://weibo.com/u/2659491180/home" class="uk-icon-button uk-icon-weibo"></a>
@@ -112,8 +111,6 @@
                 </p>
                 <p>Power by <a href="#">Awesome Python Webapp</a>. Copyright &copy; 2014.[<a href="/manage/" target="_blank">Manage</a>]</p>
                 <p><a href="http://www.sunwanli.com/" target="_blank">www.sunwanli.com</a>. All right reserved.</p>
-                <a target="_blank" href="#"><i class="uk-icon-linux"
-                                               style="font-size:64px;color: #444;"></i></a>
             </div>
         </div>
     </div>
