@@ -11,7 +11,7 @@
 
 {% block content %}
 
-    <div class="uk-width-3-4">
+    <div class="uk-width-1-1">
     {% for blog in blogs %}
         <article class="uk-article">
             <h2><a href="/blog/{{ blog.id }}">{{ blog.name }}</a></h2>
@@ -24,16 +24,16 @@
     {{ pagination('?page=', page )}}
     </div>
 
-    <div class="uk-width-medium-1-4">
-        <div class="uk-panel uk-panel-header">
-            <h3 class="uk-panel-title">友情链接</h3>
-            <ul class="uk-list uk-list-line">
-                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">编程</a></li>
-                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">读书</a></li>
-                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">Python教程</a></li>
-                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="https://github.com/WalleSun415">Git教程</a></li>
-            </ul>
-        </div>
-    </div>
+    <!--<div class="uk-width-medium-1-4">-->
+        <!--<div class="uk-panel uk-panel-header">-->
+            <!--<h3 class="uk-panel-title">友情链接</h3>-->
+            <!--<ul class="uk-list uk-list-line">-->
+                <!--<li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">编程</a></li>-->
+                <!--<li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">读书</a></li>-->
+                <!--<li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">Python教程</a></li>-->
+                <!--<li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="https://github.com/WalleSun415">Git教程</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
 
 {% endblock %}

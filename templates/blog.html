@@ -33,34 +33,37 @@ $(function () {
 {% block content %}
 
     <div class="uk-width-medium-3-4">
-        <article class="uk-article">
-            <h2>{{ blog.name }}</h2>
-            <p class="uk-article-meta">发表于{{ blog.created_at|datetime }}</p>
-            <p>{{ blog.html_content|safe }}</p>
-        </article>
-
+        <div class="uk-panel-box">
+            <article class="uk-article">
+                <h2>{{ blog.name }}</h2>
+                <p class="uk-article-meta">发表于{{ blog.created_at|datetime }}</p>
+                <p>{{ blog.html_content|safe }}</p>
+            </article>
+        </div>
         <hr class="uk-article-divider">
 
     {% if __user__ %}
         <h3>发表评论</h3>
 
-        <article class="uk-comment">
-            <header class="uk-comment-header">
-                <img class="uk-comment-avatar uk-border-circle" width="50" height="50" src="{{ __user__.image }}">
-                <h4 class="uk-comment-title">{{ __user__.name }}</h4>
-            </header>
-            <div class="uk-comment-body">
-                <form id="form-comment" class="uk-form">
-                    <div class="uk-alert uk-alert-danger uk-hidden"></div>
-                    <div class="uk-form-row">
-                        <textarea rows="6" placeholder="说点什么把" style="width:100%;resize: none;"></textarea>
-                    </div>
-                    <div class="uk-form-row">
-                        <button type="submit" class="uk-button uk-button-primary"><i class="uk-icon-comment"></i> 发表评论</button>
-                    </div>
-                </form>
-            </div>
-        </article>
+        <div class="uk-panel-box">
+            <article class="uk-comment">
+                <header class="uk-comment-header">
+                    <img class="uk-comment-avatar uk-border-circle" width="50" height="50" src="{{ __user__.image }}">
+                    <h4 class="uk-comment-title">{{ __user__.name }}</h4>
+                </header>
+                <div class="uk-comment-body">
+                    <form id="form-comment" class="uk-form">
+                        <div class="uk-alert uk-alert-danger uk-hidden"></div>
+                        <div class="uk-form-row">
+                            <textarea rows="6" placeholder="说点什么把" style="width:100%;resize: none;"></textarea>
+                        </div>
+                        <div class="uk-form-row">
+                            <button type="submit" class="uk-button uk-button-primary"><i class="uk-icon-comment"></i> 发表评论</button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </div>
 
         <hr class="uk-article-divider">
     {% endif %}
@@ -99,14 +102,14 @@ $(function () {
                 <h3>{{ blog.user_name }}</h3>
             </div>
         </div>
-        <div class="uk-panel uk-panel-header">
-            <h3 class="uk-panel-title">友情链接</h3>
-            <ul class="uk-list uk-list-line">
-                <li><i class="uk-icon-link"></i><a href="#">编程</a></li>
-                <li><i class="uk-icon-link"></i><a href="#">思考</a></li>
-                <li><i class="uk-icon-link"></i><a href="#">读书</a></li>
-            </ul>
-        </div>
+        <!--<div class="uk-panel uk-panel-header">-->
+            <!--<h3 class="uk-panel-title">友情链接</h3>-->
+            <!--<ul class="uk-list uk-list-line">-->
+                <!--<li><i class="uk-icon-link"></i><a href="#">编程</a></li>-->
+                <!--<li><i class="uk-icon-link"></i><a href="#">思考</a></li>-->
+                <!--<li><i class="uk-icon-link"></i><a href="#">读书</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
     </div>
 
 {% endblock %}
