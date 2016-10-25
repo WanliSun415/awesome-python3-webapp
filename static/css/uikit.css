@@ -1,124 +1,64 @@
-/*! UIkit 2.27.1 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-/* ========================================================================
-   Component: Base
- ========================================================================== */
-/*
- * 1. Normalize default `font-family` and set `font-size` to support `rem` units
- * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
- * 3. Style
- */
 html {
-  /* 1 */
-  font: normal 14px / 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* 2 */
+  font: normal 14px / 20px "Times New Roman", Times, serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  /* 3 */
-  background: #fff;
-  color: #444;
+  background: #eae0d5;
+  color: #444444;
 }
-/*
- * Removes default margin.
- */
 body {
   margin: 0;
 }
-/* Links
- ========================================================================== */
-/*
- * Remove the gray background color from active links in IE 10.
- */
 a {
   background: transparent;
 }
-/*
- * Improve readability of focused elements when they are also in an active/hover state.
- */
 a:active,
 a:hover {
   outline: 0;
 }
-/*
- * Style
- */
 a,
 .uk-link {
-  color: #07D;
+  color: #41292c;
   text-decoration: none;
   cursor: pointer;
 }
 a:hover,
 .uk-link:hover {
-  color: #059;
+  color: #e4bb97;
   text-decoration: underline;
 }
-/* Text-level semantics
- ========================================================================== */
-/*
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
 abbr[title] {
   border-bottom: 1px dotted;
 }
-/*
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
 b,
 strong {
   font-weight: bold;
 }
-/*
- * 1. Address odd `em`-unit font size rendering in all browsers.
- * 2. Consolas has a better baseline in running text compared to `Courier`
- */
 :not(pre) > code,
 :not(pre) > kbd,
 :not(pre) > samp {
-  /* 1 */
   font-size: 12px;
-  /* 2 */
   font-family: Consolas, monospace, serif;
-  /* 3 */
-  color: #D05;
+  color: #dd0055;
   white-space: nowrap;
 }
-/*
- * Emphasize
- */
 em {
-  color: #D05;
+  color: #dd0055;
 }
-/*
- * Insert
- */
 ins {
-  background: #ffa;
-  color: #444;
+  background: #ffffaa;
+  color: #444444;
   text-decoration: none;
 }
-/*
- * Mark
- * Note: Addresses styling not present in IE 8/9.
- */
 mark {
-  background: #ffa;
-  color: #444;
+  background: #ffffaa;
+  color: #444444;
 }
-/*
- * Quote
- */
 q {
   font-style: italic;
 }
-/*
- * Addresses inconsistent and variable font size in all browsers.
- */
 small {
   font-size: 80%;
 }
-/*
- * Prevents `sub` and `sup` affecting `line-height` in all browsers.
- */
 sub,
 sup {
   font-size: 75%;
@@ -132,11 +72,6 @@ sup {
 sub {
   bottom: -0.25em;
 }
-/* Embedded content
- ========================================================================== */
-/*
- * Remove the gap between embedded content and the bottom of their containers.
- */
 audio,
 canvas,
 iframe,
@@ -145,57 +80,23 @@ svg,
 video {
   vertical-align: middle;
 }
-/*
- * Responsiveness
- * 1. Sets a maximum width relative to the parent and auto scales the height
- * 2. Corrects `max-width` behavior if padding and border are used
- */
-audio,
-canvas,
-img,
-svg,
-video {
-  /* 1 */
+img {
   max-width: 100%;
   height: auto;
-  /* 2 */
   box-sizing: border-box;
-}
-/*
- * Preserve original dimensions
- */
-.uk-img-preserve,
-.uk-img-preserve audio,
-.uk-img-preserve canvas,
-.uk-img-preserve img,
-.uk-img-preserve svg,
-.uk-img-preserve video {
-  max-width: none;
-}
-/*
- * Remove border when inside `a` element in IE 8/9/10.
- */
-img {
   border: 0;
 }
-/*
- * Correct overflow not hidden in IE 9/10/11.
- */
+.uk-img-preserve,
+.uk-img-preserve img {
+  max-width: none;
+}
 svg:not(:root) {
   overflow: hidden;
 }
-/* Block elements
- ========================================================================== */
-/*
- * Reset margin
- */
 blockquote,
 figure {
   margin: 0;
 }
-/*
- * Margins
- */
 p,
 ul,
 ol,
@@ -218,8 +119,6 @@ figure {
 * + figure {
   margin-top: 15px;
 }
-/* Headings
- ========================================================================== */
 h1,
 h2,
 h3,
@@ -227,14 +126,11 @@ h4,
 h5,
 h6 {
   margin: 0 0 15px 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
   font-weight: normal;
-  color: #444;
+  color: #444444;
   text-transform: none;
 }
-/*
- * Margins
- */
 * + h1,
 * + h2,
 * + h3,
@@ -243,9 +139,6 @@ h6 {
 * + h6 {
   margin-top: 25px;
 }
-/*
- * Sizes
- */
 h1,
 .uk-h1 {
   font-size: 36px;
@@ -276,92 +169,58 @@ h6,
   font-size: 12px;
   line-height: 18px;
 }
-/* Lists
- ========================================================================== */
 ul,
 ol {
   padding-left: 30px;
 }
-/*
- * Reset margin for nested lists
- */
 ul > li > ul,
 ul > li > ol,
 ol > li > ol,
 ol > li > ul {
   margin: 0;
 }
-/* Description lists
- ========================================================================== */
 dt {
   font-weight: bold;
 }
 dd {
   margin-left: 0;
 }
-/* Horizontal rules
- ========================================================================== */
-/*
- * 1. Address differences between Firefox and other browsers.
- * 2. Style
- */
 hr {
-  /* 1 */
   box-sizing: content-box;
   height: 0;
-  /* 2 */
   margin: 15px 0;
   border: 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
-/* Address
- ========================================================================== */
 address {
   font-style: normal;
 }
-/* Blockquotes
- ========================================================================== */
 blockquote {
   padding-left: 15px;
-  border-left: 5px solid #ddd;
+  border-left: 5px solid #39915e;
   font-size: 16px;
   line-height: 22px;
   font-style: italic;
 }
-/* Preformatted text
- ========================================================================== */
-/*
- * 1. Contain overflow in all browsers.
- */
 pre {
   padding: 10px;
   background: #f5f5f5;
   font: 12px / 18px Consolas, monospace, serif;
-  color: #444;
+  color: #444444;
   -moz-tab-size: 4;
   tab-size: 4;
-  /* 1 */
   overflow: auto;
 }
-/* Selection pseudo-element
- ========================================================================== */
 ::-moz-selection {
-  background: #39f;
-  color: #fff;
+  background: #3399ff;
+  color: #ffffff;
   text-shadow: none;
 }
 ::selection {
-  background: #39f;
-  color: #fff;
+  background: #3399ff;
+  color: #ffffff;
   text-shadow: none;
 }
-/* HTML5 elements
- ========================================================================== */
-/*
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
 article,
 aside,
 details,
@@ -375,44 +234,24 @@ section,
 summary {
   display: block;
 }
-/*
- * Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
 progress {
   vertical-align: baseline;
 }
-/*
- * Prevent displaying `audio` without controls in Chrome, Safari and Opera
- */
 audio:not([controls]) {
   display: none;
 }
-/*
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
- */
 [hidden],
 template {
   display: none;
 }
-/* Iframe
- ========================================================================== */
 iframe {
   border: 0;
 }
-/* Fix viewport for IE10 snap mode
- ========================================================================== */
 @media screen and (max-width: 400px) {
   @-ms-viewport {
     width: device-width;
   }
 }
-/* ========================================================================
-   Component: Grid
- ========================================================================== */
-/*
- * 1. Makes grid more robust so that it can be used with other block elements like lists
- */
 .uk-grid {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -420,16 +259,10 @@ iframe {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  /* 1 */
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/*
- * DEPRECATED
- * Micro clearfix
- * Can't use `table` because it creates a 1px gap when it becomes a flex item, only in Webkit
- */
 .uk-grid:before,
 .uk-grid:after {
   content: "";
@@ -439,152 +272,73 @@ iframe {
 .uk-grid:after {
   clear: both;
 }
-/*
- * Grid cell
- * 1. Space is allocated solely based on content dimensions
- * 2. Makes grid more robust so that it can be used with other block elements
- * 3. DEPRECATED Using `float` to support IE9
- */
 .uk-grid > * {
-  /* 1 */
   -ms-flex: none;
   -webkit-flex: none;
   flex: none;
-  /* 2 */
   margin: 0;
-  /* 3 */
   float: left;
 }
-/*
- * Remove margin from the last-child
- */
 .uk-grid > * > :last-child {
   margin-bottom: 0;
 }
-/* Grid gutter
- ========================================================================== */
-/*
- * Default gutter
- */
-/* Horizontal */
 .uk-grid {
   margin-left: -25px;
 }
 .uk-grid > * {
   padding-left: 25px;
 }
-/* Vertical */
 .uk-grid + .uk-grid,
 .uk-grid-margin,
 .uk-grid > * > .uk-panel + .uk-panel {
   margin-top: 25px;
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
-  /* Horizontal */
   .uk-grid {
     margin-left: -35px;
   }
   .uk-grid > * {
     padding-left: 35px;
   }
-  /* Vertical */
   .uk-grid + .uk-grid,
   .uk-grid-margin,
   .uk-grid > * > .uk-panel + .uk-panel {
     margin-top: 35px;
   }
 }
-/*
- * Collapse gutter
- */
-/* Horizontal */
 .uk-grid-collapse {
   margin-left: 0;
 }
 .uk-grid-collapse > * {
   padding-left: 0;
 }
-/* Vertical */
 .uk-grid-collapse + .uk-grid-collapse,
 .uk-grid-collapse > .uk-grid-margin,
 .uk-grid-collapse > * > .uk-panel + .uk-panel {
   margin-top: 0;
 }
-/*
- * Small gutter
- */
-/* Horizontal */
 .uk-grid-small {
   margin-left: -10px;
 }
 .uk-grid-small > * {
   padding-left: 10px;
 }
-/* Vertical */
 .uk-grid-small + .uk-grid-small,
 .uk-grid-small > .uk-grid-margin,
 .uk-grid-small > * > .uk-panel + .uk-panel {
   margin-top: 10px;
 }
-/*
- * Medium gutter
- */
-/* Horizontal */
 .uk-grid-medium {
   margin-left: -25px;
 }
 .uk-grid-medium > * {
   padding-left: 25px;
 }
-/* Vertical */
 .uk-grid-medium + .uk-grid-medium,
 .uk-grid-medium > .uk-grid-margin,
 .uk-grid-medium > * > .uk-panel + .uk-panel {
   margin-top: 25px;
 }
-/*
- * Large gutter
- */
-/* Large screen and bigger */
-@media (min-width: 960px) {
-  /* Horizontal */
-  .uk-grid-large {
-    margin-left: -35px;
-  }
-  .uk-grid-large > * {
-    padding-left: 35px;
-  }
-  /* Vertical */
-  .uk-grid-large + .uk-grid-large,
-  .uk-grid-large-margin,
-  .uk-grid-large > * > .uk-panel + .uk-panel {
-    margin-top: 35px;
-  }
-}
-/* Extra Large screens */
-@media (min-width: 1220px) {
-  /* Horizontal */
-  .uk-grid-large {
-    margin-left: -50px;
-  }
-  .uk-grid-large > * {
-    padding-left: 50px;
-  }
-  /* Vertical */
-  .uk-grid-large + .uk-grid-large,
-  .uk-grid-large-margin,
-  .uk-grid-large > * > .uk-panel + .uk-panel {
-    margin-top: 50px;
-  }
-}
-/* Modifier: `uk-grid-divider`
- ========================================================================== */
-/*
- * Horizontal divider
- * Only works with the default gutter. Does not work with gutter collapse, small or large.
- * Does not work with `uk-push-*`, `uk-pull-*` and not if the columns float into the next row.
- */
 .uk-grid-divider:not(:empty) {
   margin-left: -25px;
   margin-right: -25px;
@@ -602,25 +356,19 @@ iframe {
 .uk-grid-divider > [class*='uk-width-7-']:nth-child(n+2),
 .uk-grid-divider > [class*='uk-width-8-']:nth-child(n+2),
 .uk-grid-divider > [class*='uk-width-9-']:nth-child(n+2) {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #39915e;
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-grid-divider > [class*='uk-width-medium-']:not(.uk-width-medium-1-1):nth-child(n+2) {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #39915e;
   }
 }
-/* Desktop and bigger */
 @media (min-width: 960px) {
   .uk-grid-divider > [class*='uk-width-large-']:not(.uk-width-large-1-1):nth-child(n+2) {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #39915e;
   }
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
-  /*
-     * Large gutter
-     */
   .uk-grid-divider:not(:empty) {
     margin-left: -35px;
     margin-right: -35px;
@@ -634,38 +382,26 @@ iframe {
     margin-bottom: 35px;
   }
 }
-/*
- * Vertical divider
- */
 .uk-grid-divider:empty {
   margin-top: 25px;
   margin-bottom: 25px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
-/* Match panels in grids
- ========================================================================== */
-/*
- * 1. Behave like a block element
- */
 .uk-grid-match > * {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  /* 1 */
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .uk-grid-match > * > * {
-  /* 1 */
   -ms-flex: none;
   -webkit-flex: none;
   flex: none;
   box-sizing: border-box;
   width: 100%;
 }
-/* Even grid cell widths
- ========================================================================== */
 [class*='uk-grid-width'] > * {
   box-sizing: border-box;
   width: 100%;
@@ -691,7 +427,6 @@ iframe {
 .uk-grid-width-auto > * {
   width: auto;
 }
-/* Phone landscape and bigger */
 @media (min-width: 480px) {
   .uk-grid-width-small-1-1 > * {
     width: 100%;
@@ -715,7 +450,6 @@ iframe {
     width: 10%;
   }
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-grid-width-medium-1-1 > * {
     width: 100%;
@@ -739,7 +473,6 @@ iframe {
     width: 10%;
   }
 }
-/* Desktop and bigger */
 @media (min-width: 960px) {
   .uk-grid-width-large-1-1 > * {
     width: 100%;
@@ -763,7 +496,6 @@ iframe {
     width: 10%;
   }
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
   .uk-grid-width-xlarge-1-1 > * {
     width: 100%;
@@ -787,27 +519,19 @@ iframe {
     width: 10%;
   }
 }
-/* Sub-objects: `uk-width-*`
- ========================================================================== */
 [class*='uk-width'] {
   box-sizing: border-box;
   width: 100%;
 }
-/*
- * Widths
- */
-/* Whole */
 .uk-width-1-1 {
   width: 100%;
 }
-/* Halves */
 .uk-width-1-2,
 .uk-width-2-4,
 .uk-width-3-6,
 .uk-width-5-10 {
   width: 50%;
 }
-/* Thirds */
 .uk-width-1-3,
 .uk-width-2-6 {
   width: 33.333%;
@@ -816,14 +540,12 @@ iframe {
 .uk-width-4-6 {
   width: 66.666%;
 }
-/* Quarters */
 .uk-width-1-4 {
   width: 25%;
 }
 .uk-width-3-4 {
   width: 75%;
 }
-/* Fifths */
 .uk-width-1-5,
 .uk-width-2-10 {
   width: 20%;
@@ -840,14 +562,12 @@ iframe {
 .uk-width-8-10 {
   width: 80%;
 }
-/* Sixths */
 .uk-width-1-6 {
   width: 16.666%;
 }
 .uk-width-5-6 {
   width: 83.333%;
 }
-/* Tenths */
 .uk-width-1-10 {
   width: 10%;
 }
@@ -860,20 +580,16 @@ iframe {
 .uk-width-9-10 {
   width: 90%;
 }
-/* Phone landscape and bigger */
 @media (min-width: 480px) {
-  /* Whole */
   .uk-width-small-1-1 {
     width: 100%;
   }
-  /* Halves */
   .uk-width-small-1-2,
   .uk-width-small-2-4,
   .uk-width-small-3-6,
   .uk-width-small-5-10 {
     width: 50%;
   }
-  /* Thirds */
   .uk-width-small-1-3,
   .uk-width-small-2-6 {
     width: 33.333%;
@@ -882,14 +598,12 @@ iframe {
   .uk-width-small-4-6 {
     width: 66.666%;
   }
-  /* Quarters */
   .uk-width-small-1-4 {
     width: 25%;
   }
   .uk-width-small-3-4 {
     width: 75%;
   }
-  /* Fifths */
   .uk-width-small-1-5,
   .uk-width-small-2-10 {
     width: 20%;
@@ -906,14 +620,12 @@ iframe {
   .uk-width-small-8-10 {
     width: 80%;
   }
-  /* Sixths */
   .uk-width-small-1-6 {
     width: 16.666%;
   }
   .uk-width-small-5-6 {
     width: 83.333%;
   }
-  /* Tenths */
   .uk-width-small-1-10 {
     width: 10%;
   }
@@ -927,20 +639,16 @@ iframe {
     width: 90%;
   }
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
-  /* Whole */
   .uk-width-medium-1-1 {
     width: 100%;
   }
-  /* Halves */
   .uk-width-medium-1-2,
   .uk-width-medium-2-4,
   .uk-width-medium-3-6,
   .uk-width-medium-5-10 {
     width: 50%;
   }
-  /* Thirds */
   .uk-width-medium-1-3,
   .uk-width-medium-2-6 {
     width: 33.333%;
@@ -949,14 +657,12 @@ iframe {
   .uk-width-medium-4-6 {
     width: 66.666%;
   }
-  /* Quarters */
   .uk-width-medium-1-4 {
     width: 25%;
   }
   .uk-width-medium-3-4 {
     width: 75%;
   }
-  /* Fifths */
   .uk-width-medium-1-5,
   .uk-width-medium-2-10 {
     width: 20%;
@@ -973,14 +679,12 @@ iframe {
   .uk-width-medium-8-10 {
     width: 80%;
   }
-  /* Sixths */
   .uk-width-medium-1-6 {
     width: 16.666%;
   }
   .uk-width-medium-5-6 {
     width: 83.333%;
   }
-  /* Tenths */
   .uk-width-medium-1-10 {
     width: 10%;
   }
@@ -994,20 +698,16 @@ iframe {
     width: 90%;
   }
 }
-/* Desktop and bigger */
 @media (min-width: 960px) {
-  /* Whole */
   .uk-width-large-1-1 {
     width: 100%;
   }
-  /* Halves */
   .uk-width-large-1-2,
   .uk-width-large-2-4,
   .uk-width-large-3-6,
   .uk-width-large-5-10 {
     width: 50%;
   }
-  /* Thirds */
   .uk-width-large-1-3,
   .uk-width-large-2-6 {
     width: 33.333%;
@@ -1016,14 +716,12 @@ iframe {
   .uk-width-large-4-6 {
     width: 66.666%;
   }
-  /* Quarters */
   .uk-width-large-1-4 {
     width: 25%;
   }
   .uk-width-large-3-4 {
     width: 75%;
   }
-  /* Fifths */
   .uk-width-large-1-5,
   .uk-width-large-2-10 {
     width: 20%;
@@ -1040,14 +738,12 @@ iframe {
   .uk-width-large-8-10 {
     width: 80%;
   }
-  /* Sixths */
   .uk-width-large-1-6 {
     width: 16.666%;
   }
   .uk-width-large-5-6 {
     width: 83.333%;
   }
-  /* Tenths */
   .uk-width-large-1-10 {
     width: 10%;
   }
@@ -1061,20 +757,16 @@ iframe {
     width: 90%;
   }
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
-  /* Whole */
   .uk-width-xlarge-1-1 {
     width: 100%;
   }
-  /* Halves */
   .uk-width-xlarge-1-2,
   .uk-width-xlarge-2-4,
   .uk-width-xlarge-3-6,
   .uk-width-xlarge-5-10 {
     width: 50%;
   }
-  /* Thirds */
   .uk-width-xlarge-1-3,
   .uk-width-xlarge-2-6 {
     width: 33.333%;
@@ -1083,14 +775,12 @@ iframe {
   .uk-width-xlarge-4-6 {
     width: 66.666%;
   }
-  /* Quarters */
   .uk-width-xlarge-1-4 {
     width: 25%;
   }
   .uk-width-xlarge-3-4 {
     width: 75%;
   }
-  /* Fifths */
   .uk-width-xlarge-1-5,
   .uk-width-xlarge-2-10 {
     width: 20%;
@@ -1107,14 +797,12 @@ iframe {
   .uk-width-xlarge-8-10 {
     width: 80%;
   }
-  /* Sixths */
   .uk-width-xlarge-1-6 {
     width: 16.666%;
   }
   .uk-width-xlarge-5-6 {
     width: 83.333%;
   }
-  /* Tenths */
   .uk-width-xlarge-1-10 {
     width: 10%;
   }
@@ -1128,29 +816,17 @@ iframe {
     width: 90%;
   }
 }
-/* Sub-object: `uk-push-*` and `uk-pull-*`
- ========================================================================== */
-/*
- * Source ordering
- * Works only with `uk-width-medium-*`
- */
-/* Tablet and bigger */
 @media (min-width: 768px) {
   [class*='uk-push-'],
   [class*='uk-pull-'] {
     position: relative;
   }
-  /*
-     * Push
-     */
-  /* Halves */
   .uk-push-1-2,
   .uk-push-2-4,
   .uk-push-3-6,
   .uk-push-5-10 {
     left: 50%;
   }
-  /* Thirds */
   .uk-push-1-3,
   .uk-push-2-6 {
     left: 33.333%;
@@ -1159,14 +835,12 @@ iframe {
   .uk-push-4-6 {
     left: 66.666%;
   }
-  /* Quarters */
   .uk-push-1-4 {
     left: 25%;
   }
   .uk-push-3-4 {
     left: 75%;
   }
-  /* Fifths */
   .uk-push-1-5,
   .uk-push-2-10 {
     left: 20%;
@@ -1183,14 +857,12 @@ iframe {
   .uk-push-8-10 {
     left: 80%;
   }
-  /* Sixths */
   .uk-push-1-6 {
     left: 16.666%;
   }
   .uk-push-5-6 {
     left: 83.333%;
   }
-  /* Tenths */
   .uk-push-1-10 {
     left: 10%;
   }
@@ -1203,17 +875,12 @@ iframe {
   .uk-push-9-10 {
     left: 90%;
   }
-  /*
-     * Pull
-     */
-  /* Halves */
   .uk-pull-1-2,
   .uk-pull-2-4,
   .uk-pull-3-6,
   .uk-pull-5-10 {
     left: -50%;
   }
-  /* Thirds */
   .uk-pull-1-3,
   .uk-pull-2-6 {
     left: -33.333%;
@@ -1222,14 +889,12 @@ iframe {
   .uk-pull-4-6 {
     left: -66.666%;
   }
-  /* Quarters */
   .uk-pull-1-4 {
     left: -25%;
   }
   .uk-pull-3-4 {
     left: -75%;
   }
-  /* Fifths */
   .uk-pull-1-5,
   .uk-pull-2-10 {
     left: -20%;
@@ -1246,14 +911,12 @@ iframe {
   .uk-pull-8-10 {
     left: -80%;
   }
-  /* Sixths */
   .uk-pull-1-6 {
     left: -16.666%;
   }
   .uk-pull-5-6 {
     left: -83.333%;
   }
-  /* Tenths */
   .uk-pull-1-10 {
     left: -10%;
   }
@@ -1267,29 +930,14 @@ iframe {
     left: -90%;
   }
 }
-/* ========================================================================
-   Component: Panel
- ========================================================================== */
-/*
- * 1. Needed for `a` elements
- * 2. Create position context for badges
- */
 .uk-panel {
-  /* 1 */
   display: block;
-  /* 2 */
   position: relative;
 }
-/*
- * Allow panels to be anchors
- */
 .uk-panel,
 .uk-panel:hover {
   text-decoration: none;
 }
-/*
- * Micro clearfix to make panels more robust
- */
 .uk-panel:before,
 .uk-panel:after {
   content: "";
@@ -1298,14 +946,9 @@ iframe {
 .uk-panel:after {
   clear: both;
 }
-/*
- * Remove margin from the last-child if not `uk-widget-title`
- */
 .uk-panel > :not(.uk-panel-title):last-child {
   margin-bottom: 0;
 }
-/* Sub-object: `uk-panel-title`
- ========================================================================== */
 .uk-panel-title {
   margin-top: 0;
   margin-bottom: 15px;
@@ -1313,38 +956,30 @@ iframe {
   line-height: 24px;
   font-weight: normal;
   text-transform: none;
-  color: #444;
+  color: #444444;
 }
-/* Sub-object: `uk-panel-badge`
- ========================================================================== */
 .uk-panel-badge {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
 }
-/* Sub-object: `uk-panel-teaser`
- ========================================================================== */
 .uk-panel-teaser {
   margin-bottom: 15px;
 }
-/* Sub-object: `uk-panel-body`
- ========================================================================== */
 .uk-panel-body {
   padding: 15px;
 }
-/* Modifier: `uk-panel-box`
- ========================================================================== */
 .uk-panel-box {
   padding: 15px;
-  background: #f5f5f5;
-  color: #444;
+  background: #eae0d5;
+  color: #444444;
 }
 .uk-panel-box-hover:hover {
-  color: #444;
+  color: #444444;
 }
 .uk-panel-box .uk-panel-title {
-  color: #444;
+  color: #444444;
 }
 .uk-panel-box .uk-panel-badge {
   top: 10px;
@@ -1355,15 +990,9 @@ iframe {
   margin-left: -15px;
   margin-right: -15px;
 }
-/*
- * Nav in panel
- */
 .uk-panel-box > .uk-nav-side {
   margin: 0 -15px;
 }
-/*
- * Sub-modifier: `uk-panel-box-primary`
- */
 .uk-panel-box-primary {
   background-color: #ebf7fd;
   color: #2d7091;
@@ -1374,28 +1003,23 @@ iframe {
 .uk-panel-box-primary .uk-panel-title {
   color: #2d7091;
 }
-/*
- * Sub-modifier: `uk-panel-box-secondary`
- */
 .uk-panel-box-secondary {
-  background-color: #eee;
-  color: #444;
+  background-color: #eeeeee;
+  color: #444444;
 }
 .uk-panel-box-secondary-hover:hover {
-  color: #444;
+  color: #444444;
 }
 .uk-panel-box-secondary .uk-panel-title {
-  color: #444;
+  color: #444444;
 }
-/* Modifier: `uk-panel-hover`
- ========================================================================== */
 .uk-panel-hover {
   padding: 15px;
-  color: #444;
+  color: #444444;
 }
 .uk-panel-hover:hover {
   background: #f5f5f5;
-  color: #444;
+  color: #444444;
 }
 .uk-panel-hover .uk-panel-badge {
   top: 10px;
@@ -1406,15 +1030,11 @@ iframe {
   margin-left: -15px;
   margin-right: -15px;
 }
-/* Modifier: `uk-panel-header`
- ========================================================================== */
 .uk-panel-header .uk-panel-title {
   padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  color: #444;
+  border-bottom: 1px solid #39915e;
+  color: #444444;
 }
-/* Modifier: `uk-panel-space`
- ========================================================================== */
 .uk-panel-space {
   padding: 30px;
 }
@@ -1422,8 +1042,6 @@ iframe {
   top: 30px;
   right: 30px;
 }
-/* Modifier: `uk-panel-divider`
- ========================================================================== */
 .uk-panel + .uk-panel-divider {
   margin-top: 50px !important;
 }
@@ -1434,9 +1052,8 @@ iframe {
   top: -25px;
   left: 0;
   right: 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
   .uk-panel + .uk-panel-divider {
     margin-top: 70px !important;
@@ -1445,25 +1062,18 @@ iframe {
     top: -35px;
   }
 }
-/* ========================================================================
-   Component: Block
- ========================================================================== */
 .uk-block {
   position: relative;
   box-sizing: border-box;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* Phone landscape and bigger */
 @media (min-width: 768px) {
   .uk-block {
     padding-top: 50px;
     padding-bottom: 50px;
   }
 }
-/*
- * Micro clearfix to make blocks more robust
- */
 .uk-block:before,
 .uk-block:after {
   content: "";
@@ -1472,76 +1082,43 @@ iframe {
 .uk-block:after {
   clear: both;
 }
-/*
- * Remove margin from the last-child
- */
 .uk-block > :last-child {
   margin-bottom: 0;
 }
-/* Padding Modifier
- ========================================================================== */
-/*
- * Large padding
- */
 .uk-block-large {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* Tablets and bigger */
 @media (min-width: 768px) {
   .uk-block-large {
     padding-top: 50px;
     padding-bottom: 50px;
   }
 }
-/* Desktop and bigger */
 @media (min-width: 960px) {
   .uk-block-large {
     padding-top: 100px;
     padding-bottom: 100px;
   }
 }
-/* Color Modifier
- ========================================================================== */
-/*
- * Default
- */
 .uk-block-default {
-  background: #fff;
+  background: #eae0d5;
 }
-/*
- * Muted
- */
 .uk-block-muted {
   background: #f9f9f9;
 }
-/*
- * Primary
- */
 .uk-block-primary {
   background: #00a8e6;
 }
-/*
- * Secondary
- */
 .uk-block-secondary {
-  background: #222;
+  background: #222222;
 }
-/*
-     * Adjust padding between equal colored blocks
-     */
 .uk-block-default + .uk-block-default,
 .uk-block-muted + .uk-block-muted,
 .uk-block-primary + .uk-block-primary,
 .uk-block-secondary + .uk-block-secondary {
   padding-top: 0;
 }
-/* ========================================================================
-   Component: Article
- ========================================================================== */
-/*
- * Micro clearfix to make articles more robust
- */
 .uk-article:before,
 .uk-article:after {
   content: "";
@@ -1550,65 +1127,43 @@ iframe {
 .uk-article:after {
   clear: both;
 }
-/*
- * Remove margin from the last-child
- */
 .uk-article > :last-child {
   margin-bottom: 0;
 }
-/*
- * Vertical gutter for articles
- */
 .uk-article + .uk-article {
   margin-top: 25px;
 }
-/* Sub-object `uk-article-title`
- ========================================================================== */
 .uk-article-title {
   font-size: 36px;
   line-height: 42px;
-  font-weight: normal;
+  font-weight: bold;
   text-transform: none;
 }
 .uk-article-title a {
   color: inherit;
   text-decoration: none;
 }
-/* Sub-object `uk-article-meta`
- ========================================================================== */
 .uk-article-meta {
   font-size: 12px;
   line-height: 18px;
-  color: #999;
+  color: #999999;
 }
-/* Sub-object `uk-article-lead`
- ========================================================================== */
 .uk-article-lead {
-  color: #444;
+  color: #444444;
   font-size: 18px;
   line-height: 24px;
   font-weight: normal;
 }
-/* Sub-object `uk-article-divider`
- ========================================================================== */
 .uk-article-divider {
   margin-bottom: 25px;
-  border-color: #ddd;
+  border-color: #39915e;
 }
 * + .uk-article-divider {
   margin-top: 25px;
 }
-/* ========================================================================
-   Component: Comment
- ========================================================================== */
-/* Sub-object `uk-comment-header`
- ========================================================================== */
 .uk-comment-header {
   margin-bottom: 15px;
 }
-/*
- * Micro clearfix
- */
 .uk-comment-header:before,
 .uk-comment-header:after {
   content: "";
@@ -1617,37 +1172,24 @@ iframe {
 .uk-comment-header:after {
   clear: both;
 }
-/* Sub-object `uk-comment-avatar`
- ========================================================================== */
 .uk-comment-avatar {
   margin-right: 15px;
   float: left;
 }
-/* Sub-object `uk-comment-title`
- ========================================================================== */
 .uk-comment-title {
   margin: 5px 0 0 0;
   font-size: 16px;
   line-height: 22px;
 }
-/* Sub-object `uk-comment-meta`
- ========================================================================== */
 .uk-comment-meta {
   margin: 2px 0 0 0;
   font-size: 11px;
   line-height: 16px;
-  color: #999;
+  color: #999999;
 }
-/* Sub-object `uk-comment-body`
- ========================================================================== */
-/*
- * Remove margin from the last-child
- */
 .uk-comment-body > :last-child {
   margin-bottom: 0;
 }
-/* Sub-object `uk-comment-list`
- ========================================================================== */
 .uk-comment-list {
   padding: 0;
   list-style: none;
@@ -1660,54 +1202,31 @@ iframe {
 .uk-comment-list .uk-comment + ul > li:nth-child(n+2) {
   margin-top: 15px;
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-comment-list .uk-comment + ul {
     padding-left: 100px;
   }
 }
-/* Modifier `uk-comment-primary`
- ========================================================================== */
-/* ========================================================================
-   Component: Cover
- ========================================================================== */
-/*
- * Background image always covers and centers its element
- */
 .uk-cover-background {
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/*
- * Emulates image cover, works with video and image elements
- * 1. Parent container which clips resized object
- * 2. Resizes the object to always covers its container
- * 3. Reset the responsive image CSS
- * 4. Center object
- */
-/* 1 */
 .uk-cover {
   overflow: hidden;
 }
 .uk-cover-object {
-  /* 2 */
   width: auto;
   height: auto;
   min-width: 100%;
   min-height: 100%;
-  /* 3 */
   max-width: none;
-  /* 4 */
   position: relative;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/*
- * To center iframes use `data-uk-cover` JavaScript
- */
 [data-uk-cover] {
   position: relative;
   left: 50%;
@@ -1715,18 +1234,12 @@ iframe {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* ========================================================================
-   Component: Nav
- ========================================================================== */
 .uk-nav,
 .uk-nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/*
- * Items
- */
 .uk-nav li > a {
   display: block;
   text-decoration: none;
@@ -1734,24 +1247,16 @@ iframe {
 .uk-nav > li > a {
   padding: 5px 15px;
 }
-/*
- * Nested items
- */
 .uk-nav ul {
   padding-left: 15px;
 }
 .uk-nav ul a {
   padding: 2px 0;
 }
-/*
- * Item subtitle
- */
 .uk-nav li > a > div {
   font-size: 12px;
   line-height: 18px;
 }
-/* Sub-object: `uk-nav-header`
- ========================================================================== */
 .uk-nav-header {
   padding: 5px 15px;
   text-transform: uppercase;
@@ -1761,21 +1266,12 @@ iframe {
 .uk-nav-header:not(:first-child) {
   margin-top: 15px;
 }
-/* Sub-object: `uk-nav-divider`
- ========================================================================== */
 .uk-nav-divider {
   margin: 9px 15px;
 }
-/* Sub-object: `uk-nav-sub`
- ========================================================================== */
-/*
- * `ul` needed for higher specificity to override padding
- */
 ul.uk-nav-sub {
   padding: 5px 0 5px 15px;
 }
-/* Modifier: `uk-nav-parent-icon`
- ========================================================================== */
 .uk-nav-parent-icon > .uk-parent > a:after {
   content: "\f104";
   width: 20px;
@@ -1787,197 +1283,104 @@ ul.uk-nav-sub {
 .uk-nav-parent-icon > .uk-parent.uk-open > a:after {
   content: "\f107";
 }
-/* Modifier `uk-nav-side`
- ========================================================================== */
-/*
- * Items
- */
 .uk-nav-side > li > a {
-  color: #444;
+  color: #444444;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-nav-side > li > a:hover,
 .uk-nav-side > li > a:focus {
   background: rgba(0, 0, 0, 0.05);
-  color: #444;
-  /* 2 */
+  color: #444444;
   outline: none;
 }
-/* Active */
 .uk-nav-side > li.uk-active > a {
-  background: #00a8e6;
-  color: #fff;
+  background: #41292c;
+  color: #ffffff;
 }
-/*
- * Sub-object: `uk-nav-header`
- */
 .uk-nav-side .uk-nav-header {
-  color: #444;
+  color: #444444;
 }
-/*
- * Sub-object: `uk-nav-divider`
- */
 .uk-nav-side .uk-nav-divider {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
-/*
- * Nested items
- */
 .uk-nav-side ul a {
-  color: #07D;
+  color: #41292c;
 }
 .uk-nav-side ul a:hover {
-  color: #059;
+  color: #e4bb97;
 }
-/* Modifier `uk-nav-dropdown`
- ========================================================================== */
-/*
- * Items
- */
 .uk-nav-dropdown > li > a {
-  color: #444;
+  color: #444444;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-nav-dropdown > li > a:hover,
 .uk-nav-dropdown > li > a:focus {
-  background: #00a8e6;
-  color: #fff;
-  /* 2 */
+  background: #41292c;
+  color: #ffffff;
   outline: none;
 }
-/*
- * Sub-object: `uk-nav-header`
- */
 .uk-nav-dropdown .uk-nav-header {
-  color: #999;
+  color: #999999;
 }
-/*
- * Sub-object: `uk-nav-divider`
- */
 .uk-nav-dropdown .uk-nav-divider {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
-/*
- * Nested items
- */
 .uk-nav-dropdown ul a {
-  color: #07D;
+  color: #41292c;
 }
 .uk-nav-dropdown ul a:hover {
-  color: #059;
+  color: #e4bb97;
 }
-/* Modifier `uk-nav-navbar`
- ========================================================================== */
-/*
- * Items
- */
 .uk-nav-navbar > li > a {
-  color: #444;
+  color: #444444;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-nav-navbar > li > a:hover,
 .uk-nav-navbar > li > a:focus {
-  background: #00a8e6;
-  color: #fff;
-  /* 2 */
+  background: #41292c;
+  color: #ffffff;
   outline: none;
 }
-/*
- * Sub-object: `uk-nav-header`
- */
 .uk-nav-navbar .uk-nav-header {
-  color: #999;
+  color: #999999;
 }
-/*
- * Sub-object: `uk-nav-divider`
- */
 .uk-nav-navbar .uk-nav-divider {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
-/*
- * Nested items
- */
 .uk-nav-navbar ul a {
-  color: #07D;
+  color: #41292c;
 }
 .uk-nav-navbar ul a:hover {
-  color: #059;
+  color: #e4bb97;
 }
-/* Modifier `uk-nav-offcanvas`
- ========================================================================== */
-/*
- * Items
- */
 .uk-nav-offcanvas > li > a {
-  color: #ccc;
+  color: #cccccc;
   padding: 10px 15px;
 }
-/*
- * Hover
- * No hover on touch devices because it behaves buggy in fixed offcanvas
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-nav-offcanvas > .uk-open > a,
 html:not(.uk-touch) .uk-nav-offcanvas > li > a:hover,
 html:not(.uk-touch) .uk-nav-offcanvas > li > a:focus {
   background: #404040;
-  color: #fff;
-  /* 2 */
+  color: #ffffff;
   outline: none;
 }
-/*
- * Active
- * `html .uk-nav` needed for higher specificity to override hover
- */
 html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
   background: #1a1a1a;
-  color: #fff;
+  color: #ffffff;
 }
-/*
- * Sub-object: `uk-nav-header`
- */
 .uk-nav-offcanvas .uk-nav-header {
-  color: #777;
+  color: #777777;
 }
-/*
- * Sub-object: `uk-nav-divider`
- */
 .uk-nav-offcanvas .uk-nav-divider {
   border-top: 1px solid #1a1a1a;
 }
-/*
- * Nested items
- * No hover on touch devices because it behaves buggy in fixed offcanvas
- */
 .uk-nav-offcanvas ul a {
-  color: #ccc;
+  color: #cccccc;
 }
 html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
-  color: #fff;
+  color: #ffffff;
 }
-/* ========================================================================
-   Component: Navbar
- ========================================================================== */
 .uk-navbar {
-  background: #eee;
-  color: #444;
+  background: #41292c;
+  color: #eae0d5;
 }
-/*
- * Micro clearfix
- */
 .uk-navbar:before,
 .uk-navbar:after {
   content: "";
@@ -1986,70 +1389,46 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-navbar:after {
   clear: both;
 }
-/* Sub-object: `uk-navbar-nav`
- ========================================================================== */
 .uk-navbar-nav {
   margin: 0;
   padding: 0;
   list-style: none;
   float: left;
 }
-/*
- * 1. Create position context for dropdowns
- */
 .uk-navbar-nav > li {
   float: left;
-  /* 1 */
   position: relative;
 }
-/*
- * 1. Dimensions
- * 2. Style
- */
 .uk-navbar-nav > li > a {
   display: block;
   box-sizing: border-box;
   text-decoration: none;
-  /* 1 */
   height: 40px;
   padding: 0 15px;
   line-height: 40px;
-  /* 2 */
-  color: #444;
+  color: #ffffff;
   font-size: 14px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: normal;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
 }
-/* Appear not as link */
 .uk-navbar-nav > li > a[href='#'] {
   cursor: text;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Also apply if dropdown is opened
- * 3. Remove default focus style
- */
 .uk-navbar-nav > li:hover > a,
 .uk-navbar-nav > li > a:focus,
 .uk-navbar-nav > li.uk-open > a {
-  background-color: #f5f5f5;
-  color: #444;
-  /* 3 */
+  background-color: #00ffff;
+  color: #444444;
   outline: none;
 }
-/* OnClick */
 .uk-navbar-nav > li > a:active {
-  background-color: #ddd;
-  color: #444;
+  background-color: #eae0d5;
+  color: #444444;
 }
-/* Active */
 .uk-navbar-nav > li.uk-active > a {
-  background-color: #f5f5f5;
-  color: #444;
+  background-color: #caa377;
+  color: #444444;
 }
-/* Sub-objects: `uk-navbar-nav-subtitle`
- ========================================================================== */
 .uk-navbar-nav .uk-navbar-nav-subtitle {
   line-height: 28px;
 }
@@ -2058,11 +1437,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   font-size: 10px;
   line-height: 12px;
 }
-/* Sub-objects: `uk-navbar-content`, `uk-navbar-brand`, `uk-navbar-toggle`
- ========================================================================== */
-/*
- * Imitate navbar items
- */
 .uk-navbar-content,
 .uk-navbar-brand,
 .uk-navbar-toggle {
@@ -2072,9 +1446,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   padding: 0 15px;
   float: left;
 }
-/*
- * Helper to center all child elements vertically
- */
 .uk-navbar-content:before,
 .uk-navbar-brand:before,
 .uk-navbar-toggle:before {
@@ -2083,97 +1454,55 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   height: 100%;
   vertical-align: middle;
 }
-/* Sub-objects: `uk-navbar-content`
- ========================================================================== */
-/*
- * Better sibling spacing
- */
 .uk-navbar-content + .uk-navbar-content:not(.uk-navbar-center) {
   padding-left: 0;
 }
-/*
- * Link colors
- */
 .uk-navbar-content > a:not([class]) {
-  color: #07D;
+  color: #41292c;
 }
 .uk-navbar-content > a:not([class]):hover {
-  color: #059;
+  color: #e4bb97;
 }
-/* Sub-objects: `uk-navbar-brand`
- ========================================================================== */
 .uk-navbar-brand {
-  font-size: 18px;
-  color: #444;
+  font-size: 25px;
+  color: #00ffff;
   text-decoration: none;
 }
-/*
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-navbar-brand:hover,
 .uk-navbar-brand:focus {
-  color: #444;
+  color: #444444;
   text-decoration: none;
-  /* 2 */
   outline: none;
 }
-/* Sub-object: `uk-navbar-toggle`
- ========================================================================== */
 .uk-navbar-toggle {
   font-size: 18px;
-  color: #444;
+  color: #444444;
   text-decoration: none;
 }
-/*
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-navbar-toggle:hover,
 .uk-navbar-toggle:focus {
-  color: #444;
+  color: #444444;
   text-decoration: none;
-  /* 2 */
   outline: none;
 }
-/*
- * 1. Center icon vertically
- */
 .uk-navbar-toggle:after {
   content: "\f0c9";
   font-family: FontAwesome;
-  /* 1 */
   vertical-align: middle;
 }
 .uk-navbar-toggle-alt:after {
   content: "\f002";
 }
-/* Sub-object: `uk-navbar-center`
- ========================================================================== */
-/*
- * The element with this class needs to be last child in the navbar
- * 1. This hack is needed because other float elements shift centered text
- */
 .uk-navbar-center {
   float: none;
   text-align: center;
-  /* 1 */
   max-width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
-/* Sub-object: `uk-navbar-flip`
- ========================================================================== */
 .uk-navbar-flip {
   float: right;
 }
-/* ========================================================================
-   Component: Subnav
- ========================================================================== */
-/*
- * 1. Gutter
- * 2. Remove default list style
- */
 .uk-subnav {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -2181,32 +1510,19 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  /* 1 */
   margin-left: -10px;
   margin-top: -10px;
-  /* 2 */
   padding: 0;
   list-style: none;
 }
-/*
- * 1. Space is allocated solely based on content dimensions
- * 2. Horizontal gutter is using `padding` so `uk-width-*` classes can be applied
- * 3. Create position context for dropdowns
- */
 .uk-subnav > * {
-  /* 1 */
   -ms-flex: none;
   -webkit-flex: none;
   flex: none;
-  /* 2 */
   padding-left: 10px;
   margin-top: 10px;
-  /* 3 */
   position: relative;
 }
-/*
- * DEPRECATED IE9 Support
- */
 .uk-subnav:before,
 .uk-subnav:after {
   content: "";
@@ -2219,29 +1535,18 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-subnav > * {
   float: left;
 }
-/* Items
- ========================================================================== */
 .uk-subnav > * > * {
   display: inline-block;
-  color: #444;
+  color: #444444;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- */
 .uk-subnav > * > :hover,
 .uk-subnav > * > :focus {
-  color: #07D;
+  color: #41292c;
   text-decoration: none;
 }
-/*
- * Active
- */
 .uk-subnav > .uk-active > * {
-  color: #07D;
+  color: #41292c;
 }
-/* Modifier: 'subnav-line'
- ========================================================================== */
 .uk-subnav-line > :before {
   content: "";
   display: inline-block;
@@ -2250,61 +1555,33 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 }
 .uk-subnav-line > :nth-child(n+2):before {
   margin-right: 10px;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #39915e;
 }
-/* Modifier: 'subnav-pill'
- ========================================================================== */
 .uk-subnav-pill > * > * {
   padding: 3px 9px;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-subnav-pill > * > :hover,
 .uk-subnav-pill > * > :focus {
-  background: #eee;
-  color: #444;
+  background: #eeeeee;
+  color: #444444;
   text-decoration: none;
-  /* 2 */
   outline: none;
 }
-/*
- * Active
- * `li` needed for higher specificity to override hover
- */
 .uk-subnav-pill > .uk-active > * {
-  background: #00a8e6;
-  color: #fff;
+  background: #41292c;
+  color: #ffffff;
 }
-/* Disabled state
- ========================================================================== */
 .uk-subnav > .uk-disabled > * {
   background: none;
-  color: #999;
+  color: #999999;
   text-decoration: none;
   cursor: text;
 }
-/* ========================================================================
-   Component: Breadcrumb
- ========================================================================== */
-/*
- * 1. Remove default list style
- * 2. Remove whitespace between child elements when using `inline-block`
- */
 .uk-breadcrumb {
-  /* 1 */
   padding: 0;
   list-style: none;
-  /* 2 */
   font-size: 0.001px;
 }
-/* Items
- ========================================================================== */
-/*
- * Reset whitespace hack
- */
 .uk-breadcrumb > li {
   font-size: 1rem;
   vertical-align: top;
@@ -2319,33 +1596,15 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   display: inline-block;
   margin: 0 8px;
 }
-/*
- * Disabled
- */
 .uk-breadcrumb > li:not(.uk-active) > span {
-  color: #999;
+  color: #999999;
 }
-/* ========================================================================
-   Component: Pagination
- ========================================================================== */
-/*
- * 1. Remove default list style
- * 2. Center pagination by default
- * 3. Remove whitespace between child elements when using `inline-block`
- */
 .uk-pagination {
-  /* 1 */
   padding: 0;
   list-style: none;
-  /* 2 */
   text-align: center;
-  /* 3 */
   font-size: 0.001px;
 }
-/*
- * Micro clearfix
- * Needed if `uk-pagination-previous` or `uk-pagination-next` sub-objects are used
- */
 .uk-pagination:before,
 .uk-pagination:after {
   content: "";
@@ -2354,26 +1613,14 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-pagination:after {
   clear: both;
 }
-/* Items
- ========================================================================== */
-/*
- * 1. Reset whitespace hack
- * 2. Remove the gap at the bottom of it container
- */
 .uk-pagination > li {
   display: inline-block;
-  /* 1 */
   font-size: 1rem;
-  /* 2 */
   vertical-align: top;
 }
 .uk-pagination > li:nth-child(n+2) {
   margin-left: 5px;
 }
-/*
- * 1. Makes pagination more robust against different box-sizing use
- * 2. Reset text-align to center if alignment modifier is used
- */
 .uk-pagination > li > a,
 .uk-pagination > li > span {
   display: inline-block;
@@ -2381,77 +1628,49 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   padding: 3px 5px;
   line-height: 20px;
   text-decoration: none;
-  /* 1 */
   box-sizing: content-box;
-  /* 2 */
   text-align: center;
 }
-/*
- * Links
- */
 .uk-pagination > li > a {
-  background: #eee;
-  color: #444;
+  background: #eae0d5;
+  color: #444444;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-pagination > li > a:hover,
 .uk-pagination > li > a:focus {
-  background-color: #f5f5f5;
-  color: #444;
-  /* 2 */
+  background-color: #e4bb97;
+  color: #444444;
   outline: none;
 }
-/* OnClick */
 .uk-pagination > li > a:active {
-  background-color: #ddd;
-  color: #444;
+  background-color: #dddddd;
+  color: #444444;
 }
-/*
- * Active
- */
 .uk-pagination > .uk-active > span {
-  background: #00a8e6;
-  color: #fff;
+  background: #41292c;
+  color: #ffffff;
 }
-/*
- * Disabled
- */
 .uk-pagination > .uk-disabled > span {
-  background-color: #f5f5f5;
-  color: #999;
+  background-color: #eae0d5;
+  color: #999999;
 }
-/* Previous and next navigation
- ========================================================================== */
 .uk-pagination-previous {
   float: left;
 }
 .uk-pagination-next {
   float: right;
 }
-/* Alignment modifiers
- ========================================================================== */
 .uk-pagination-left {
   text-align: left;
 }
 .uk-pagination-right {
   text-align: right;
 }
-/* ========================================================================
-   Component: Tab
- ========================================================================== */
 .uk-tab {
   margin: 0;
   padding: 0;
   list-style: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #39915e;
 }
-/*
- * Micro clearfix on the deepest container
- */
 .uk-tab:before,
 .uk-tab:after {
   content: "";
@@ -2460,14 +1679,9 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-tab:after {
   clear: both;
 }
-/*
- * Items
- * 1. Create position context for dropdowns
- */
 .uk-tab > li {
   margin-bottom: -1px;
   float: left;
-  /* 1 */
   position: relative;
 }
 .uk-tab > li > a {
@@ -2475,25 +1689,18 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   padding: 8px 12px 8px 12px;
   border: 1px solid transparent;
   border-bottom-width: 0;
-  color: #07D;
+  color: #41292c;
   text-decoration: none;
 }
 .uk-tab > li:nth-child(n+2) > a {
   margin-left: 5px;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Also apply if dropdown is opened
- * 3. Remove default focus style
- */
 .uk-tab > li > a:hover,
 .uk-tab > li > a:focus,
 .uk-tab > li.uk-open > a {
   border-color: #f5f5f5;
   background: #f5f5f5;
-  color: #059;
-  /* 2 */
+  color: #e4bb97;
   outline: none;
 }
 .uk-tab > li:not(.uk-active) > a:hover,
@@ -2502,16 +1709,14 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   margin-bottom: 1px;
   padding-bottom: 7px;
 }
-/* Active */
 .uk-tab > li.uk-active > a {
-  border-color: #ddd;
+  border-color: #39915e;
   border-bottom-color: transparent;
-  background: #fff;
-  color: #444;
+  background: #eae0d5;
+  color: #444444;
 }
-/* Disabled */
 .uk-tab > li.uk-disabled > a {
-  color: #999;
+  color: #999999;
   cursor: text;
 }
 .uk-tab > li.uk-disabled > a:hover,
@@ -2520,8 +1725,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   background: none;
   border-color: transparent;
 }
-/* Modifier: 'tab-flip'
- ========================================================================== */
 .uk-tab-flip > li {
   float: right;
 }
@@ -2529,27 +1732,20 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   margin-left: 0;
   margin-right: 5px;
 }
-/* Modifier: 'tab-responsive'
- ========================================================================== */
 .uk-tab > li.uk-tab-responsive > a {
   margin-left: 0;
   margin-right: 0;
 }
-/*
- * Icon
- */
 .uk-tab-responsive > a:before {
   content: "\f0c9\00a0";
   font-family: FontAwesome;
 }
-/* Modifier: 'tab-center'
- ========================================================================== */
 .uk-tab-center {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #39915e;
 }
 .uk-tab-center-bottom {
   border-bottom: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
 .uk-tab-center:before,
 .uk-tab-center:after {
@@ -2559,9 +1755,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-tab-center:after {
   clear: both;
 }
-/*
- * 1. Using `right` to prevent vertical scrollbar caused by centering if to many tabs
- */
 .uk-tab-center .uk-tab {
   position: relative;
   right: 50%;
@@ -2575,10 +1768,8 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-tab-center .uk-tab > li > a {
   text-align: center;
 }
-/* Modifier: 'tab-bottom'
- ========================================================================== */
 .uk-tab-bottom {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
   border-bottom: none;
 }
 .uk-tab-bottom > li {
@@ -2601,17 +1792,11 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 }
 .uk-tab-bottom > li.uk-active > a {
   border-top-color: transparent;
-  border-bottom-color: #ddd;
+  border-bottom-color: #39915e;
 }
-/* Modifier: 'tab-grid'
- ========================================================================== */
-/*
- * 1. Create position context to prevent hidden border because of negative `z-index`
- */
 .uk-tab-grid {
   margin-left: -5px;
   border-bottom: none;
-  /* 1 */
   position: relative;
   z-index: 0;
 }
@@ -2621,8 +1806,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   left: 5px;
   right: 0;
   bottom: -1px;
-  border-top: 1px solid #ddd;
-  /* 1 */
+  border-top: 1px solid #39915e;
   z-index: -1;
 }
 .uk-tab-grid > li:first-child > a {
@@ -2631,9 +1815,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-tab-grid > li > a {
   text-align: center;
 }
-/*
- * If `uk-tab-bottom`
- */
 .uk-tab-grid.uk-tab-bottom {
   border-top: none;
 }
@@ -2641,9 +1822,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   top: -1px;
   bottom: auto;
 }
-/* Modifier: 'tab-left', 'tab-right'
- ========================================================================== */
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-tab-left,
   .uk-tab-right {
@@ -2666,13 +1844,10 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   }
   .uk-tab-left > li.uk-active > a,
   .uk-tab-right > li.uk-active > a {
-    border-color: #ddd;
+    border-color: #39915e;
   }
-  /*
-     * Modifier: 'tab-left'
-     */
   .uk-tab-left {
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #39915e;
   }
   .uk-tab-left > li {
     margin-right: -1px;
@@ -2691,11 +1866,8 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   .uk-tab-left > li.uk-active > a {
     border-right-color: transparent;
   }
-  /*
-     * Modifier: 'tab-right'
-     */
   .uk-tab-right {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #39915e;
   }
   .uk-tab-right > li {
     margin-left: -1px;
@@ -2715,13 +1887,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
     border-left-color: transparent;
   }
 }
-/* ========================================================================
-   Component: Thumbnav
- ========================================================================== */
-/*
- * 1. Gutter
- * 2. Remove default list style
- */
 .uk-thumbnav {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -2729,29 +1894,18 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  /* 1 */
   margin-left: -10px;
   margin-top: -10px;
-  /* 2 */
   padding: 0;
   list-style: none;
 }
-/*
- * 1. Space is allocated solely based on content dimensions
- * 2. Horizontal gutter is using `padding` so `uk-width-*` classes can be applied
- */
 .uk-thumbnav > * {
-  /* 1 */
   -ms-flex: none;
   -webkit-flex: none;
   flex: none;
-  /* 2 */
   padding-left: 10px;
   margin-top: 10px;
 }
-/*
- * DEPRECATED IE9 Support
- */
 .uk-thumbnav:before,
 .uk-thumbnav:after {
   content: "";
@@ -2764,40 +1918,26 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-thumbnav > * {
   float: left;
 }
-/* Items
- ========================================================================== */
 .uk-thumbnav > * > * {
   display: block;
-  background: #fff;
+  background: #ffffff;
 }
 .uk-thumbnav > * > * > img {
   opacity: 0.7;
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
-/*
- * Hover
- */
 .uk-thumbnav > * > :hover > img,
 .uk-thumbnav > * > :focus > img {
   opacity: 1;
 }
-/*
- * Active
- */
 .uk-thumbnav > .uk-active > * > img {
   opacity: 1;
 }
-/* ========================================================================
-   Component: List
- ========================================================================== */
 .uk-list {
   padding: 0;
   list-style: none;
 }
-/*
- * Micro clearfix to make list more robust
- */
 .uk-list > li:before,
 .uk-list > li:after {
   content: "";
@@ -2806,46 +1946,28 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-list > li:after {
   clear: both;
 }
-/*
- * Remove margin from the last-child
- */
 .uk-list > li > :last-child {
   margin-bottom: 0;
 }
-/*
- * Nested lists
- */
 .uk-list ul {
   margin: 0;
   padding-left: 20px;
   list-style: none;
 }
-/* Modifier: `uk-list-line`
- ========================================================================== */
 .uk-list-line > li:nth-child(n+2) {
   margin-top: 5px;
   padding-top: 5px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
-/* Modifier: `uk-list-striped`
- ========================================================================== */
 .uk-list-striped > li {
   padding: 5px 5px;
 }
 .uk-list-striped > li:nth-of-type(odd) {
   background: #f5f5f5;
 }
-/* Modifier: `uk-list-space`
- ========================================================================== */
 .uk-list-space > li:nth-child(n+2) {
   margin-top: 10px;
 }
-/* ========================================================================
-   Component: Description list
- ========================================================================== */
-/* Modifier: `uk-description-list-horizontal`
- ========================================================================== */
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-description-list-horizontal {
     overflow: hidden;
@@ -2862,39 +1984,23 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
     margin-left: 180px;
   }
 }
-/* Modifier: `uk-description-list-line`
- ========================================================================== */
 .uk-description-list-line > dt {
   font-weight: normal;
 }
 .uk-description-list-line > dt:nth-child(n+2) {
   margin-top: 5px;
   padding-top: 5px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #39915e;
 }
 .uk-description-list-line > dd {
-  color: #999;
+  color: #999999;
 }
-/* ========================================================================
-   Component: Table
- ========================================================================== */
-/*
- * 1. Remove most spacing between table cells.
- * 2. Block element behavior
- * 3. Style
- */
 .uk-table {
-  /* 1 */
   border-collapse: collapse;
   border-spacing: 0;
-  /* 2 */
   width: 100%;
-  /* 3 */
   margin-bottom: 15px;
 }
-/*
- * Add margin if adjacent element
- */
 * + .uk-table {
   margin-top: 15px;
 }
@@ -2902,9 +2008,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-table td {
   padding: 8px 8px;
 }
-/*
- * Set alignment
- */
 .uk-table th {
   text-align: left;
 }
@@ -2914,9 +2017,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-table thead th {
   vertical-align: bottom;
 }
-/*
- * Caption and footer
- */
 .uk-table caption,
 .uk-table tfoot {
   font-size: 12px;
@@ -2924,102 +2024,52 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 }
 .uk-table caption {
   text-align: left;
-  color: #999;
+  color: #999999;
 }
-/*
- * Active State
- */
 .uk-table tbody tr.uk-active {
-  background: #EEE;
+  background: #eeeeee;
 }
-/* Sub-modifier: `uk-table-middle`
- ========================================================================== */
 .uk-table-middle,
 .uk-table-middle td {
   vertical-align: middle !important;
 }
-/* Modifier: `uk-table-striped`
- ========================================================================== */
 .uk-table-striped tbody tr:nth-of-type(odd) {
   background: #f5f5f5;
 }
-/* Modifier: `uk-table-condensed`
- ========================================================================== */
 .uk-table-condensed td {
   padding: 4px 8px;
 }
-/* Modifier: `uk-table-hover`
- ========================================================================== */
 .uk-table-hover tbody tr:hover {
-  background: #EEE;
+  background: #eeeeee;
 }
-/* ========================================================================
-   Component: Form
- ========================================================================== */
-/*
- * 1. Define consistent box sizing.
- *    Default is `content-box` with following exceptions set to `border-box`
- *    `button`, `select`, `input[type="checkbox"]` and `input[type="radio"]`
- *    `input[type="search"]` in Chrome, Safari and Opera
- *    `input[type="color"]` in Firefox
- * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
- * 3. Remove `border-radius` in iOS.
- * 4. Correct `font` properties and `color` not being inherited.
- */
 .uk-form input,
 .uk-form select,
 .uk-form textarea {
-  /* 1 */
   box-sizing: border-box;
-  /* 2 */
   margin: 0;
-  /* 3 */
   border-radius: 0;
-  /* 4 */
   font: inherit;
   color: inherit;
 }
-/*
- * Address inconsistent `text-transform` inheritance which is only inherit in Firefox
- */
 .uk-form select {
   text-transform: none;
 }
-/*
- * 1. Correct `font` properties not being inherited.
- * 2. Don't inherit the `font-weight` and use `bold` instead.
- * NOTE: Both declarations don't work in Chrome, Safari and Opera.
- */
 .uk-form optgroup {
-  /* 1 */
   font: inherit;
-  /* 2 */
   font-weight: bold;
 }
-/*
- * Removes inner padding and border in Firefox 4+.
- */
 .uk-form input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/*
- * Removes excess padding in IE 8/9/10.
- */
 .uk-form input[type="checkbox"],
 .uk-form input[type="radio"] {
   padding: 0;
 }
-/*
- * Improves consistency of cursor style for clickable elements
- */
 .uk-form input[type="checkbox"]:not(:disabled),
 .uk-form input[type="radio"]:not(:disabled) {
   cursor: pointer;
 }
-/*
- * Remove default style in iOS.
- */
 .uk-form textarea,
 .uk-form input:not([type]),
 .uk-form input[type="text"],
@@ -3032,75 +2082,36 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-form input[type="datetime"] {
   -webkit-appearance: none;
 }
-/*
- * Remove inner padding and search cancel button in Chrome, Safari and Opera on OS X.
- */
 .uk-form input[type="search"]::-webkit-search-cancel-button,
 .uk-form input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-/*
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
 .uk-form input[type="number"]::-webkit-inner-spin-button,
 .uk-form input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-/*
- * Define consistent border, margin, and padding.
- */
 .uk-form fieldset {
   border: none;
   margin: 0;
   padding: 0;
 }
-/*
- * 1. Remove default vertical scrollbar in IE 8/9/10/11.
- * 2. Improve readability and alignment in all browsers.
- */
 .uk-form textarea {
-  /* 1 */
   overflow: auto;
-  /* 2 */
   vertical-align: top;
 }
-/*
- * Removes placeholder transparency in Firefox.
- */
 .uk-form ::-moz-placeholder {
   opacity: 1;
 }
-/*
- * Removes `box-shadow` for invalid controls in Firefox.
- */
 .uk-form :invalid {
   box-shadow: none;
 }
-/*
- * Vertical alignment
- */
 .uk-form input:not([type="radio"]):not([type="checkbox"]),
 .uk-form select {
   vertical-align: middle;
 }
-/* Style
- ========================================================================== */
-/*
- * Remove margin from the last-child
- */
 .uk-form > :last-child {
   margin-bottom: 0;
 }
-/*
- * Controls
- * Except for `range`, `radio`, `checkbox`, `file`, `submit`, `reset`, `button` and `image`
- * 1. Must be `height` because `min-height` is not working in OSX
- * 2. Responsiveness: Sets a maximum width relative to the parent to scale on narrower viewports
- * 3. Vertical `padding` needed for `select` elements in Firefox
- * 4. Style
- */
 .uk-form select,
 .uk-form textarea,
 .uk-form input:not([type]),
@@ -3118,20 +2129,14 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-form input[type="search"],
 .uk-form input[type="tel"],
 .uk-form input[type="color"] {
-  /* 1 */
   height: 30px;
-  /* 2 */
   max-width: 100%;
-  /* 3 */
   padding: 4px 6px;
-  /* 4 */
-  border: 1px solid #ddd;
-  background: #fff;
-  color: #444;
-  -webkit-transition: all 0.2s linear;
-  -webkit-transition-property: border, background, color, box-shadow, padding;
-  transition: all 0.2s linear;
-  transition-property: border, background, color, box-shadow, padding;
+  border: 1px solid #39915e;
+  background: #eae0d5;
+  color: #444444;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
 }
 .uk-form select:focus,
 .uk-form textarea:focus,
@@ -3153,7 +2158,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   border-color: #99baca;
   outline: 0;
   background: #f5fbfe;
-  color: #444;
+  color: #444444;
 }
 .uk-form select:disabled,
 .uk-form textarea:disabled,
@@ -3172,66 +2177,42 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-form input[type="search"]:disabled,
 .uk-form input[type="tel"]:disabled,
 .uk-form input[type="color"]:disabled {
-  border-color: #ddd;
+  border-color: #39915e;
   background-color: #f5f5f5;
-  color: #999;
+  color: #999999;
 }
-/*
- * Placeholder
- */
 .uk-form :-ms-input-placeholder {
-  color: #999 !important;
+  color: #999999 !important;
 }
 .uk-form ::-moz-placeholder {
-  color: #999;
+  color: #999999;
 }
 .uk-form ::-webkit-input-placeholder {
-  color: #999;
+  color: #999999;
 }
 .uk-form :disabled:-ms-input-placeholder {
-  color: #999 !important;
+  color: #999999 !important;
 }
 .uk-form :disabled::-moz-placeholder {
-  color: #999;
+  color: #999999;
 }
 .uk-form :disabled::-webkit-input-placeholder {
-  color: #999;
+  color: #999999;
 }
-/*
- * Legend
- * 1. Behave like block element
- * 2. Correct `color` not being inherited in IE 8/9/10/11.
- * 3. Remove padding
- * 4. `margin-bottom` is not working in Safari and Opera.
- *    Using `padding` and :after instead to create the border
- * 5. Style
- */
 .uk-form legend {
-  /* 1 */
   width: 100%;
-  /* 2 */
   border: 0;
-  /* 3 */
   padding: 0;
-  /* 4 */
   padding-bottom: 15px;
-  /* 5 */
   font-size: 18px;
   line-height: 30px;
 }
-/*
- * 1. Fixes IE9
- */
 .uk-form legend:after {
   content: "";
   display: block;
-  border-bottom: 1px solid #ddd;
-  /* 1 */
+  border-bottom: 1px solid #39915e;
   width: 100%;
 }
-/* Size modifiers
- * Higher specificity needed to override defaults
- ========================================================================== */
 select.uk-form-small,
 textarea.uk-form-small,
 input[type].uk-form-small,
@@ -3248,53 +2229,29 @@ input:not([type]).uk-form-large {
   padding: 8px 6px;
   font-size: 16px;
 }
-/* Reset height
- * Must be after size modifiers
- ========================================================================== */
 .uk-form textarea,
 .uk-form select[multiple],
 .uk-form select[size] {
   height: auto;
 }
-/* Validation states
- * Using !important to keep the selector simple
- ========================================================================== */
-/*
- * Error state
- */
 .uk-form-danger {
   border-color: #dc8d99 !important;
   background: #fff7f8 !important;
   color: #d85030 !important;
 }
-/*
- * Success state
- */
 .uk-form-success {
   border-color: #8ec73b !important;
   background: #fafff2 !important;
   color: #659f13 !important;
 }
-/* Style modifiers
- * Using !important to keep the selector simple
- ========================================================================== */
-/*
- * Blank form
- */
 .uk-form-blank {
   border-color: transparent !important;
   border-style: dashed !important;
   background: none !important;
 }
 .uk-form-blank:focus {
-  border-color: #ddd !important;
+  border-color: #39915e !important;
 }
-/* Size sub-modifiers
- ========================================================================== */
-/*
- * Fixed widths
- * Different widths for mini sized `input` and `select` elements
- */
 input.uk-form-width-mini {
   width: 40px;
 }
@@ -3310,13 +2267,6 @@ select.uk-form-width-mini {
 .uk-form-width-large {
   width: 500px;
 }
-/* Sub-objects: `uk-form-row`
- * Groups labels and controls in rows
- ========================================================================== */
-/*
- * Micro clearfix
- * Needed for `uk-form-horizontal` modifier
- */
 .uk-form-row:before,
 .uk-form-row:after {
   content: "";
@@ -3325,15 +2275,9 @@ select.uk-form-width-mini {
 .uk-form-row:after {
   clear: both;
 }
-/*
- * Vertical gutter
- */
 .uk-form-row + .uk-form-row {
   margin-top: 15px;
 }
-/* Help text
- * Sub-object: `uk-form-help-inline`, `uk-form-help-block`
- ========================================================================== */
 .uk-form-help-inline {
   display: inline-block;
   margin: 0 0 0 10px;
@@ -3341,45 +2285,27 @@ select.uk-form-width-mini {
 .uk-form-help-block {
   margin: 5px 0 0 0;
 }
-/* Controls content
- * Sub-object: `uk-form-controls`, `uk-form-controls-condensed`
- ========================================================================== */
-/*
- * Remove margins
- */
 .uk-form-controls > :first-child {
   margin-top: 0;
 }
 .uk-form-controls > :last-child {
   margin-bottom: 0;
 }
-/*
- * Group controls and text into blocks with a small spacing between blocks
- */
 .uk-form-controls-condensed {
   margin: 5px 0;
 }
-/* Modifier: `uk-form-stacked`
- * Requires sub-object: `uk-form-label`
- ========================================================================== */
 .uk-form-stacked .uk-form-label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
-/* Modifier: `uk-form-horizontal`
- * Requires sub-objects: `uk-form-label`, `uk-form-controls`
- ========================================================================== */
-/* Tablet portrait and smaller */
 @media (max-width: 959px) {
-  /* Behave like `uk-form-stacked` */
   .uk-form-horizontal .uk-form-label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
   }
 }
-/* Desktop and bigger */
 @media (min-width: 960px) {
   .uk-form-horizontal .uk-form-label {
     width: 200px;
@@ -3389,199 +2315,118 @@ select.uk-form-width-mini {
   .uk-form-horizontal .uk-form-controls {
     margin-left: 215px;
   }
-  /* Better vertical alignment if controls are checkboxes and radio buttons with text */
   .uk-form-horizontal .uk-form-controls-text {
     padding-top: 5px;
   }
 }
-/* Sub-object: `uk-form-icon`
- ========================================================================== */
-/*
- * 1. Container width fits its content
- * 2. Create position context
- * 3. Prevent `inline-block` consequences
- */
 .uk-form-icon {
-  /* 1 */
   display: inline-block;
-  /* 2 */
   position: relative;
-  /* 3 */
   max-width: 100%;
 }
-/*
- * 1. Make form element clickable through icon
- */
 .uk-form-icon > [class*='uk-icon-'] {
   position: absolute;
   top: 50%;
   width: 30px;
   margin-top: -7px;
   font-size: 14px;
-  color: #999;
+  color: #999999;
   text-align: center;
-  /* 1 */
   pointer-events: none;
 }
 .uk-form-icon:not(.uk-form-icon-flip) > input {
   padding-left: 30px !important;
 }
-/*
- * Sub-modifier: `uk-form-icon-flip`
- */
 .uk-form-icon-flip > [class*='uk-icon-'] {
   right: 0;
 }
 .uk-form-icon-flip > input {
   padding-right: 30px !important;
 }
-/* ========================================================================
-   Component: Button
- ========================================================================== */
-/*
- * Removes inner padding and border in Firefox 4+.
- */
 .uk-button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/*
- * 1. Correct inability to style clickable `input` types in iOS.
- * 2. Remove margins in Chrome, Safari and Opera.
- * 3. Remove borders for `button`.
- * 4. Address `overflow` set to `hidden` in IE 8/9/10/11.
- * 5. Correct `font` properties and `color` not being inherited for `button`.
- * 6. Address inconsistent `text-transform` inheritance which is only inherit in Firefox and IE
- * 7. Style
- * 8. `line-height` is used to create a height
- * 9. `min-height` is necessary for `input` elements in Firefox and Opera because `line-height` is not working.
- * 10. Reset button group whitespace hack
- * 11. Required for `a`.
- */
 .uk-button {
-  /* 1 */
   -webkit-appearance: none;
-  /* 2 */
   margin: 0;
-  /* 3 */
   border: none;
-  /* 4 */
   overflow: visible;
-  /* 5 */
   font: inherit;
-  color: #444;
-  /* 6 */
+  color: #444444;
   text-transform: none;
-  /* 7 */
   display: inline-block;
   box-sizing: border-box;
   padding: 0 12px;
-  background: #eee;
+  background: #eeeeee;
   vertical-align: middle;
-  /* 8 */
   line-height: 30px;
-  /* 9 */
   min-height: 30px;
-  /* 10 */
   font-size: 1rem;
-  /* 11 */
   text-decoration: none;
   text-align: center;
 }
 .uk-button:not(:disabled) {
   cursor: pointer;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- * 3. Required for `a` elements
- */
 .uk-button:hover,
 .uk-button:focus {
   background-color: #f5f5f5;
-  color: #444;
-  /* 2 */
+  color: #444444;
   outline: none;
-  /* 3 */
   text-decoration: none;
 }
-/* Active */
 .uk-button:active,
 .uk-button.uk-active {
-  background-color: #ddd;
-  color: #444;
+  background-color: #dddddd;
+  color: #444444;
 }
-/* Color modifiers
- ========================================================================== */
-/*
- * Modifier: `uk-button-primary`
- */
 .uk-button-primary {
-  background-color: #00a8e6;
-  color: #fff;
+  background-color: #41292c;
+  color: #ffffff;
 }
-/* Hover */
 .uk-button-primary:hover,
 .uk-button-primary:focus {
   background-color: #35b3ee;
-  color: #fff;
+  color: #ffffff;
 }
-/* Active */
 .uk-button-primary:active,
 .uk-button-primary.uk-active {
   background-color: #0091ca;
-  color: #fff;
+  color: #ffffff;
 }
-/*
- * Modifier: `uk-button-success`
- */
 .uk-button-success {
   background-color: #8cc14c;
-  color: #fff;
+  color: #ffffff;
 }
-/* Hover */
 .uk-button-success:hover,
 .uk-button-success:focus {
   background-color: #8ec73b;
-  color: #fff;
+  color: #ffffff;
 }
-/* Active */
 .uk-button-success:active,
 .uk-button-success.uk-active {
   background-color: #72ae41;
-  color: #fff;
+  color: #ffffff;
 }
-/*
- * Modifier: `uk-button-danger`
- */
 .uk-button-danger {
   background-color: #da314b;
-  color: #fff;
+  color: #ffffff;
 }
-/* Hover */
 .uk-button-danger:hover,
 .uk-button-danger:focus {
   background-color: #e4354f;
-  color: #fff;
+  color: #ffffff;
 }
-/* Active */
 .uk-button-danger:active,
 .uk-button-danger.uk-active {
   background-color: #c91032;
-  color: #fff;
+  color: #ffffff;
 }
-/* Disabled state
- * Overrides also the color modifiers
- ========================================================================== */
-/* Equal for all button types */
 .uk-button:disabled {
   background-color: #f5f5f5;
-  color: #999;
+  color: #999999;
 }
-/* Modifier: `uk-button-link`
- ========================================================================== */
-/* Reset */
 .uk-button-link,
 .uk-button-link:hover,
 .uk-button-link:focus,
@@ -3591,26 +2436,22 @@ select.uk-form-width-mini {
   border-color: transparent;
   background: none;
 }
-/* Color */
 .uk-button-link {
-  color: #07D;
+  color: #41292c;
 }
 .uk-button-link:hover,
 .uk-button-link:focus,
 .uk-button-link:active,
 .uk-button-link.uk-active {
-  color: #059;
+  color: #e4bb97;
   text-decoration: underline;
 }
 .uk-button-link:disabled {
-  color: #999;
+  color: #999999;
 }
-/* Focus */
 .uk-button-link:focus {
   outline: 1px dotted;
 }
-/* Size modifiers
- ========================================================================== */
 .uk-button-mini {
   min-height: 20px;
   padding: 0 6px;
@@ -3629,83 +2470,44 @@ select.uk-form-width-mini {
   line-height: 40px;
   font-size: 16px;
 }
-/* Sub-object `uk-button-group`
- ========================================================================== */
-/*
- * 1. Behave like buttons
- * 2. Create position context for dropdowns
- * 3. Remove whitespace between child elements when using `inline-block`
- * 4. Prevent buttons from wrapping
- * 5. Remove whitespace between child elements when using `inline-block`
- */
 .uk-button-group {
-  /* 1 */
   display: inline-block;
   vertical-align: middle;
-  /* 2 */
   position: relative;
-  /* 3 */
   font-size: 0.001px;
-  /* 4 */
   white-space: nowrap;
 }
 .uk-button-group > * {
   display: inline-block;
 }
-/* 5 */
 .uk-button-group .uk-button {
   vertical-align: top;
 }
-/* Sub-object: `uk-button-dropdown`
- ========================================================================== */
-/*
- * 1. Behave like buttons
- * 2. Create position context for dropdowns
- */
 .uk-button-dropdown {
-  /* 1 */
   display: inline-block;
   vertical-align: middle;
-  /* 2 */
   position: relative;
 }
-/* ========================================================================
-   Component: Icon
- ========================================================================== */
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.woff2") format('woff2'), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-/*
- * 1. Allow margin
- * 2. Prevent inherit font style
- * 4. Correct line-height
- * 5. Better font rendering
- * 6. Remove `text-decoration` for anchors
- */
 [class*='uk-icon-'] {
   font-family: FontAwesome;
-  /* 1 */
   display: inline-block;
-  /* 2 */
   font-weight: normal;
   font-style: normal;
-  /* 4 */
   line-height: 1;
-  /* 5 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* 6 */
 [class*='uk-icon-'],
 [class*='uk-icon-']:hover,
 [class*='uk-icon-']:focus {
   text-decoration: none;
 }
-/* Size modifiers
- ========================================================================== */
 .uk-icon-small {
   font-size: 150%;
   vertical-align: -10%;
@@ -3718,63 +2520,43 @@ select.uk-form-width-mini {
   font-size: 250%;
   vertical-align: -22%;
 }
-/* Modifier: `uk-icon-justify`
- ========================================================================== */
 .uk-icon-justify {
   width: 1em;
   text-align: center;
 }
-/* Modifier: `uk-icon-spin`
- ========================================================================== */
 .uk-icon-spin {
   display: inline-block;
   -webkit-animation: uk-rotate 2s infinite linear;
   animation: uk-rotate 2s infinite linear;
 }
-/* Modifier: `uk-icon-hover`
- ========================================================================== */
 .uk-icon-hover {
-  color: #999;
+  color: #999999;
 }
-/*
- * Hover
- */
 .uk-icon-hover:hover {
-  color: #444;
+  color: #444444;
 }
-/* Modifier: `uk-icon-button`
- ========================================================================== */
 .uk-icon-button {
   box-sizing: border-box;
   display: inline-block;
   width: 35px;
   height: 35px;
   border-radius: 100%;
-  background: #eee;
+  background: #eeeeee;
   line-height: 35px;
-  color: #444;
+  color: #444444;
   font-size: 18px;
   text-align: center;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- */
 .uk-icon-button:hover,
 .uk-icon-button:focus {
   background-color: #f5f5f5;
-  color: #444;
-  /* 2 */
+  color: #444444;
   outline: none;
 }
-/* Active */
 .uk-icon-button:active {
-  background-color: #ddd;
-  color: #444;
+  background-color: #dddddd;
+  color: #444444;
 }
-/* Icon mapping
- ========================================================================== */
 .uk-icon-glass:before {
   content: "\f000";
 }
@@ -5677,132 +4459,20 @@ select.uk-form-width-mini {
 .uk-icon-usb:before {
   content: "\f287";
 }
-.uk-icon-american-sign-language-interpreting:before,
-.uk-icon-asl-interpreting:before {
-  content: "\f2a3";
-}
-.uk-icon-assistive-listening-systems:before {
-  content: "\f2a2";
-}
-.uk-icon-audio-description:before {
-  content: "\f29e";
-}
-.uk-icon-blind:before {
-  content: "\f29d";
-}
-.uk-icon-braille:before {
-  content: "\f2a1";
-}
-.uk-icon-deaf:before,
-.uk-icon-deafness:before {
-  content: "\f2a4";
-}
-.uk-icon-envira:before {
-  content: "\f299";
-}
-.uk-icon-font-awesome:before,
-.uk-icon-fa:before {
-  content: "\f2b4";
-}
-.uk-icon-first-order:before {
-  content: "\f2b0";
-}
-.uk-icon-gitlab:before {
-  content: "\f296";
-}
-.uk-icon-glide:before {
-  content: "\f2a5";
-}
-.uk-icon-glide-g:before {
-  content: "\f2a6";
-}
-.uk-icon-hard-of-hearing:before {
-  content: "\f2a4";
-}
-.uk-icon-low-vision:before {
-  content: "\f2a8";
-}
-.uk-icon-question-circle-o:before {
-  content: "\f29c";
-}
-.uk-icon-sign-language:before,
-.uk-icon-signing:before {
-  content: "\f2a7";
-}
-.uk-icon-snapchat:before {
-  content: "\f2ab";
-}
-.uk-icon-snapchat-ghost:before {
-  content: "\f2ac";
-}
-.uk-icon-snapchat-square:before {
-  content: "\f2ad";
-}
-.uk-icon-themeisle:before {
-  content: "\f2b2";
-}
-.uk-icon-universal-access:before {
-  content: "\f29a";
-}
-.uk-icon-viadeo:before {
-  content: "\f2a9";
-}
-.uk-icon-viadeo-square:before {
-  content: "\f2aa";
-}
-.uk-icon-volume-control-phone:before {
-  content: "\f2a0";
-}
-.uk-icon-wheelchair-alt:before {
-  content: "\f29b";
-}
-.uk-icon-wpbeginner:before {
-  content: "\f297";
-}
-.uk-icon-wpforms:before {
-  content: "\f298";
-}
-.uk-icon-yoast:before {
-  content: "\f2b1";
-}
-/* ========================================================================
-   Component: Close
- ========================================================================== */
-/*
- * Removes inner padding and border in Firefox 4+.
- */
 .uk-close::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/*
- * 1. Correct inability to style clickable `input` types in iOS.
- * 2. Remove margins in Chrome, Safari and Opera.
- * 3. Remove borders for `button`.
- * 4. Address `overflow` set to `hidden` in IE 8/9/10/11.
- * 5. Correct `font` properties and `color` not being inherited for `button`.
- * 6. Address inconsistent `text-transform` inheritance which is only inherit in Firefox and IE
- * 7. Remove default `button` padding and background color
- * 8. Style
- */
 .uk-close {
-  /* 1 */
   -webkit-appearance: none;
-  /* 2 */
   margin: 0;
-  /* 3 */
   border: none;
-  /* 4 */
   overflow: visible;
-  /* 5 */
   font: inherit;
   color: inherit;
-  /* 6 */
   text-transform: none;
-  /* 7. */
   padding: 0;
   background: transparent;
-  /* 8 */
   display: inline-block;
   box-sizing: content-box;
   width: 20px;
@@ -5811,42 +4481,29 @@ select.uk-form-width-mini {
   vertical-align: middle;
   opacity: 0.3;
 }
-/* Icon */
 .uk-close:after {
   display: block;
   content: "\f00d";
   font-family: FontAwesome;
 }
-/*
- * Hover
- * 1. Apply hover style also to focus state
- * 2. Remove default focus style
- * 3. Required for `a` elements
- */
 .uk-close:hover,
 .uk-close:focus {
   opacity: 0.5;
-  /* 2 */
   outline: none;
-  /* 3 */
   color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
-/* Modifier
- ========================================================================== */
 .uk-close-alt {
   padding: 2px;
   border-radius: 50%;
-  background: #eee;
+  background: #eeeeee;
   opacity: 1;
 }
-/* Hover */
 .uk-close-alt:hover,
 .uk-close-alt:focus {
   opacity: 1;
 }
-/* Icon */
 .uk-close-alt:after {
   opacity: 0.5;
 }
@@ -5854,29 +4511,21 @@ select.uk-form-width-mini {
 .uk-close-alt:focus:after {
   opacity: 0.8;
 }
-/* ========================================================================
-   Component: Badge
- ========================================================================== */
 .uk-badge {
   display: inline-block;
   padding: 0 5px;
-  background: #00a8e6;
+  background: #41292c;
   font-size: 10px;
   font-weight: bold;
   line-height: 14px;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   vertical-align: middle;
   text-transform: none;
 }
-/*
- * Keep color when badge is a link
- */
 a.uk-badge:hover {
-  color: #fff;
+  color: #ffffff;
 }
-/* Modifier: `uk-badge-notification`;
- ========================================================================== */
 .uk-badge-notification {
   box-sizing: border-box;
   min-width: 18px;
@@ -5884,50 +4533,27 @@ a.uk-badge:hover {
   font-size: 12px;
   line-height: 18px;
 }
-/* Color modifier
- ========================================================================== */
-/*
- * Modifier: `uk-badge-success`
- */
 .uk-badge-success {
   background-color: #8cc14c;
 }
-/*
- * Modifier: `uk-badge-warning`
- */
 .uk-badge-warning {
   background-color: #faa732;
 }
-/*
- * Modifier: `uk-badge-danger`
- */
 .uk-badge-danger {
   background-color: #da314b;
 }
-/* ========================================================================
-   Component: Alert
- ========================================================================== */
 .uk-alert {
   margin-bottom: 15px;
   padding: 10px;
   background: #ebf7fd;
   color: #2d7091;
 }
-/*
- * Add margin if adjacent element
- */
 * + .uk-alert {
   margin-top: 15px;
 }
-/*
- * Remove margin from the last-child
- */
 .uk-alert > :last-child {
   margin-bottom: 0;
 }
-/*
- * Keep color for headings if the default heading color is changed
- */
 .uk-alert h1,
 .uk-alert h2,
 .uk-alert h3,
@@ -5936,91 +4562,51 @@ a.uk-badge:hover {
 .uk-alert h6 {
   color: inherit;
 }
-/* Close in alert
- ========================================================================== */
 .uk-alert > .uk-close:first-child {
   float: right;
 }
-/*
- * Remove margin from adjacent element
- */
 .uk-alert > .uk-close:first-child + * {
   margin-top: 0;
 }
-/* Modifier: `uk-alert-success`
- ========================================================================== */
 .uk-alert-success {
   background: #f2fae3;
   color: #659f13;
 }
-/* Modifier: `uk-alert-warning`
- ========================================================================== */
 .uk-alert-warning {
   background: #fffceb;
   color: #e28327;
 }
-/* Modifier: `uk-alert-danger`
- ========================================================================== */
 .uk-alert-danger {
   background: #fff1f0;
   color: #d85030;
 }
-/* Modifier: `uk-alert-large`
- ========================================================================== */
 .uk-alert-large {
   padding: 20px;
 }
 .uk-alert-large > .uk-close:first-child {
   margin: -10px -10px 0 0;
 }
-/* ========================================================================
-   Component: Thumbnail
- ========================================================================== */
-/*
- * 1. Container width fits its content
- * 2. Responsive behavior
- * 3. Corrects `max-width` behavior sed
- * 4. Required for `figure` element
- * 5. Style
- */
 .uk-thumbnail {
-  /* 1 */
   display: inline-block;
-  /* 2 */
   max-width: 100%;
-  /* 3 */
   box-sizing: border-box;
-  /* 3 */
   margin: 0;
-  /* 4 */
   padding: 4px;
-  border: 1px solid #ddd;
-  background: #fff;
+  border: 1px solid #39915e;
+  background: #eae0d5;
 }
-/*
- * Hover state for `a` elements
- * 1. Apply hover style also to focus state
- * 2. Needed for caption
- * 3. Remove default focus style
- */
 a.uk-thumbnail:hover,
 a.uk-thumbnail:focus {
-  border-color: #aaaaaa;
-  background-color: #fff;
-  /* 2 */
+  border-color: #1c482f;
+  background-color: #eae0d5;
   text-decoration: none;
-  /* 3 */
   outline: none;
 }
-/* Caption
- ========================================================================== */
 .uk-thumbnail-caption {
   padding-top: 4px;
   text-align: center;
-  color: #444;
+  color: #444444;
 }
-/* Sizes
- ========================================================================== */
 .uk-thumbnail-mini {
   width: 150px;
 }
@@ -6037,71 +4623,34 @@ a.uk-thumbnail:focus {
 .uk-thumbnail-expand > img {
   width: 100%;
 }
-/* ========================================================================
-   Component: Overlay
- ========================================================================== */
-/*
- * 1. Container width fits its content
- * 2. Create position context
- * 3. Set max-width for responsive images to prevent `inline-block` consequences
- * 4. Remove the gap between the container and its child element
- * 5. Needed for transitions and to fixed wrong scaling calculation for images in Chrome
- * 6. Fixed `overflow: hidden` to be ignored with border-radius and CSS transforms in Webkit
- * 7. Reset margin
- */
 .uk-overlay {
-  /* 1 */
   display: inline-block;
-  /* 2 */
   position: relative;
-  /* 3 */
   max-width: 100%;
-  /* 4 */
   vertical-align: middle;
-  /* 5 */
   overflow: hidden;
-  /* 6 */
   -webkit-transform: translateZ(0);
-  /* 7 */
   margin: 0;
 }
-/* 6 for Safari */
 .uk-overlay.uk-border-circle {
-  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  -webkit-mask-image: -webkit-radial-gradient(circle, #ffffff 100%, #000000 100%);
 }
-/*
- * Remove margin from content
- */
 .uk-overlay > :first-child {
   margin-bottom: 0;
 }
-/* Sub-object `uk-overlay-panel`
- ========================================================================== */
-/*
- * 1. Position cover
- * 2. Style
- */
 .uk-overlay-panel {
-  /* 1 */
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  /* 2 */
   padding: 20px;
-  color: #fff;
+  color: #ffffff;
 }
-/*
- * Remove margin from the last-child
- */
 .uk-overlay-panel > :last-child,
 .uk-overlay-panel.uk-flex > * > :last-child {
   margin-bottom: 0;
 }
-/*
- * Keep color for headings if the default heading color is changed
- */
 .uk-overlay-panel h1,
 .uk-overlay-panel h2,
 .uk-overlay-panel h3,
@@ -6117,29 +4666,18 @@ a.uk-thumbnail:focus {
 .uk-overlay-panel a[class*='uk-icon-']:not(.uk-icon-button) {
   color: inherit;
 }
-/* Sub-object `uk-overlay-hover` and `uk-overlay-active`
- ========================================================================== */
 .uk-overlay-hover:not(:hover):not(.uk-hover) .uk-overlay-panel:not(.uk-ignore) {
   opacity: 0;
 }
 .uk-overlay-active :not(.uk-active) > .uk-overlay-panel:not(.uk-ignore) {
   opacity: 0;
 }
-/* Modifier `uk-overlay-background`
- ========================================================================== */
 .uk-overlay-background {
   background: rgba(0, 0, 0, 0.5);
 }
-/* Modifier `uk-overlay-image`
- ========================================================================== */
-/*
- * Reset panel
- */
 .uk-overlay-image {
   padding: 0;
 }
-/* Position modifiers
- ========================================================================== */
 .uk-overlay-top {
   bottom: auto;
 }
@@ -6152,8 +4690,6 @@ a.uk-thumbnail:focus {
 .uk-overlay-right {
   left: auto;
 }
-/* Sub-object `uk-overlay-icon`
- ========================================================================== */
 .uk-overlay-icon:before {
   content: "\f002";
   position: absolute;
@@ -6167,10 +4703,8 @@ a.uk-thumbnail:focus {
   line-height: 1;
   font-family: FontAwesome;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 }
-/* Transitions
- ========================================================================== */
 .uk-overlay-fade,
 .uk-overlay-scale,
 .uk-overlay-spin,
@@ -6187,9 +4721,6 @@ a.uk-thumbnail:focus {
 .uk-overlay-active [class*='uk-overlay-slide'] {
   transition-duration: 0.8s;
 }
-/*
- * Fade
- */
 .uk-overlay-fade {
   opacity: 0.7;
 }
@@ -6198,9 +4729,6 @@ a.uk-thumbnail:focus {
 .uk-overlay-active .uk-active > .uk-overlay-fade {
   opacity: 1;
 }
-/*
- * Scale
- */
 .uk-overlay-scale {
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -6211,9 +4739,6 @@ a.uk-thumbnail:focus {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-/*
- * Spin
- */
 .uk-overlay-spin {
   -webkit-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg);
@@ -6224,9 +4749,6 @@ a.uk-thumbnail:focus {
   -webkit-transform: scale(1.1) rotate(3deg);
   transform: scale(1.1) rotate(3deg);
 }
-/*
- * Grayscale
- */
 .uk-overlay-grayscale {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -6237,33 +4759,25 @@ a.uk-thumbnail:focus {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
-/*
- * Slide
- */
 [class*='uk-overlay-slide'] {
   opacity: 0;
 }
-/* Top */
 .uk-overlay-slide-top {
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
-/* Bottom */
 .uk-overlay-slide-bottom {
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }
-/* Left */
 .uk-overlay-slide-left {
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
 }
-/* Right */
 .uk-overlay-slide-right {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
-/* Hover */
 .uk-overlay-hover:hover [class*='uk-overlay-slide'],
 .uk-overlay-hover.uk-hover [class*='uk-overlay-slide'],
 .uk-overlay-active .uk-active > [class*='uk-overlay-slide'] {
@@ -6271,43 +4785,24 @@ a.uk-thumbnail:focus {
   -webkit-transform: translateX(0) translateY(0);
   transform: translateX(0) translateY(0);
 }
-/* DEPRECATED
- * Sub-object `uk-overlay-area`
- ========================================================================== */
-/*
- * 1. Set position
- * 2. Set style
- * 3. Fade-in transition
- */
 .uk-overlay-area {
-  /* 1 */
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  /* 2 */
   background: rgba(0, 0, 0, 0.3);
-  /* 3 */
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
   -webkit-transform: translate3d(0, 0, 0);
 }
-/*
- * Hover
- * 1. `uk-hover` to support touch devices
- * 2. Use optional `uk-overlay-toggle` to trigger the overlay earlier
- */
 .uk-overlay:hover .uk-overlay-area,
 .uk-overlay.uk-hover .uk-overlay-area,
 .uk-overlay-toggle:hover .uk-overlay-area,
 .uk-overlay-toggle.uk-hover .uk-overlay-area {
   opacity: 1;
 }
-/*
- * Icon
- */
 .uk-overlay-area:empty:before {
   content: "\f002";
   position: absolute;
@@ -6321,105 +4816,58 @@ a.uk-thumbnail:focus {
   line-height: 1;
   font-family: FontAwesome;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 }
-/* DEPRECATED
- * Sub-object `uk-overlay-area-content`
- ========================================================================== */
-/*
- * Remove whitespace between child elements when using `inline-block`
- * Needed for Firefox
- */
 .uk-overlay-area:not(:empty) {
   font-size: 0.001px;
 }
-/*
- * 1. Needed for vertical alignment
- */
 .uk-overlay-area:not(:empty):before {
   content: '';
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
-/*
- * 1. Set vertical alignment
- * 2. Reset whitespace hack
- * 3. Set horizontal alignment
- * 4. Set style
- */
 .uk-overlay-area-content {
-  /* 1 */
   display: inline-block;
   box-sizing: border-box;
   width: 100%;
   vertical-align: middle;
-  /* 2 */
   font-size: 1rem;
-  /* 3 */
   text-align: center;
-  /* 4 */
   padding: 0 15px;
-  color: #fff;
+  color: #ffffff;
 }
-/*
- * Remove margin from the last-child
- */
 .uk-overlay-area-content > :last-child {
   margin-bottom: 0;
 }
-/*
- * Links in overlay area
- */
 .uk-overlay-area-content a:not([class]),
 .uk-overlay-area-content a:not([class]):hover {
   color: inherit;
 }
-/* DEPRECATED
- * Sub-object `uk-overlay-caption`
- ========================================================================== */
-/*
- * 1. Set position
- * 2. Set style
- * 3. Fade-in transition
- */
 .uk-overlay-caption {
-  /* 1 */
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  /* 2 */
   padding: 15px;
   background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  /* 3 */
+  color: #ffffff;
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
   -webkit-transform: translate3d(0, 0, 0);
 }
-/*
- * Hover
- * 1. `uk-hover` to support touch devices
- * 2. Use optional `uk-overlay-toggle` to trigger the overlay earlier
- */
 .uk-overlay:hover .uk-overlay-caption,
 .uk-overlay.uk-hover .uk-overlay-caption,
 .uk-overlay-toggle:hover .uk-overlay-caption,
 .uk-overlay-toggle.uk-hover .uk-overlay-caption {
   opacity: 1;
 }
-/* ========================================================================
-   Component: Column
- ========================================================================== */
 [class*='uk-column-'] {
   -webkit-column-gap: 25px;
   -moz-column-gap: 25px;
   column-gap: 25px;
 }
-/* Width modifiers
- ========================================================================== */
 .uk-column-1-2 {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -6445,7 +4893,6 @@ a.uk-thumbnail:focus {
   -moz-column-count: 6;
   column-count: 6;
 }
-/* Phone landscape and bigger */
 @media (min-width: 480px) {
   .uk-column-small-1-2 {
     -webkit-column-count: 2;
@@ -6473,7 +4920,6 @@ a.uk-thumbnail:focus {
     column-count: 6;
   }
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-column-medium-1-2 {
     -webkit-column-count: 2;
@@ -6501,7 +4947,6 @@ a.uk-thumbnail:focus {
     column-count: 6;
   }
 }
-/* Desktop and bigger */
 @media (min-width: 960px) {
   .uk-column-large-1-2 {
     -webkit-column-count: 2;
@@ -6529,7 +4974,6 @@ a.uk-thumbnail:focus {
     column-count: 6;
   }
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
   .uk-column-xlarge-1-2 {
     -webkit-column-count: 2;
@@ -6557,9 +5001,6 @@ a.uk-thumbnail:focus {
     column-count: 6;
   }
 }
-/* ========================================================================
-   Component: Animation
- ========================================================================== */
 [class*='uk-animation-'] {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
@@ -6568,16 +5009,11 @@ a.uk-thumbnail:focus {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* Hide animated element if scrollspy is used */
 @media screen {
   [data-uk-scrollspy*='uk-animation-']:not([data-uk-scrollspy*='target']) {
     opacity: 0;
   }
 }
-/*
- * Fade
- * Higher specificity (!important) needed because of reverse modifier
- */
 .uk-animation-fade {
   -webkit-animation-name: uk-fade;
   animation-name: uk-fade;
@@ -6586,9 +5022,6 @@ a.uk-thumbnail:focus {
   -webkit-animation-timing-function: linear !important;
   animation-timing-function: linear !important;
 }
-/*
- * Fade with scale
- */
 .uk-animation-scale-up {
   -webkit-animation-name: uk-fade-scale-02;
   animation-name: uk-fade-scale-02;
@@ -6597,9 +5030,6 @@ a.uk-thumbnail:focus {
   -webkit-animation-name: uk-fade-scale-18;
   animation-name: uk-fade-scale-18;
 }
-/*
- * Fade with slide
- */
 .uk-animation-slide-top {
   -webkit-animation-name: uk-fade-top;
   animation-name: uk-fade-top;
@@ -6616,36 +5046,24 @@ a.uk-thumbnail:focus {
   -webkit-animation-name: uk-fade-right;
   animation-name: uk-fade-right;
 }
-/*
- * Scale
- */
 .uk-animation-scale {
   -webkit-animation-name: uk-scale-12;
   animation-name: uk-scale-12;
 }
-/*
- * Shake
- */
 .uk-animation-shake {
   -webkit-animation-name: uk-shake;
   animation-name: uk-shake;
 }
-/* Direction modifiers
- ========================================================================== */
 .uk-animation-reverse {
   -webkit-animation-direction: reverse;
   animation-direction: reverse;
   -webkit-animation-timing-function: ease-in;
   animation-timing-function: ease-in;
 }
-/* Duration modifiers
-========================================================================== */
 .uk-animation-15 {
   -webkit-animation-duration: 15s;
   animation-duration: 15s;
 }
-/* Origin modifiers
-========================================================================== */
 .uk-animation-top-left {
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
@@ -6678,12 +5096,6 @@ a.uk-thumbnail:focus {
   -webkit-transform-origin: 100% 100%;
   transform-origin: 100% 100%;
 }
-/* Sub-object: `uk-animation-hover`
-========================================================================== */
-/*
- * Enable animation only on hover
- * Note: Firefox also needs this because animations are not triggered when switching between display `hidden` and `block`
- */
 .uk-animation-hover:not(:hover),
 .uk-animation-hover:not(:hover) [class*='uk-animation-'],
 .uk-touch .uk-animation-hover:not(.uk-hover),
@@ -6691,9 +5103,6 @@ a.uk-thumbnail:focus {
   -webkit-animation-name: none;
   animation-name: none;
 }
-/* Keyframes: Fade
- * Used by dropdown, datepicker and slideshow component
- ========================================================================== */
 @-webkit-keyframes uk-fade {
   0% {
     opacity: 0;
@@ -6710,11 +5119,6 @@ a.uk-thumbnail:focus {
     opacity: 1;
   }
 }
-/* Keyframes: Fade with slide
- ========================================================================== */
-/*
- * Top
- */
 @-webkit-keyframes uk-fade-top {
   0% {
     opacity: 0;
@@ -6735,9 +5139,6 @@ a.uk-thumbnail:focus {
     transform: translateY(0);
   }
 }
-/*
- * Bottom
- */
 @-webkit-keyframes uk-fade-bottom {
   0% {
     opacity: 0;
@@ -6758,9 +5159,6 @@ a.uk-thumbnail:focus {
     transform: translateY(0);
   }
 }
-/*
- * Left
- */
 @-webkit-keyframes uk-fade-left {
   0% {
     opacity: 0;
@@ -6781,9 +5179,6 @@ a.uk-thumbnail:focus {
     transform: translateX(0);
   }
 }
-/*
- * Right
- */
 @-webkit-keyframes uk-fade-right {
   0% {
     opacity: 0;
@@ -6804,11 +5199,6 @@ a.uk-thumbnail:focus {
     transform: translateX(0);
   }
 }
-/* Keyframes: Fade with scale
- ========================================================================== */
-/*
- * Scale by 0.2
- */
 @-webkit-keyframes uk-fade-scale-02 {
   0% {
     opacity: 0;
@@ -6829,10 +5219,6 @@ a.uk-thumbnail:focus {
     transform: scale(1);
   }
 }
-/*
- * Scale by 1.5
- * Used by slideshow component
- */
 @-webkit-keyframes uk-fade-scale-15 {
   0% {
     opacity: 0;
@@ -6853,9 +5239,6 @@ a.uk-thumbnail:focus {
     transform: scale(1);
   }
 }
-/*
- * Scale by 1.8
- */
 @-webkit-keyframes uk-fade-scale-18 {
   0% {
     opacity: 0;
@@ -6876,12 +5259,6 @@ a.uk-thumbnail:focus {
     transform: scale(1);
   }
 }
-/* Keyframes: Slide
- * Used by slideshow component
- ========================================================================== */
-/*
- * Left
- */
 @-webkit-keyframes uk-slide-left {
   0% {
     -webkit-transform: translateX(-100%);
@@ -6898,9 +5275,6 @@ a.uk-thumbnail:focus {
     transform: translateX(0);
   }
 }
-/*
- * Right
- */
 @-webkit-keyframes uk-slide-right {
   0% {
     -webkit-transform: translateX(100%);
@@ -6917,9 +5291,6 @@ a.uk-thumbnail:focus {
     transform: translateX(0);
   }
 }
-/*
- * Left third
- */
 @-webkit-keyframes uk-slide-left-33 {
   0% {
     -webkit-transform: translateX(33%);
@@ -6936,9 +5307,6 @@ a.uk-thumbnail:focus {
     transform: translateX(0);
   }
 }
-/*
- * Right third
- */
 @-webkit-keyframes uk-slide-right-33 {
   0% {
     -webkit-transform: translateX(-33%);
@@ -6955,8 +5323,6 @@ a.uk-thumbnail:focus {
     transform: translateX(0);
   }
 }
-/* Keyframes: Scale
- ========================================================================== */
 @-webkit-keyframes uk-scale-12 {
   0% {
     -webkit-transform: scale(1.2);
@@ -6973,9 +5339,6 @@ a.uk-thumbnail:focus {
     transform: scale(1);
   }
 }
-/* Keyframes: Rotate
- * Used by icon component
- ========================================================================== */
 @-webkit-keyframes uk-rotate {
   0% {
     -webkit-transform: rotate(0deg);
@@ -6992,8 +5355,6 @@ a.uk-thumbnail:focus {
     transform: rotate(359deg);
   }
 }
-/* Keyframes: Shake
- ========================================================================== */
 @-webkit-keyframes uk-shake {
   0%,
   100% {
@@ -7060,12 +5421,6 @@ a.uk-thumbnail:focus {
     transform: translateX(-1px);
   }
 }
-/* Keyframes: Fade with slide fixed
- * Used by dropdown and search component
- ========================================================================== */
-/*
- * Top fixed
- */
 @-webkit-keyframes uk-slide-top-fixed {
   0% {
     opacity: 0;
@@ -7086,9 +5441,6 @@ a.uk-thumbnail:focus {
     transform: translateY(0);
   }
 }
-/*
- * Bottom fixed
- */
 @-webkit-keyframes uk-slide-bottom-fixed {
   0% {
     opacity: 0;
@@ -7109,60 +5461,29 @@ a.uk-thumbnail:focus {
     transform: translateY(0);
   }
 }
-/* ========================================================================
-   Component: Dropdown
- ========================================================================== */
-/*
- * 1. Hide by default
- * 2. Set position
- * 3. Box-sizing is needed for `uk-dropdown-justify`
- * 4. Set width
- */
 .uk-dropdown,
 .uk-dropdown-blank {
-  /* 1 */
   display: none;
-  /* 2 */
   position: absolute;
   z-index: 1020;
-  /* 3 */
   box-sizing: border-box;
-  /* 4 */
   width: 200px;
 }
-/*
- * Dropdown style
- * 1. Reset button group whitespace hack
- */
 .uk-dropdown {
   padding: 15px;
   background: #f5f5f5;
-  color: #444;
-  /* 1 */
+  color: #444444;
   font-size: 1rem;
   vertical-align: top;
 }
-/*
- * 1. Show dropdown
- * 2. Set animation
- * 3. Needed for scale animation
- */
 .uk-open > .uk-dropdown,
 .uk-open > .uk-dropdown-blank {
-  /* 1 */
   display: block;
-  /* 2 */
   -webkit-animation: uk-fade 0.2s ease-in-out;
   animation: uk-fade 0.2s ease-in-out;
-  /* 3 */
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
 }
-/* Alignment modifiers
- ========================================================================== */
-/*
- * Modifier
- */
 .uk-dropdown-top {
   margin-top: -5px;
 }
@@ -7175,32 +5496,16 @@ a.uk-thumbnail:focus {
 .uk-dropdown-right {
   margin-left: 5px;
 }
-/* Nav in dropdown
- ========================================================================== */
 .uk-dropdown .uk-nav {
   margin: 0 -15px;
 }
-/* Grid and panel in dropdown
- ========================================================================== */
-/*
-* Vertical gutter
-*/
-/*
- * Grid
- * Higher specificity to override large gutter
- */
 .uk-grid .uk-dropdown-grid + .uk-dropdown-grid {
   margin-top: 15px;
 }
-/* Panels */
 .uk-dropdown-grid > [class*='uk-width-'] > .uk-panel + .uk-panel {
   margin-top: 15px;
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
-  /*
-     * Horizontal gutter
-     */
   .uk-dropdown:not(.uk-dropdown-stack) > .uk-dropdown-grid {
     margin-left: -15px;
     margin-right: -15px;
@@ -7209,15 +5514,9 @@ a.uk-thumbnail:focus {
     padding-left: 15px;
     padding-right: 15px;
   }
-  /*
-     * Column divider
-     */
   .uk-dropdown:not(.uk-dropdown-stack) > .uk-dropdown-grid > [class*='uk-width-']:nth-child(n+2) {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #39915e;
   }
-  /*
-     * Width multiplier for dropdown columns
-     */
   .uk-dropdown-width-2:not(.uk-dropdown-stack) {
     width: 400px;
   }
@@ -7231,196 +5530,109 @@ a.uk-thumbnail:focus {
     width: 1000px;
   }
 }
-/* Phone landscape and smaller */
 @media (max-width: 767px) {
-  /*
-     * Stack columns and take full width
-     */
   .uk-dropdown-grid > [class*='uk-width-'] {
     width: 100%;
   }
-  /*
-     * Vertical gutter
-     */
   .uk-dropdown-grid > [class*='uk-width-']:nth-child(n+2) {
     margin-top: 15px;
   }
 }
-/*
-* Stack grid columns
-*/
 .uk-dropdown-stack > .uk-dropdown-grid > [class*='uk-width-'] {
   width: 100%;
 }
 .uk-dropdown-stack > .uk-dropdown-grid > [class*='uk-width-']:nth-child(n+2) {
   margin-top: 15px;
 }
-/* Modifier `uk-dropdown-small`
- ========================================================================== */
-/*
- * Set min-width and text expands dropdown if needed
- */
 .uk-dropdown-small {
   min-width: 150px;
   width: auto;
   padding: 5px;
   white-space: nowrap;
 }
-/*
- * Nav in dropdown
- */
 .uk-dropdown-small .uk-nav {
   margin: 0 -5px;
 }
-/* Modifier: `uk-dropdown-navbar`
- ========================================================================== */
 .uk-dropdown-navbar {
   margin-top: 0;
-  background: #f5f5f5;
-  color: #444;
+  background: #00ffff;
+  color: #444444;
 }
 .uk-open > .uk-dropdown-navbar {
   -webkit-animation: uk-slide-top-fixed 0.2s ease-in-out;
   animation: uk-slide-top-fixed 0.2s ease-in-out;
 }
-/* Modifier `uk-dropdown-scrollable`
- ========================================================================== */
-/*
- * Usefull for long lists
- */
 .uk-dropdown-scrollable {
   overflow-y: auto;
   max-height: 200px;
 }
-/* Sub-object: `uk-dropdown-overlay`
- ========================================================================== */
-/* ========================================================================
-   Component: Modal
- ========================================================================== */
-/*
- * This is the modal overlay and modal dialog container
- * 1. Hide by default
- * 2. Set fixed position
- * 3. Allow scrolling for the modal dialog
- * 4. Mask the background page
- * 5. Fade-in transition
- * 6. Deactivate browser history navigation in IE11
- * 7. force hardware acceleration to prevent browser rendering hiccups
- */
 .uk-modal {
-  /* 1 */
   display: none;
-  /* 2 */
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1010;
-  /* 3 */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  /* 4 */
   background: rgba(0, 0, 0, 0.6);
-  /* 5 */
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
-  /* 6 */
   touch-action: cross-slide-y pinch-zoom double-tap-zoom;
-  /* 7 */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-/*
- * Open state
- */
 .uk-modal.uk-open {
   opacity: 1;
 }
-/*
- * Prevents duplicated scrollbar caused by 4.
- */
 .uk-modal-page,
 .uk-modal-page body {
   overflow: hidden;
 }
-/* Sub-object: `uk-modal-dialog`
- ========================================================================== */
-/*
- * 1. Create position context for caption, spinner and close button
- * 2. Set box sizing
- * 3. Set style
- * 4. Slide-in transition
- */
 .uk-modal-dialog {
-  /* 1 */
   position: relative;
-  /* 2 */
   box-sizing: border-box;
   margin: 50px auto;
   padding: 20px;
   width: 600px;
   max-width: 100%;
   max-width: calc(100% - 20px);
-  /* 3 */
-  background: #fff;
-  /* 4 */
+  background: #eae0d5;
   opacity: 0;
   -webkit-transform: translateY(-100px);
   transform: translateY(-100px);
   -webkit-transition: opacity 0.3s linear, -webkit-transform 0.3s ease-out;
   transition: opacity 0.3s linear, transform 0.3s ease-out;
 }
-/* Phone landscape and smaller */
 @media (max-width: 767px) {
-  /*
-     * Fit in small screen
-     */
   .uk-modal-dialog {
     width: auto;
     margin: 10px auto;
   }
 }
-/*
- * Open state
- */
 .uk-open .uk-modal-dialog {
-  /* 4 */
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/*
- * Remove margin from the last-child
- */
 .uk-modal-dialog > :not([class*='uk-modal-']):last-child {
   margin-bottom: 0;
 }
-/* Close in modal
- ========================================================================== */
 .uk-modal-dialog > .uk-close:first-child {
   margin: -10px -10px 0 0;
   float: right;
 }
-/*
- * Remove margin from adjacent element
- */
 .uk-modal-dialog > .uk-close:first-child + :not([class*='uk-modal-']) {
   margin-top: 0;
 }
-/* Modifier: `uk-modal-dialog-lightbox`
- ========================================================================== */
 .uk-modal-dialog-lightbox {
   margin: 15px auto;
   padding: 0;
   max-width: 95%;
   max-width: calc(100% - 30px);
-  min-height: 50px;
 }
-/*
- * Close button
- */
 .uk-modal-dialog-lightbox > .uk-close:first-child {
   position: absolute;
   top: -12px;
@@ -7428,15 +5640,12 @@ a.uk-thumbnail:focus {
   margin: 0;
   float: none;
 }
-/* Phone landscape and smaller */
 @media (max-width: 767px) {
   .uk-modal-dialog-lightbox > .uk-close:first-child {
     top: -7px;
     right: -7px;
   }
 }
-/* Modifier: `uk-modal-dialog-blank`
- ========================================================================== */
 .uk-modal-dialog-blank {
   margin: 0;
   padding: 0;
@@ -7445,9 +5654,6 @@ a.uk-thumbnail:focus {
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
 }
-/*
-* Close button
-*/
 .uk-modal-dialog-blank > .uk-close:first-child {
   position: absolute;
   top: 20px;
@@ -7456,51 +5662,38 @@ a.uk-thumbnail:focus {
   margin: 0;
   float: none;
 }
-/* Modifier: `uk-modal-dialog-large`
- ========================================================================== */
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-modal-dialog-large {
     width: 930px;
   }
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
   .uk-modal-dialog-large {
     width: 1130px;
   }
 }
-/* Sub-Object: `uk-modal-header` and `uk-modal-footer`
- ========================================================================== */
 .uk-modal-header {
   margin-bottom: 15px;
 }
 .uk-modal-footer {
   margin-top: 15px;
 }
-/*
- * Remove margin from the last-child
- */
 .uk-modal-header > :last-child,
 .uk-modal-footer > :last-child {
   margin-bottom: 0;
 }
-/* Sub-Object: `uk-modal-caption`
- ========================================================================== */
 .uk-modal-caption {
   position: absolute;
   left: 0;
   right: 0;
   bottom: -20px;
   margin-bottom: -10px;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* Sub-Object: `uk-modal-spinner`
- ========================================================================== */
 .uk-modal-spinner {
   position: absolute;
   top: 50%;
@@ -7512,68 +5705,30 @@ a.uk-thumbnail:focus {
 }
 .uk-modal-spinner:after {
   content: "\f110";
-  display: block;
   font-family: FontAwesome;
   -webkit-animation: uk-rotate 2s infinite linear;
   animation: uk-rotate 2s infinite linear;
 }
-/* ========================================================================
-   Component: Off-canvas
- ========================================================================== */
-/*
- * This is the offcanvas overlay and bar container
- * 1. Hide by default
- * 2. Set fixed position
- * 3. Deactivate browser touch actions in IE11
- * 4. Mask the background page
- */
 .uk-offcanvas {
-  /* 1 */
   display: none;
-  /* 2 */
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1000;
-  /* 3 */
   touch-action: none;
-  /* 4 */
   background: rgba(0, 0, 0, 0.1);
 }
 .uk-offcanvas.uk-active {
   display: block;
 }
-/* Sub-object `uk-offcanvas-page`
- ========================================================================== */
-/*
- * Prepares the whole HTML page to slide-out
- * 1. Fix the main page and disallow scrolling
- * 2. Side-out transition
- * 3. Needed for the transition to work instead of just letting it pop to the side
- */
 .uk-offcanvas-page {
-  /* 1 */
   position: fixed;
-  /* 2 */
   -webkit-transition: margin-left 0.3s ease-in-out;
   transition: margin-left 0.3s ease-in-out;
-  /* 3 */
-  margin-left: 0;
 }
-/* Sub-object `uk-offcanvas-bar`
- ========================================================================== */
-/*
- * This is the offcanvas bar
- * 1. Set fixed position
- * 2. Size and style
- * 3. Allow scrolling
- * 4. Side-out transition
- * 5. Deactivate scroll chaining in IE11
- */
 .uk-offcanvas-bar {
-  /* 1 */
   position: fixed;
   top: 0;
   bottom: 0;
@@ -7581,98 +5736,47 @@ a.uk-thumbnail:focus {
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
   z-index: 1001;
-  /* 2 */
   width: 270px;
   max-width: 100%;
-  background: #333;
-  /* 3 */
+  background: #333333;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  /* 4 */
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
-  /* 5 */
   -ms-scroll-chaining: none;
 }
 .uk-offcanvas.uk-active .uk-offcanvas-bar.uk-offcanvas-bar-show {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
 }
-/* Modifier `uk-offcanvas-bar-flip`
- ========================================================================== */
 .uk-offcanvas-bar-flip {
   left: auto;
   right: 0;
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
-/* Offcanvase modes
- ========================================================================== */
-.uk-offcanvas-bar[mode='none'] {
-  -webkit-transition: none;
-  transition: none;
-}
-.uk-offcanvas-bar[mode='reveal'] {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-  clip: rect(0, 0, 100vh, 0);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out, clip 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, clip 0.3s ease-in-out;
-}
-.uk-offcanvas-bar-flip[mode='reveal'] {
-  clip: none;
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-}
-.uk-offcanvas-bar-flip[mode='reveal'] > * {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-}
-.uk-offcanvas.uk-active .uk-offcanvas-bar-flip[mode='reveal'].uk-offcanvas-bar-show > * {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-}
-/* Panel in offcanvas
- ========================================================================== */
 .uk-offcanvas .uk-panel {
   margin: 20px 15px;
-  color: #777;
+  color: #777777;
 }
 .uk-offcanvas .uk-panel-title {
-  color: #ccc;
+  color: #cccccc;
 }
 .uk-offcanvas .uk-panel a:not([class]) {
-  color: #ccc;
+  color: #cccccc;
 }
 .uk-offcanvas .uk-panel a:not([class]):hover {
-  color: #fff;
+  color: #ffffff;
 }
-/* ========================================================================
-   Component: Switcher
- ========================================================================== */
-/*
- * 1. Deactivate browser history navigation in IE11
- */
 .uk-switcher {
   margin: 0;
   padding: 0;
   list-style: none;
-  /* 1 */
   touch-action: cross-slide-y pinch-zoom double-tap-zoom;
 }
-/*
- * Items
- */
 .uk-switcher > :not(.uk-active) {
   display: none;
 }
-/* ========================================================================
-   Component: Text
- ========================================================================== */
-/* Size modifiers
- ========================================================================== */
 .uk-text-small {
   font-size: 11px;
   line-height: 16px;
@@ -7682,15 +5786,11 @@ a.uk-thumbnail:focus {
   line-height: 24px;
   font-weight: normal;
 }
-/* Weight modifiers
- ========================================================================== */
 .uk-text-bold {
   font-weight: bold;
 }
-/* Color modifiers
- ========================================================================== */
 .uk-text-muted {
-  color: #999 !important;
+  color: #999999 !important;
 }
 .uk-text-primary {
   color: #2d7091 !important;
@@ -7705,10 +5805,8 @@ a.uk-thumbnail:focus {
   color: #d85030 !important;
 }
 .uk-text-contrast {
-  color: #fff !important;
+  color: #ffffff !important;
 }
-/* Alignment modifiers
- ========================================================================== */
 .uk-text-left {
   text-align: left !important;
 }
@@ -7730,7 +5828,6 @@ a.uk-thumbnail:focus {
 .uk-text-bottom {
   vertical-align: bottom !important;
 }
-/* Only tablets portrait and smaller */
 @media (max-width: 959px) {
   .uk-text-center-medium {
     text-align: center !important;
@@ -7739,7 +5836,6 @@ a.uk-thumbnail:focus {
     text-align: left !important;
   }
 }
-/* Phone landscape and smaller */
 @media (max-width: 767px) {
   .uk-text-center-small {
     text-align: center !important;
@@ -7748,25 +5844,14 @@ a.uk-thumbnail:focus {
     text-align: left !important;
   }
 }
-/* Wrap modifiers
- ========================================================================== */
-/*
- * Prevent text from wrapping onto multiple lines
- */
 .uk-text-nowrap {
   white-space: nowrap;
 }
-/*
- * Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
- */
 .uk-text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/*
- * Break strings if their length exceeds the width of their container
- */
 .uk-text-break {
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -7774,37 +5859,17 @@ a.uk-thumbnail:focus {
   -moz-hyphens: auto;
   hyphens: auto;
 }
-/* Transform modifiers
- ========================================================================== */
-.uk-text-capitalize {
-  text-transform: capitalize !important;
-}
-.uk-text-lowercase {
-  text-transform: lowercase !important;
-}
-.uk-text-uppercase {
-  text-transform: uppercase !important;
-}
-/* ========================================================================
-   Component: Utility
- ========================================================================== */
-/* Container
- ========================================================================== */
 .uk-container {
   box-sizing: border-box;
   max-width: 980px;
   padding: 0 25px;
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
   .uk-container {
     max-width: 1200px;
     padding: 0 35px;
   }
 }
-/*
- * Micro clearfix
- */
 .uk-container:before,
 .uk-container:after {
   content: "";
@@ -7813,21 +5878,10 @@ a.uk-thumbnail:focus {
 .uk-container:after {
   clear: both;
 }
-/*
- * Center container
- */
 .uk-container-center {
   margin-left: auto;
   margin-right: auto;
 }
-/* Clearing
- ========================================================================== */
-/*
- * Micro clearfix
-* `table-cell` is used with `:before` because `table` creates a 1px gap when it becomes a flex item, only in Webkit
- * `table` is used again with `:after` because `clear` only works with block elements.
- * Note: `display: block` with `overflow: hidden` is currently not working in the latest Safari
- */
 .uk-clearfix:before {
   content: "";
   display: table-cell;
@@ -7837,9 +5891,6 @@ a.uk-thumbnail:focus {
   display: table;
   clear: both;
 }
-/*
- *  Create a new block formatting context
- */
 .uk-nbfc {
   overflow: hidden;
 }
@@ -7847,27 +5898,15 @@ a.uk-thumbnail:focus {
   display: table-cell;
   width: 10000px;
 }
-/* Alignment of block elements
- ========================================================================== */
-/*
- * Float blocks
- * 1. Prevent content overflow on small devices
- */
 .uk-float-left {
   float: left;
 }
 .uk-float-right {
   float: right;
 }
-/* 1 */
 [class*='uk-float-'] {
   max-width: 100%;
 }
-/* Alignment of images and objects
- ========================================================================== */
-/*
- * Alignment
- */
 [class*='uk-align-'] {
   display: block;
   margin-bottom: 15px;
@@ -7880,7 +5919,6 @@ a.uk-thumbnail:focus {
   margin-left: 15px;
   float: right;
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-align-medium-left {
     margin-right: 15px;
@@ -7895,32 +5933,19 @@ a.uk-thumbnail:focus {
   margin-left: auto;
   margin-right: auto;
 }
-/* Vertical alignment
- ========================================================================== */
-/*
- * Remove whitespace between child elements when using `inline-block`
- */
 .uk-vertical-align {
   font-size: 0.001px;
 }
-/*
- *  The `uk-vertical-align` container needs a specific height
- */
 .uk-vertical-align:before {
   content: '';
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
-/*
- * Sub-object which can have any height
- * 1. Reset whitespace hack
- */
 .uk-vertical-align-middle,
 .uk-vertical-align-bottom {
   display: inline-block;
   max-width: 100%;
-  /* 1 */
   font-size: 1rem;
 }
 .uk-vertical-align-middle {
@@ -7929,59 +5954,28 @@ a.uk-thumbnail:focus {
 .uk-vertical-align-bottom {
   vertical-align: bottom;
 }
-/* Height
- ========================================================================== */
-/*
- * More robust if padding and border are used
- */
 [class*='uk-height'] {
   box-sizing: border-box;
 }
-/*
- * Useful to extend the `html` and `body` element to the full height of the page.
- */
 .uk-height-1-1 {
   height: 100%;
 }
-/*
- * Useful to create image teasers
- */
 .uk-height-viewport {
   height: 100vh;
   min-height: 600px;
 }
-/* Responsive objects
- * Note: Images are already responsive by default, see Base component
- ========================================================================== */
-/*
- * 1. Corrects `max-width` and `max-height` behavior if padding and border are used
- */
 .uk-responsive-width,
 .uk-responsive-height {
   box-sizing: border-box;
 }
-/*
- * Responsiveness: Sets a maximum width relative to the parent and auto scales the height
- * `important` needed to override `uk-img-preserve img`
- */
 .uk-responsive-width {
   max-width: 100% !important;
   height: auto;
 }
-/*
- * Responsiveness: Sets a maximum height relative to the parent and auto scales the width
- * Only works if the parent element has a fixed height.
- */
 .uk-responsive-height {
   max-height: 100%;
   width: auto;
 }
-/* Margin
- ========================================================================== */
-/*
- * Create a block with the same margin of a paragraph
- * Add margin if adjacent element
- */
 .uk-margin {
   margin-bottom: 15px;
 }
@@ -8000,9 +5994,6 @@ a.uk-thumbnail:focus {
 .uk-margin-right {
   margin-right: 15px !important;
 }
-/*
- * Larger margins
- */
 .uk-margin-large {
   margin-bottom: 50px;
 }
@@ -8021,9 +6012,6 @@ a.uk-thumbnail:focus {
 .uk-margin-large-right {
   margin-right: 50px !important;
 }
-/*
- * Smaller margins
- */
 .uk-margin-small {
   margin-bottom: 5px;
 }
@@ -8042,9 +6030,6 @@ a.uk-thumbnail:focus {
 .uk-margin-small-right {
   margin-right: 5px !important;
 }
-/*
- * Remove margins
- */
 .uk-margin-remove {
   margin: 0 !important;
 }
@@ -8054,8 +6039,6 @@ a.uk-thumbnail:focus {
 .uk-margin-bottom-remove {
   margin-bottom: 0 !important;
 }
-/* Padding
- ========================================================================== */
 .uk-padding-remove {
   padding: 0 !important;
 }
@@ -8069,43 +6052,30 @@ a.uk-thumbnail:focus {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
-/* Border
- ========================================================================== */
 .uk-border-circle {
   border-radius: 50%;
 }
 .uk-border-rounded {
   border-radius: 5px;
 }
-/* Headings
- ========================================================================== */
 .uk-heading-large {
   font-size: 36px;
   line-height: 42px;
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-heading-large {
     font-size: 52px;
     line-height: 64px;
   }
 }
-/* Link
- ========================================================================== */
-/*
- * Let links appear in default text color
- */
 .uk-link-muted,
 .uk-link-muted a {
-  color: #444;
+  color: #444444;
 }
 .uk-link-muted:hover,
 .uk-link-muted a:hover {
-  color: #444;
+  color: #444444;
 }
-/*
- * Reset link style
- */
 .uk-link-reset,
 .uk-link-reset a,
 .uk-link-reset:hover,
@@ -8115,25 +6085,17 @@ a.uk-thumbnail:focus {
   color: inherit;
   text-decoration: none;
 }
-/* Scrollable
- ========================================================================== */
-/*
- * Enable scrolling for preformatted text
- */
 .uk-scrollable-text {
   height: 300px;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   resize: both;
 }
-/*
- * Box with scrolling enabled
- */
 .uk-scrollable-box {
   box-sizing: border-box;
   height: 170px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #39915e;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   resize: both;
@@ -8141,14 +6103,9 @@ a.uk-thumbnail:focus {
 .uk-scrollable-box > :last-child {
   margin-bottom: 0;
 }
-/* Overflow
- ========================================================================== */
 .uk-overflow-hidden {
   overflow: hidden;
 }
-/*
- * Enable scrollbars if content is clipped
- */
 .uk-overflow-container {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -8156,14 +6113,11 @@ a.uk-thumbnail:focus {
 .uk-overflow-container > :last-child {
   margin-bottom: 0;
 }
-/* Position
- ========================================================================== */
 .uk-position-absolute,
 [class*='uk-position-top'],
 [class*='uk-position-bottom'] {
   position: absolute !important;
 }
-/* Don't use `width: 100%` because it is wrong if the parent has padding. */
 .uk-position-top {
   top: 0;
   left: 0;
@@ -8190,9 +6144,6 @@ a.uk-thumbnail:focus {
   bottom: 0;
   right: 0;
 }
-/*
- * Cover
- */
 .uk-position-cover {
   position: absolute;
   top: 0;
@@ -8200,24 +6151,12 @@ a.uk-thumbnail:focus {
   left: 0;
   right: 0;
 }
-/*
- * Relative
- */
 .uk-position-relative {
   position: relative !important;
 }
-/*
- * Z-index
- */
 .uk-position-z-index {
   z-index: 1;
 }
-/* Display
- ========================================================================== */
-/*
- * Display
- * 1. Required if child is a responsive image
- */
 .uk-display-block {
   display: block !important;
 }
@@ -8226,14 +6165,8 @@ a.uk-thumbnail:focus {
 }
 .uk-display-inline-block {
   display: inline-block !important;
-  /* 1 */
   max-width: 100%;
 }
-/*
- * Visibility
- * Avoids setting display to `block` so it works also with `inline-block` and `table`
- */
-/* Desktop and bigger */
 @media (min-width: 960px) {
   .uk-visible-small {
     display: none !important;
@@ -8245,7 +6178,6 @@ a.uk-thumbnail:focus {
     display: none !important;
   }
 }
-/* Tablets portrait */
 @media (min-width: 768px) and (max-width: 959px) {
   .uk-visible-small {
     display: none !important;
@@ -8257,7 +6189,6 @@ a.uk-thumbnail:focus {
     display: none !important;
   }
 }
-/* Phone landscape and smaller*/
 @media (max-width: 767px) {
   .uk-visible-medium {
     display: none !important;
@@ -8269,16 +6200,13 @@ a.uk-thumbnail:focus {
     display: none !important;
   }
 }
-/* Remove from the flow and screen readers on any device */
 .uk-hidden {
   display: none !important;
   visibility: hidden !important;
 }
-/* It's hidden, but still affects layout */
 .uk-invisible {
   visibility: hidden !important;
 }
-/* Show on hover */
 .uk-visible-hover:hover .uk-hidden,
 .uk-visible-hover:hover .uk-invisible {
   display: block !important;
@@ -8289,14 +6217,10 @@ a.uk-thumbnail:focus {
   display: inline-block !important;
   visibility: visible !important;
 }
-/* Hide on touch */
 .uk-touch .uk-hidden-touch,
 .uk-notouch .uk-hidden-notouch {
   display: none !important;
 }
-/* ========================================================================
-   Component: Flex
- ========================================================================== */
 .uk-flex {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -8307,19 +6231,10 @@ a.uk-thumbnail:focus {
   display: -webkit-inline-flex;
   display: inline-flex;
 }
-/*
- * Fixes initial flex-shrink value in IE10
- */
 .uk-flex > *,
 .uk-flex-inline > * {
   -ms-flex-negative: 1;
 }
-/* Alignment
- ========================================================================== */
-/*
- * Vertical alignment
- * Default value is `stretch`
- */
 .uk-flex-top {
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
@@ -8335,10 +6250,6 @@ a.uk-thumbnail:focus {
   -webkit-align-items: flex-end;
   align-items: flex-end;
 }
-/*
- * Horizontal alignment
- * Default value is `flex-start`
- */
 .uk-flex-center {
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -8359,8 +6270,6 @@ a.uk-thumbnail:focus {
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
-/* Direction
- ========================================================================== */
 .uk-flex-row-reverse {
   -ms-flex-direction: row-reverse;
   -webkit-flex-direction: row-reverse;
@@ -8376,8 +6285,6 @@ a.uk-thumbnail:focus {
   -webkit-flex-direction: column-reverse;
   flex-direction: column-reverse;
 }
-/* Wrap
- ========================================================================== */
 .uk-flex-nowrap {
   -ms-flex-wrap: nowrap;
   -webkit-flex-wrap: nowrap;
@@ -8393,10 +6300,6 @@ a.uk-thumbnail:focus {
   -webkit-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
-/*
- * Horizontal alignment
- * Default value is `stretch`
- */
 .uk-flex-wrap-top {
   -ms-flex-line-pack: start;
   -webkit-align-content: flex-start;
@@ -8422,11 +6325,6 @@ a.uk-thumbnail:focus {
   -webkit-align-content: space-around;
   align-content: space-around;
 }
-/* Item ordering
- ========================================================================== */
-/*
- * Default is 0
- */
 .uk-flex-order-first {
   -ms-flex-order: -1;
   -webkit-order: -1;
@@ -8437,7 +6335,6 @@ a.uk-thumbnail:focus {
   -webkit-order: 99;
   order: 99;
 }
-/* Phone landscape and bigger */
 @media (min-width: 480px) {
   .uk-flex-order-first-small {
     -ms-flex-order: -1;
@@ -8450,7 +6347,6 @@ a.uk-thumbnail:focus {
     order: 99;
   }
 }
-/* Tablet and bigger */
 @media (min-width: 768px) {
   .uk-flex-order-first-medium {
     -ms-flex-order: -1;
@@ -8463,7 +6359,6 @@ a.uk-thumbnail:focus {
     order: 99;
   }
 }
-/* Desktop and bigger */
 @media (min-width: 960px) {
   .uk-flex-order-first-large {
     -ms-flex-order: -1;
@@ -8476,7 +6371,6 @@ a.uk-thumbnail:focus {
     order: 99;
   }
 }
-/* Large screen and bigger */
 @media (min-width: 1220px) {
   .uk-flex-order-first-xlarge {
     -ms-flex-order: -1;
@@ -8489,48 +6383,24 @@ a.uk-thumbnail:focus {
     order: 99;
   }
 }
-/* Item dimensions
- ========================================================================== */
-/*
- * Initial: 0 1 auto
- * Content dimensions, but shrinks
- */
-/*
- * No Flex: 0 0 auto
- * Content dimensions
- */
 .uk-flex-item-none {
   -ms-flex: none;
   -webkit-flex: none;
   flex: none;
 }
-/*
- * Relative Flex: 1 1 auto
- * Space is allocated considering content
- * 1. Fixes flex-shrink value in IE10
- */
 .uk-flex-item-auto {
   -ms-flex: auto;
   -webkit-flex: auto;
   flex: auto;
-  /* 1 */
   -ms-flex-negative: 1;
 }
-/*
- * Absolute Flex: 1 1 0%
- * Space is allocated solely based on flex
- */
 .uk-flex-item-1 {
   -ms-flex: 1;
   -webkit-flex: 1;
   flex: 1;
 }
-/* ========================================================================
-   Component: Contrast
- ========================================================================== */
 .uk-contrast {
-  color: #fff;
-  /* Active */
+  color: #ffffff;
 }
 .uk-contrast a:not([class]),
 .uk-contrast .uk-link {
@@ -8539,16 +6409,16 @@ a.uk-thumbnail:focus {
 }
 .uk-contrast a:not([class]):hover,
 .uk-contrast .uk-link:hover {
-  color: #fff;
+  color: #ffffff;
   text-decoration: underline;
 }
 .uk-contrast :not(pre) > code,
 .uk-contrast :not(pre) > kbd,
 .uk-contrast :not(pre) > samp {
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast em {
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast h1,
 .uk-contrast h2,
@@ -8556,7 +6426,7 @@ a.uk-thumbnail:focus {
 .uk-contrast h4,
 .uk-contrast h5,
 .uk-contrast h6 {
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast hr {
   border-top-color: rgba(255, 255, 255, 0.2);
@@ -8566,19 +6436,19 @@ a.uk-thumbnail:focus {
   text-decoration: none;
 }
 .uk-contrast .uk-nav-side > li > a {
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast .uk-nav-side > li > a:hover,
 .uk-contrast .uk-nav-side > li > a:focus {
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast .uk-nav-side > li.uk-active > a {
-  background: #fff;
-  color: #444;
+  background: #ffffff;
+  color: #444444;
 }
 .uk-contrast .uk-nav-side .uk-nav-header {
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast .uk-nav-side .uk-nav-divider {
   border-top-color: rgba(255, 255, 255, 0.2);
@@ -8587,7 +6457,7 @@ a.uk-thumbnail:focus {
   color: rgba(255, 255, 255, 0.7);
 }
 .uk-contrast .uk-nav-side ul a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast .uk-subnav > * > a {
   color: rgba(255, 255, 255, 0.7);
@@ -8595,11 +6465,11 @@ a.uk-thumbnail:focus {
 }
 .uk-contrast .uk-subnav > * > a:hover,
 .uk-contrast .uk-subnav > * > a:focus {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 .uk-contrast .uk-subnav > .uk-active > a {
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast .uk-subnav-line > :nth-child(n+2):before {
   border-left-color: rgba(255, 255, 255, 0.2);
@@ -8607,12 +6477,12 @@ a.uk-thumbnail:focus {
 .uk-contrast .uk-subnav-pill > * > a:hover,
 .uk-contrast .uk-subnav-pill > * > a:focus {
   background: rgba(255, 255, 255, 0.7);
-  color: #444;
+  color: #444444;
   text-decoration: none;
 }
 .uk-contrast .uk-subnav-pill > .uk-active > a {
-  background: #fff;
-  color: #444;
+  background: #ffffff;
+  color: #444444;
 }
 .uk-contrast .uk-tab {
   border-bottom-color: rgba(255, 255, 255, 0.2);
@@ -8626,14 +6496,14 @@ a.uk-thumbnail:focus {
 .uk-contrast .uk-tab > li.uk-open > a {
   border-color: rgba(255, 255, 255, 0.7);
   background: rgba(255, 255, 255, 0.7);
-  color: #444;
+  color: #444444;
   text-decoration: none;
 }
 .uk-contrast .uk-tab > li.uk-active > a {
   border-color: rgba(255, 255, 255, 0.2);
   border-bottom-color: transparent;
-  background: #fff;
-  color: #444;
+  background: #ffffff;
+  color: #444444;
 }
 .uk-contrast .uk-tab-center {
   border-bottom-color: rgba(255, 255, 255, 0.2);
@@ -8663,7 +6533,7 @@ a.uk-thumbnail:focus {
 .uk-contrast .uk-form input[type="color"] {
   border-color: rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.8);
-  color: #444;
+  color: #444444;
   background-clip: padding-box;
 }
 .uk-contrast .uk-form select:focus,
@@ -8683,9 +6553,9 @@ a.uk-thumbnail:focus {
 .uk-contrast .uk-form input[type="search"]:focus,
 .uk-contrast .uk-form input[type="tel"]:focus,
 .uk-contrast .uk-form input[type="color"]:focus {
-  border-color: #fff;
-  background: #fff;
-  color: #444;
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #444444;
 }
 .uk-contrast .uk-form :-ms-input-placeholder {
   color: rgba(68, 68, 68, 0.7) !important;
@@ -8697,51 +6567,51 @@ a.uk-thumbnail:focus {
   color: rgba(68, 68, 68, 0.7);
 }
 .uk-contrast .uk-button {
-  color: #444;
-  background: #fff;
+  color: #444444;
+  background: #ffffff;
 }
 .uk-contrast .uk-button:hover,
 .uk-contrast .uk-button:focus {
   background-color: rgba(255, 255, 255, 0.8);
-  color: #444;
+  color: #444444;
 }
 .uk-contrast .uk-button:active,
 .uk-contrast .uk-button.uk-active {
   background-color: rgba(255, 255, 255, 0.7);
-  color: #444;
+  color: #444444;
 }
 .uk-contrast .uk-button-primary {
-  background-color: #00a8e6;
-  color: #fff;
+  background-color: #41292c;
+  color: #ffffff;
 }
 .uk-contrast .uk-button-primary:hover,
 .uk-contrast .uk-button-primary:focus {
   background-color: #35b3ee;
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast .uk-button-primary:active,
 .uk-contrast .uk-button-primary.uk-active {
   background-color: #0091ca;
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast .uk-icon-hover {
   color: rgba(255, 255, 255, 0.7);
 }
 .uk-contrast .uk-icon-hover:hover {
-  color: #fff;
+  color: #ffffff;
 }
 .uk-contrast .uk-icon-button {
-  background: #fff;
-  color: #444;
+  background: #ffffff;
+  color: #444444;
 }
 .uk-contrast .uk-icon-button:hover,
 .uk-contrast .uk-icon-button:focus {
   background-color: rgba(255, 255, 255, 0.8);
-  color: #444;
+  color: #444444;
 }
 .uk-contrast .uk-icon-button:active {
   background-color: rgba(255, 255, 255, 0.7);
-  color: #444;
+  color: #444444;
 }
 .uk-contrast .uk-text-muted {
   color: rgba(255, 255, 255, 0.6) !important;
@@ -8749,9 +6619,6 @@ a.uk-thumbnail:focus {
 .uk-contrast .uk-text-primary {
   color: #2d7091 !important;
 }
-/* ========================================================================
-   Component: Print
- ========================================================================== */
 @media print {
   *,
   *:before,
@@ -8793,4 +6660,1085 @@ a.uk-thumbnail:focus {
   h3 {
     page-break-after: avoid;
   }
+}
+.uk-dotnav {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-top: -15px;
+  padding: 0;
+  list-style: none;
+}
+.uk-dotnav > * {
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+  padding-left: 15px;
+  margin-top: 15px;
+}
+.uk-dotnav:before,
+.uk-dotnav:after {
+  content: "";
+  display: block;
+  overflow: hidden;
+}
+.uk-dotnav:after {
+  clear: both;
+}
+.uk-dotnav > * {
+  float: left;
+}
+.uk-dotnav > * > * {
+  display: block;
+  box-sizing: content-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(50, 50, 50, 0.1);
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.uk-dotnav > * > :hover,
+.uk-dotnav > * > :focus {
+  background: rgba(50, 50, 50, 0.4);
+  outline: none;
+}
+.uk-dotnav > * > :active {
+  background: rgba(50, 50, 50, 0.6);
+}
+.uk-dotnav > .uk-active > * {
+  background: rgba(50, 50, 50, 0.4);
+}
+.uk-dotnav-contrast > * > * {
+  background: rgba(255, 255, 255, 0.4);
+}
+.uk-dotnav-contrast > * > :hover,
+.uk-dotnav-contrast > * > :focus {
+  background: rgba(255, 255, 255, 0.7);
+}
+.uk-dotnav-contrast > * > :active {
+  background: rgba(255, 255, 255, 0.9);
+}
+.uk-dotnav-contrast > .uk-active > * {
+  background: rgba(255, 255, 255, 0.9);
+}
+.uk-dotnav-vertical {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.uk-dotnav-vertical > * {
+  float: none;
+}
+.uk-slidenav {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  color: rgba(50, 50, 50, 0.4);
+  font-size: 60px;
+  text-align: center;
+}
+.uk-slidenav:hover,
+.uk-slidenav:focus {
+  outline: none;
+  text-decoration: none;
+  color: rgba(50, 50, 50, 0.7);
+  cursor: pointer;
+}
+.uk-slidenav:active {
+  color: rgba(50, 50, 50, 0.9);
+}
+.uk-slidenav-previous:before {
+  content: "\f104";
+  font-family: FontAwesome;
+}
+.uk-slidenav-next:before {
+  content: "\f105";
+  font-family: FontAwesome;
+}
+.uk-slidenav-position {
+  position: relative;
+}
+.uk-slidenav-position .uk-slidenav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  margin-top: -30px;
+}
+.uk-slidenav-position:hover .uk-slidenav {
+  display: block;
+}
+.uk-slidenav-position .uk-slidenav-previous {
+  left: 20px;
+}
+.uk-slidenav-position .uk-slidenav-next {
+  right: 20px;
+}
+.uk-slidenav-contrast {
+  color: rgba(255, 255, 255, 0.5);
+}
+.uk-slidenav-contrast:hover,
+.uk-slidenav-contrast:focus {
+  color: rgba(255, 255, 255, 0.7);
+}
+.uk-slidenav-contrast:active {
+  color: rgba(255, 255, 255, 0.9);
+}
+.uk-form input[type="radio"],
+.uk-form input[type="checkbox"] {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border: 1px solid #aaaaaa;
+  overflow: hidden;
+  margin-top: -4px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  outline: 0;
+  background: transparent;
+}
+.uk-form input[type="radio"] {
+  border-radius: 50%;
+}
+.uk-form input[type=radio]:before,
+.uk-form input[type=checkbox]:before {
+  display: block;
+}
+.uk-form input[type=radio]:checked:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin: 2px auto 0;
+  border-radius: 50%;
+  background: #00a8e6;
+}
+.uk-form input[type=checkbox]:checked:before,
+.uk-form input[type=checkbox]:indeterminate:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  line-height: 12px;
+  color: #00a8e6;
+}
+.uk-form input[type=checkbox]:indeterminate:before {
+  content: "\f068";
+}
+.uk-form input[type=radio]:disabled,
+.uk-form input[type=checkbox]:disabled {
+  border-color: #dddddd;
+}
+.uk-form input[type=radio]:disabled:checked:before {
+  background-color: #aaaaaa;
+}
+.uk-form input[type=checkbox]:disabled:checked:before,
+.uk-form input[type=checkbox]:disabled:indeterminate:before {
+  color: #aaaaaa;
+}
+.uk-form-file {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+}
+.uk-form-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  left: 0;
+  font-size: 500px;
+}
+.uk-form-password {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.uk-form-password-toggle {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -6px;
+  font-size: 13px;
+  line-height: 13px;
+  color: #999999;
+}
+.uk-form-password-toggle:hover {
+  color: #999999;
+  text-decoration: none;
+}
+.uk-form-password > input {
+  padding-right: 50px !important;
+}
+.uk-form-select {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+}
+.uk-form-select select {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  left: 0;
+  -webkit-appearance: none;
+}
+.uk-placeholder {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px dashed #39915e;
+  background: #fafafa;
+  color: #444444;
+}
+* + .uk-placeholder {
+  margin-top: 15px;
+}
+.uk-placeholder > :last-child {
+  margin-bottom: 0;
+}
+.uk-placeholder-large {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.uk-progress {
+  box-sizing: border-box;
+  height: 20px;
+  margin-bottom: 15px;
+  background: #eeeeee;
+  overflow: hidden;
+  line-height: 20px;
+}
+* + .uk-progress {
+  margin-top: 15px;
+}
+.uk-progress-bar {
+  width: 0;
+  height: 100%;
+  background: #41292c;
+  float: left;
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+}
+.uk-progress-mini {
+  height: 6px;
+}
+.uk-progress-small {
+  height: 12px;
+}
+.uk-progress-success .uk-progress-bar {
+  background-color: #8cc14c;
+}
+.uk-progress-warning .uk-progress-bar {
+  background-color: #faa732;
+}
+.uk-progress-danger .uk-progress-bar {
+  background-color: #da314b;
+}
+.uk-progress-striped .uk-progress-bar {
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+}
+.uk-progress-striped.uk-active .uk-progress-bar {
+  -webkit-animation: uk-progress-bar-stripes 2s linear infinite;
+  animation: uk-progress-bar-stripes 2s linear infinite;
+}
+@-webkit-keyframes uk-progress-bar-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+@keyframes uk-progress-bar-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+.uk-accordion-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding: 5px 15px;
+  background: #eeeeee;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.uk-accordion-content {
+  padding: 0 15px 15px 15px;
+}
+.uk-accordion-content:before,
+.uk-accordion-content:after {
+  content: "";
+  display: table;
+}
+.uk-accordion-content:after {
+  clear: both;
+}
+.uk-accordion-content > :last-child {
+  margin-bottom: 0;
+}
+.uk-autocomplete {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.uk-nav-autocomplete > li > a {
+  color: #444444;
+}
+.uk-nav-autocomplete > li.uk-active > a {
+  background: #41292c;
+  color: #ffffff;
+  outline: none;
+}
+.uk-nav-autocomplete .uk-nav-header {
+  color: #999999;
+}
+.uk-nav-autocomplete .uk-nav-divider {
+  border-top: 1px solid #39915e;
+}
+.uk-datepicker {
+  z-index: 1050;
+  width: auto;
+  -webkit-animation: uk-fade 0.2s ease-in-out;
+  animation: uk-fade 0.2s ease-in-out;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.uk-datepicker-nav {
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 20px;
+}
+.uk-datepicker-nav:before,
+.uk-datepicker-nav:after {
+  content: "";
+  display: table;
+}
+.uk-datepicker-nav:after {
+  clear: both;
+}
+.uk-datepicker-nav a {
+  color: #444444;
+  text-decoration: none;
+}
+.uk-datepicker-nav a:hover {
+  color: #444444;
+}
+.uk-datepicker-previous {
+  float: left;
+}
+.uk-datepicker-next {
+  float: right;
+}
+.uk-datepicker-previous:after,
+.uk-datepicker-next:after {
+  width: 20px;
+  font-family: FontAwesome;
+}
+.uk-datepicker-previous:after {
+  content: "\f053";
+}
+.uk-datepicker-next:after {
+  content: "\f054";
+}
+.uk-datepicker-table {
+  width: 100%;
+}
+.uk-datepicker-table th,
+.uk-datepicker-table td {
+  padding: 2px;
+}
+.uk-datepicker-table th {
+  font-size: 12px;
+}
+.uk-datepicker-table a {
+  display: block;
+  width: 26px;
+  line-height: 24px;
+  text-align: center;
+  color: #444444;
+  text-decoration: none;
+}
+a.uk-datepicker-table-muted {
+  color: #999999;
+}
+.uk-datepicker-table a:hover,
+.uk-datepicker-table a:focus {
+  background-color: #dddddd;
+  color: #444444;
+  outline: none;
+}
+.uk-datepicker-table a:active {
+  background-color: #cccccc;
+  color: #444444;
+}
+.uk-datepicker-table a.uk-active {
+  background: #41292c;
+  color: #ffffff;
+}
+.uk-htmleditor-navbar {
+  background: #eeeeee;
+}
+.uk-htmleditor-navbar:before,
+.uk-htmleditor-navbar:after {
+  content: "";
+  display: table;
+}
+.uk-htmleditor-navbar:after {
+  clear: both;
+}
+.uk-htmleditor-navbar-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+.uk-htmleditor-navbar-nav > li {
+  float: left;
+}
+.uk-htmleditor-navbar-nav > li > a {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  height: 40px;
+  padding: 0 15px;
+  line-height: 40px;
+  color: #444444;
+  font-size: 11px;
+  cursor: pointer;
+}
+.uk-htmleditor-navbar-nav > li:hover > a,
+.uk-htmleditor-navbar-nav > li > a:focus {
+  background-color: #f5f5f5;
+  color: #444444;
+  outline: none;
+}
+.uk-htmleditor-navbar-nav > li > a:active {
+  background-color: #dddddd;
+  color: #444444;
+}
+.uk-htmleditor-navbar-nav > li.uk-active > a {
+  background-color: #f5f5f5;
+  color: #444444;
+}
+.uk-htmleditor-navbar-flip {
+  float: right;
+}
+[data-mode='split'] .uk-htmleditor-button-code,
+[data-mode='split'] .uk-htmleditor-button-preview {
+  display: none;
+}
+.uk-htmleditor-content {
+  border-left: 1px solid #39915e;
+  border-right: 1px solid #39915e;
+  border-bottom: 1px solid #39915e;
+  background: #eae0d5;
+}
+.uk-htmleditor-content:before,
+.uk-htmleditor-content:after {
+  content: "";
+  display: table;
+}
+.uk-htmleditor-content:after {
+  clear: both;
+}
+.uk-htmleditor-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 990;
+}
+.uk-htmleditor-fullscreen .uk-htmleditor-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.uk-htmleditor-fullscreen .uk-icon-expand:before {
+  content: "\f066";
+}
+.uk-htmleditor-code,
+.uk-htmleditor-preview {
+  box-sizing: border-box;
+}
+.uk-htmleditor-preview {
+  padding: 20px;
+  overflow-y: scroll;
+  position: relative;
+}
+[data-mode='tab'][data-active-tab='code'] .uk-htmleditor-preview,
+[data-mode='tab'][data-active-tab='preview'] .uk-htmleditor-code {
+  display: none;
+}
+[data-mode='split'] .uk-htmleditor-code,
+[data-mode='split'] .uk-htmleditor-preview {
+  float: left;
+  width: 50%;
+}
+[data-mode='split'] .uk-htmleditor-code {
+  border-right: 1px solid #eeeeee;
+}
+.uk-htmleditor-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.uk-htmleditor .CodeMirror {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.uk-slider {
+  position: relative;
+  z-index: 0;
+  touch-action: pan-y;
+}
+.uk-slider:not(.uk-grid) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.uk-slider > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.uk-slider-container {
+  overflow: hidden;
+}
+.uk-slider:not(.uk-drag) {
+  -webkit-transition: -webkit-transform 200ms linear;
+  transition: transform 200ms linear;
+}
+.uk-slider.uk-drag {
+  cursor: col-resize;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.uk-slider a,
+.uk-slider img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+}
+.uk-slider img {
+  pointer-events: none;
+}
+.uk-slider-fullscreen,
+.uk-slider-fullscreen > li {
+  height: 100vh;
+}
+.uk-slideshow {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.uk-slideshow > li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+.uk-slideshow > .uk-active {
+  z-index: 10;
+  opacity: 1;
+}
+.uk-slideshow > li > img {
+  visibility: hidden;
+}
+[data-uk-slideshow-slide] {
+  cursor: pointer;
+}
+.uk-slideshow-fullscreen,
+.uk-slideshow-fullscreen > li {
+  height: 100vh;
+}
+.uk-slideshow-fade-in {
+  -webkit-animation: uk-fade 0.5s linear;
+  animation: uk-fade 0.5s linear;
+}
+.uk-slideshow-fade-out {
+  -webkit-animation: uk-fade 0.5s linear reverse;
+  animation: uk-fade 0.5s linear reverse;
+}
+.uk-slideshow-scroll-forward-in {
+  -webkit-animation: uk-slide-right 0.5s ease-in-out;
+  animation: uk-slide-right 0.5s ease-in-out;
+}
+.uk-slideshow-scroll-forward-out {
+  -webkit-animation: uk-slide-left 0.5s ease-in-out reverse;
+  animation: uk-slide-left 0.5s ease-in-out reverse;
+}
+.uk-slideshow-scroll-backward-in {
+  -webkit-animation: uk-slide-left 0.5s ease-in-out;
+  animation: uk-slide-left 0.5s ease-in-out;
+}
+.uk-slideshow-scroll-backward-out {
+  -webkit-animation: uk-slide-right 0.5s ease-in-out reverse;
+  animation: uk-slide-right 0.5s ease-in-out reverse;
+}
+.uk-slideshow-scale-out {
+  -webkit-animation: uk-fade-scale-15 0.5s ease-in-out reverse;
+  animation: uk-fade-scale-15 0.5s ease-in-out reverse;
+}
+.uk-slideshow-swipe-forward-in {
+  -webkit-animation: uk-slide-left-33 0.5s ease-in-out;
+  animation: uk-slide-left-33 0.5s ease-in-out;
+}
+.uk-slideshow-swipe-forward-out {
+  -webkit-animation: uk-slide-left 0.5s ease-in-out reverse;
+  animation: uk-slide-left 0.5s ease-in-out reverse;
+}
+.uk-slideshow-swipe-backward-in {
+  -webkit-animation: uk-slide-right-33 0.5s ease-in-out;
+  animation: uk-slide-right-33 0.5s ease-in-out;
+}
+.uk-slideshow-swipe-backward-out {
+  -webkit-animation: uk-slide-right 0.5s ease-in-out reverse;
+  animation: uk-slide-right 0.5s ease-in-out reverse;
+}
+.uk-slideshow-swipe-forward-in:before,
+.uk-slideshow-swipe-backward-in:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-animation: uk-fade 0.5s ease-in-out reverse;
+  animation: uk-fade 0.5s ease-in-out reverse;
+}
+.uk-notify {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1040;
+  box-sizing: border-box;
+  width: 350px;
+}
+.uk-notify-top-right,
+.uk-notify-bottom-right {
+  left: auto;
+  right: 10px;
+}
+.uk-notify-top-center,
+.uk-notify-bottom-center {
+  left: 50%;
+  margin-left: -175px;
+}
+.uk-notify-bottom-left,
+.uk-notify-bottom-right,
+.uk-notify-bottom-center {
+  top: auto;
+  bottom: 10px;
+}
+@media (max-width: 479px) {
+  .uk-notify {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    margin: 0;
+  }
+}
+.uk-notify-message {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 15px;
+  background: #444444;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 22px;
+  cursor: pointer;
+}
+.uk-notify-message > .uk-close {
+  visibility: hidden;
+  float: right;
+}
+.uk-notify-message:hover > .uk-close {
+  visibility: visible;
+}
+.uk-notify-message-primary {
+  background: #ebf7fd;
+  color: #2d7091;
+}
+.uk-notify-message-success {
+  background: #f2fae3;
+  color: #659f13;
+}
+.uk-notify-message-warning {
+  background: #fffceb;
+  color: #e28327;
+}
+.uk-notify-message-danger {
+  background: #fff1f0;
+  color: #d85030;
+}
+.uk-search {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+}
+.uk-search:before {
+  content: "\f002";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-family: FontAwesome;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.2);
+}
+.uk-search-field::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.uk-search-field::-webkit-search-cancel-button,
+.uk-search-field::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.uk-search-field::-ms-clear {
+  display: none;
+}
+.uk-search-field::-moz-placeholder {
+  opacity: 1;
+}
+.uk-search-field {
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 0;
+  font: inherit;
+  color: #444444;
+  -webkit-appearance: none;
+  width: 120px;
+  height: 30px;
+  padding: 0 0 0 30px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  vertical-align: middle;
+}
+.uk-search-field:-ms-input-placeholder {
+  color: #999999 !important;
+}
+.uk-search-field::-moz-placeholder {
+  color: #999999;
+}
+.uk-search-field::-webkit-input-placeholder {
+  color: #999999;
+}
+.uk-search-field:focus {
+  outline: 0;
+}
+.uk-search-field:focus,
+.uk-search.uk-active .uk-search-field {
+  width: 180px;
+}
+.uk-dropdown-search {
+  width: 300px;
+  margin-top: 0;
+  background: #f5f5f5;
+  color: #444444;
+}
+.uk-open > .uk-dropdown-search {
+  -webkit-animation: uk-slide-top-fixed 0.2s ease-in-out;
+  animation: uk-slide-top-fixed 0.2s ease-in-out;
+}
+.uk-navbar-flip .uk-dropdown-search {
+  margin-top: 5px;
+  margin-right: -15px;
+}
+.uk-nav-search > li > a {
+  color: #444444;
+}
+.uk-nav-search > li.uk-active > a {
+  background: #41292c;
+  color: #ffffff;
+  outline: none;
+}
+.uk-nav-search .uk-nav-header {
+  color: #999999;
+}
+.uk-nav-search .uk-nav-divider {
+  border-top: 1px solid #39915e;
+}
+.uk-nav-search ul a {
+  color: #41292c;
+}
+.uk-nav-search ul a:hover {
+  color: #e4bb97;
+}
+.uk-offcanvas .uk-search {
+  display: block;
+  margin: 20px 15px;
+}
+.uk-offcanvas .uk-search:before {
+  color: #777777;
+}
+.uk-offcanvas .uk-search-field {
+  width: 100%;
+  border-color: rgba(0, 0, 0, 0);
+  background: #1a1a1a;
+  color: #cccccc;
+}
+.uk-offcanvas .uk-search-field:-ms-input-placeholder {
+  color: #777777 !important;
+}
+.uk-offcanvas .uk-search-field::-moz-placeholder {
+  color: #777777;
+}
+.uk-offcanvas .uk-search-field::-webkit-input-placeholder {
+  color: #777777;
+}
+.uk-nestable {
+  padding: 0;
+  list-style: none;
+}
+.uk-nestable a,
+.uk-nestable img {
+  -webkit-touch-callout: none;
+}
+.uk-nestable-list {
+  margin: 0;
+  padding-left: 40px;
+  list-style: none;
+}
+.uk-nestable-item {
+  touch-action: none;
+}
+.uk-nestable-item + .uk-nestable-item {
+  margin-top: 10px;
+}
+.uk-nestable-list:not(.uk-nestable-dragged) > .uk-nestable-item:first-child {
+  margin-top: 10px;
+}
+.uk-nestable-dragged {
+  position: absolute;
+  z-index: 1050;
+  pointer-events: none;
+  padding-left: 0;
+}
+.uk-nestable-placeholder {
+  position: relative;
+}
+.uk-nestable-placeholder > * {
+  opacity: 0;
+}
+.uk-nestable-placeholder:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px dashed #39915e;
+  opacity: 1;
+}
+.uk-nestable-empty {
+  min-height: 30px;
+}
+.uk-nestable-handle {
+  touch-action: none;
+}
+.uk-nestable-handle:hover {
+  cursor: move;
+}
+.uk-nestable-moving,
+.uk-nestable-moving * {
+  cursor: move;
+}
+[data-nestable-action='toggle'] {
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.uk-nestable-toggle {
+  display: inline-block;
+  visibility: hidden;
+}
+.uk-nestable-toggle:after {
+  content: "\f147";
+  font-family: FontAwesome;
+}
+.uk-parent > :not(.uk-nestable-list) .uk-nestable-toggle {
+  visibility: visible;
+}
+.uk-collapsed .uk-nestable-list {
+  display: none;
+}
+.uk-collapsed .uk-nestable-toggle:after {
+  content: "\f196";
+}
+.uk-nestable-panel {
+  padding: 5px;
+  background: #f5f5f5;
+}
+.uk-sortable {
+  position: relative;
+}
+.uk-sortable > * {
+  touch-action: none;
+}
+.uk-sortable a,
+.uk-sortable img {
+  -webkit-touch-callout: none;
+}
+.uk-sortable > :last-child {
+  margin-bottom: 0;
+}
+.uk-sortable-dragged {
+  position: absolute;
+  z-index: 1050;
+  pointer-events: none;
+}
+.uk-sortable-placeholder {
+  opacity: 0;
+}
+.uk-sortable-empty {
+  min-height: 30px;
+}
+.uk-sortable-handle {
+  touch-action: none;
+}
+.uk-sortable-handle:hover {
+  cursor: move;
+}
+.uk-sortable-moving,
+.uk-sortable-moving * {
+  cursor: move;
+}
+[data-uk-sticky].uk-active {
+  z-index: 980;
+  box-sizing: border-box;
+}
+.uk-sticky-placeholder > * {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+[data-uk-sticky][class*='uk-animation-'] {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+[data-uk-sticky].uk-animation-reverse {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+.uk-dragover {
+  box-shadow: 0 0 20px rgba(100, 100, 100, 0.3);
+}
+.uk-tooltip {
+  display: none;
+  position: absolute;
+  z-index: 1030;
+  box-sizing: border-box;
+  max-width: 200px;
+  padding: 5px 8px;
+  background: #333333;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  line-height: 18px;
+}
+.uk-tooltip:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px dashed #333333;
+}
+.uk-tooltip-top:after,
+.uk-tooltip-top-left:after,
+.uk-tooltip-top-right:after {
+  bottom: -5px;
+  border-top-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #333333;
+}
+.uk-tooltip-bottom:after,
+.uk-tooltip-bottom-left:after,
+.uk-tooltip-bottom-right:after {
+  top: -5px;
+  border-bottom-style: solid;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #333333;
+}
+.uk-tooltip-top:after,
+.uk-tooltip-bottom:after {
+  left: 50%;
+  margin-left: -5px;
+}
+.uk-tooltip-top-left:after,
+.uk-tooltip-bottom-left:after {
+  left: 10px;
+}
+.uk-tooltip-top-right:after,
+.uk-tooltip-bottom-right:after {
+  right: 10px;
+}
+.uk-tooltip-left:after {
+  right: -5px;
+  top: 50%;
+  margin-top: -5px;
+  border-left-style: solid;
+  border-right: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: #333333;
+}
+.uk-tooltip-right:after {
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
+  border-right-style: solid;
+  border-left: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: #333333;
 }
