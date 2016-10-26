@@ -7,8 +7,8 @@
 <script>
 
 var
-        ID = '{{ id }}',
-        action = '{{ action }}';
+    ID = '{{ id }}',
+    action = '{{ action }}';
 
 function initVM(blog) {
     var vm = new Vue({
@@ -20,10 +20,10 @@ function initVM(blog) {
                 var $form = $('#vm').find('form');
                 $form.postJSON(action, this.$data, function (err, r) {
                     if (err) {
-                        form.showFormError(err);
+                        $form.showFormError(err);
                     }
                     else {
-                        return location.assign('/api/blogs/' + r.id);
+                        return location.assign('/manage/blogs');
                     }
                 });
             }
