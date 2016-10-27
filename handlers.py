@@ -212,7 +212,7 @@ async def authenticate(*, email, passwd):
     return r
 
 
-# 后端API:获取用户 manage_users.html
+# 后端API:获取用户列表 manage_users.html
 @get('/api/users')
 async def api_get_users(*, page='1'):
     page_index = get_page_index(page)
@@ -250,7 +250,7 @@ async def api_register_user(*, email, name, passwd):
     return r
 
 
-# 后端API：获取日志 manage_blogs.html
+# 后端API：获取日志列表 manage_blogs.html
 @get('/api/blogs')
 async def api_blogs(*, page='1'):
     page_index = get_page_index(page)
@@ -277,10 +277,21 @@ async def api_create_blog(request, *, name, summary, content):
     return blog
 
 
-# 后端API：修改日志 manage_blogs.html:methods-edit_blog
-@get('/api/blogs/{id}')
-async def api_get_blog(*, id):
+# 后端API:修改日志
+@post('/api/blogs/{id}')
+async def api_update_blog(id, request, *, name, summary, content):
+    check_admin(request)
     blog = await Blog.find(id)
+    if not name or not name.strip():
+        raise APIValueError('name', 'name cannot be empty.')
+    if not summary or not summary.strip():
+        raise APIValueError('summary', 'summary cannot be empty.')
+    if not content or not content.strip():
+        raise APIValueError('content', 'summary cannot be empty.')
+    blog.name = name.strip()
+    blog.summary = summary.strip()
+    blog.content = content.strip()
+    await blog.update()
     return blog
 
 
@@ -291,6 +302,13 @@ async def api_delete_blog(request, *, id):
     blog = await Blog.find(id)
     await blog.remove()
     return dict(id=id)
+
+
+# 后端API：查看日志详情 manage_blogs.html:methods-edit_blog
+@get('/api/blogs/{id}')
+async def api_get_blog(*, id):
+    blog = await Blog.find(id)
+    return blog
 
 
 # 后端API:获取评论列表 manage_comments.html
