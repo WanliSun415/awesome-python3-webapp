@@ -129,7 +129,7 @@ def manage_edit_blog(*, id):
     return{
         '__template__': 'manage_blog_edit.html',
         'id': id,
-        'action': 'api/blogs/%s' % id
+        'action': '/api/blogs/%s' % id
     }
 
 
