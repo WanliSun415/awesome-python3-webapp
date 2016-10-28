@@ -87,6 +87,14 @@ async def index(*, page='1'):
     }
 
 
+# 关于博主页面
+@get('/about')
+async def about():
+    return {
+        '__template__': 'about.html'
+    }
+
+
 # 登陆 __base__.html:button-登陆
 @get('/signin')
 def signin():

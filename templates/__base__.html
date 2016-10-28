@@ -52,7 +52,7 @@
 <head>
     <meta charset="UTF-8" />
     {% block meta %}<!-- block meta -->{% endblock %}
-    <title>{% block title %} ? {% endblock %} - Awesome Python Webapp</title>
+    <title>{% block title %} ? {% endblock %} - 孙万里的博客</title>
     <link rel="stylesheet" href="/static/css/uikit.min.css">
     <!--<link rel="stylesheet" href="/static/css/uikit.gradient.min.css">-->
     <link rel="stylesheet" href="/static/css/awesome.css" />
@@ -70,6 +70,10 @@
         <div class="uk-container uk-container-center">
             <a href="/" class="uk-navbar-brand"
                style="font-family: Raleway">WalleSun Blog</a>
+            <ul class="uk-navbar-nav">
+                <li><a href="/manage/">Manage</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
             <div class="uk-navbar-flip">
                 <ul class="uk-navbar-nav">
                 {% if __user__ %}
@@ -109,8 +113,8 @@
                     <a target="_blank" href="http://weibo.com/u/2659491180/home" class="uk-icon-button uk-icon-weibo"></a>
                     <a target="_blank" href="https://github.com/WalleSun415" class="uk-icon-button uk-icon-github"></a>
                 </p>
-                <p>Power by <a href="#">Awesome Python Webapp</a>. Copyright &copy; 2014.[<a href="/manage/" target="_blank">Manage</a>]</p>
-                <p><a href="http://www.sunwanli.com/" target="_blank">www.sunwanli.com</a>. All right reserved.</p>
+                <p>Power by <a target="_blank" href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432170876125c96f6cc10717484baea0c6da9bee2be4000">awesome-python3-webapp</a>. Copyright &copy; 2014.</p>
+                <p><a href="http://www.swl.com/" target="_blank">www.swl.com</a>. All right reserved.</p>
             </div>
         </div>
     </div>

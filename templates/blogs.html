@@ -1,6 +1,6 @@
 {% extends '__base__.html' %}
 
-{% block title %}日志{% endblock %}
+{% block title %}首页{% endblock %}
 
 {% block beforehead %}
 
@@ -11,7 +11,7 @@
 
 {% block content %}
 
-    <div class="uk-width-1-1">
+    <div class="uk-width-3-4">
     {% for blog in blogs %}
         <article class="uk-article">
             <h2><a href="/blog/{{ blog.id }}">{{ blog.name }}</a></h2>
@@ -24,7 +24,13 @@
     {{ pagination('?page=', page )}}
     </div>
 
-    <!--<div class="uk-width-medium-1-4">-->
+    <div class="uk-width-medium-1-4">
+        <div class="uk-panel uk-panel-box">
+            <div class="uk-text-center">
+                <img class="uk-border-circle" width="150" height="150" src="http://ww3.sinaimg.cn/mw690/9e849d6cgw1f97qywxa6tj2064064jry.jpg" alt="user_image">
+                <h3>WalleSun</h3>
+                <h3>欢迎来到孙万里的博客</h3>
+            </div>
         <!--<div class="uk-panel uk-panel-header">-->
             <!--<h3 class="uk-panel-title">友情链接</h3>-->
             <!--<ul class="uk-list uk-list-line">-->
@@ -33,7 +39,7 @@
                 <!--<li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">Python教程</a></li>-->
                 <!--<li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="https://github.com/WalleSun415">Git教程</a></li>-->
             <!--</ul>-->
-        <!--</div>-->
-    <!--</div>-->
+        </div>
+    </div>
 
 {% endblock %}
